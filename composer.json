@@ -1,0 +1,10 @@
+{
+    "name": "yangkai/template",
+    "description": "template",
+    "keywords": ["yangkai", "template"],
+    "minimum-stability":"dev",
+    "require": {
+	    "php":"^7.0.12"
+    }
+}
+

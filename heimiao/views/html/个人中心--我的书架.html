@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/sprites.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/user_center.css">
+</head>
+
+<body>
+    <div id="within_header">
+        <div class="wrap clearfix">
+            <div class="logo-img pull-left">
+                <img src="./img/logo1.png" alt="">
+            </div>
+            <ul class="menu pull-left clearfix">
+                <li class="active"><a href="#">书屋</a></li>
+                <li><a href="#">长篇</a></li>
+                <li><a href="#">短篇</a></li>
+                <li><a href="#">充值</a></li>
+                <li><a href="#">故事集</a></li>
+            </ul>
+            <div class="pull-left search-box">
+                <input type="text" class="search-input" placeholder="书名/作者">
+                <button class="search-btn"><svg t="1535339923867" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="2042" xmlns:xlink="http://www.w3.org/1999/xlink" width="19"
+                        height="19">
+                        <defs>
+                            <style type="text/css"></style>
+                        </defs>
+                        <path d="M928 886.4l-160-160c128-150.4 120-377.6-20.8-520-150.4-150.4-393.6-150.4-542.4 0-72 72-112 169.6-112 272s40 198.4 112 272c72 72 169.6 112 272 112 91.2 0 179.2-32 248-91.2l160 160c12.8 12.8 32 12.8 44.8 0 11.2-12.8 11.2-32-1.6-44.8zM249.6 705.6c-60.8-60.8-94.4-140.8-94.4-225.6s33.6-166.4 94.4-225.6c62.4-62.4 144-92.8 225.6-92.8s163.2 30.4 225.6 92.8c124.8 124.8 124.8 328 0 452.8C640 768 560 801.6 475.2 801.6c-84.8-3.2-164.8-35.2-225.6-96z"
+                            fill="#FFFFFF" p-id="2043"></path>
+                    </svg></button>
+            </div>
+            <div class="pull-right">
+                <a href="#">登录</a>
+            </div>
+        </div>
+    </div>
+    <div id="user_center">
+        <div class="wrap clearfix">
+            <div class="menu pull-left">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="bg-huabankaobei"></i>
+                            个人中心
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            <i class="bg-biaoqing"></i>
+                            我的书架
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bg-icon_mine_yigoumaide_px"></i>
+                            已购作品
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bg-chongzhizhongxin"></i>
+                            充值中心
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bg-chongzhijilu"></i>
+                            充值记录
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bg-dashang"></i>
+                            我的打赏
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bg-yuepiao"></i>
+                            我的月票
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bg-jibenziliao"></i>
+                            基本资料
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bg-mimaxiugai"></i>
+                            修改密码
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="center pull-right">
+                <div class="title">我的书架</div>
+                <div class="page_null"><img src="./img/shujia-null.png">
+                    <span>书架上还没有书</span>
+                    <i>把喜欢的书加入书架可以随时阅读、追更哦</i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="footer">
+        <p>© 2018 午夜客栈wuyekezhan.com 杭州全集文化传播有限公司版权所有 浙ICP备18032227号</p>
+    </div>
+    <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
+                </div>
+                <div class="modal-body">
+                    <div class="tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#login" aria-controls="home" role="tab"
+                                    data-toggle="tab">登录</a></li>
+                            <li role="presentation"><a href="#register" aria-controls="profile" role="tab" data-toggle="tab">注册</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="login">
+                            <div class="form-box">
+                                <form class="login-form" action="">
+                                    <div class="dol clearfix">
+                                        <i class="user-icon"></i>
+                                        <input type="text" name="username" required placeholder="请输入用户名，包含字母和数字">
+                                    </div>
+                                    <div class="dol clearfix">
+                                        <i class="mm-icon"></i>
+                                        <input type="password" name="userpwd" required placeholder="请输入密码，6-15位可包含数字和字母">
+                                    </div>
+                                    <div class="dol clearfix">
+                                        <div class="pull-left">
+                                            <label for="wjmm">
+                                                <input id="wjmm" type="checkbox">
+                                                <label></label>
+                                                <span class="check">自动登录</span>
+                                            </label>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a href="#">忘记密码？</a>
+                                        </div>
+                                    </div>
+                                    <div class="dol">
+                                        <button type="submit">登录</button>
+                                    </div>
+                                </form>
+                                <div class="qt-title">其他登录方式</div>
+                                <ul class="qt-fx clearfix">
+                                    <li class="weix"><a href="#">
+                                            <img src="./img/weixin.png" alt="">
+                                        </a></li>
+                                    <li class="qq"><a href="#">
+                                            <img src="./img/tenxun.png" alt="">
+                                        </a></li>
+                                    <li class="weibo"><a href="#">
+                                            <img src="./img/weibo.png" alt="">
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="register">
+                            <div class="form-box">
+                                <form class="register-form" action="">
+                                    <div class="dol clearfix">
+                                        <i class="phone-icon"></i>
+                                        <input type="number" required name="phone" placeholder="请输入手机号">
+                                    </div>
+                                    <div class="dol clearfix">
+                                        <i class="user-icon"></i>
+                                        <input type="text" required name="username" placeholder="请输入用户名，包含字母和数字">
+                                    </div>
+                                    <div class="dol clearfix">
+                                        <i class="mm-icon"></i>
+                                        <input type="password" required id="password" name="password" placeholder="设置密码，6-15位可包含数字和字母">
+                                    </div>
+                                    <div class="dol clearfix">
+                                        <i class="mm-icon"></i>
+                                        <input type="password" required name="password_again" placeholder="请再次输入密码">
+                                    </div>
+                                    <div class="dol clearfix">
+                                        <i class="mm-icon"></i>
+                                        <input type="text" name="code" required style="width:205px" placeholder="请填写验证码">
+                                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540460458786&di=7f51005a49b54ef4f417b18b51960722&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fzhidao%2Fwh%253D450%252C600%2Fsign%3Dbcb93235f21fbe091c0bcb105e502005%2Feac4b74543a98226088e26648a82b9014a90eb22.jpg"
+                                            class="code-img" alt="">
+                                    </div>
+                                    <div class="dol clearfix">
+                                        <div class="pull-left">
+                                            <label for="tongyi">
+                                                <input id="tongyi" checked type="checkbox">
+                                                <label></label>
+                                                <span class="check">我已阅读并同意 <a href="#">《三更讲故事用户协议》</a> </span>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="dol">
+                                        <button type="submit">注册</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery.validate.min.js"></script>
+    <script src="./js/jquery.validate.extend.js"></script>
+    <script src="./js/messages_zh.min.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

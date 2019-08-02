@@ -1,0 +1,90 @@
+/* .bg-biaoqing {
+    width: 32px; height: 32px;
+    background: url("../img/user_center_sprites1.png") -2px -2px;
+}
+
+.bg-chongzhijilu {
+    width: 32px; height: 32px;
+    background: url("../img/user_center_sprites1.png") -38px -2px;
+}
+
+.bg-chongzhizhongxin {
+    width: 32px; height: 32px;
+    background: url("../img/user_center_sprites1.png") -2px -38px;
+}
+
+.bg-dashang {
+    width: 32px; height: 32px;
+    background: url("../img/user_center_sprites1.png") -38px -38px;
+}
+
+.bg-huabankaobei {
+    width: 32px; height: 32px;
+    background: url("../img/user_center_sprites1.png") -74px -2px;
+}
+
+.bg-icon_mine_yigoumaide_px {
+    width: 32px; height: 32px;
+    background: url("../img/user_center_sprites1.png") -74px -38px;
+}
+
+.bg-jibenziliao {
+    width: 32px; height: 32px;
+    background: url("../img/user_center_sprites1.png") -2px -74px;
+}
+
+.bg-mimaxiugai {
+    width: 32px; height: 32px;
+    background: url("../img/user_center_sprites1.png") -38px -74px;
+}
+
+.bg-yuepiao {
+    width: 32px; height: 32px;
+    background: url("../img/user_center_sprites1.png") -74px -74px;
+} */
+
+.bg-biaoqing {
+    width: 16px; height: 16px;
+    background: url("../img/user_center_sprites.png") -10px -10px;
+}
+
+.bg-chongzhijilu {
+    width: 16px; height: 16px;
+    background: url("../img/user_center_sprites.png") -46px -10px;
+}
+
+.bg-chongzhizhongxin {
+    width: 16px; height: 16px;
+    background: url("../img/user_center_sprites.png") -10px -46px;
+}
+
+.bg-dashang {
+    width: 16px; height: 16px;
+    background: url("../img/user_center_sprites.png") -46px -46px;
+}
+
+.bg-huabankaobei {
+    width: 16px; height: 16px;
+    background: url("../img/user_center_sprites.png") -82px -10px;
+}
+
+.bg-icon_mine_yigoumaide_px {
+    width: 16px; height: 16px;
+    background: url("../img/user_center_sprites.png") -82px -46px;
+}
+
+.bg-jibenziliao {
+    width: 16px; height: 16px;
+    background: url("../img/user_center_sprites.png") -10px -82px;
+}
+
+.bg-mimaxiugai {
+    width: 16px; height: 16px;
+    background: url("../img/user_center_sprites.png") -46px -82px;
+}
+
+.bg-yuepiao {
+    width: 16px; height: 16px;
+    background: url("../img/user_center_sprites.png") -82px -82px;
+}
+

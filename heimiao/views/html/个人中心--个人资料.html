@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/sprites.css">
+    <link rel="stylesheet" href="./css/layer.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/user_center.css">
+</head>
+
+<body>
+    <div id="within_header">
+        <div class="wrap clearfix">
+            <div class="logo-img pull-left">
+                <img src="./img/logo1.png" alt="">
+            </div>
+            <ul class="menu pull-left clearfix">
+                <li class="active"><a href="#">书屋</a></li>
+                <li><a href="#">长篇</a></li>
+                <li><a href="#">短篇</a></li>
+                <li><a href="#">充值</a></li>
+                <li><a href="#">故事集</a></li>
+            </ul>
+            <div class="pull-left search-box">
+                <input type="text" class="search-input" placeholder="书名/作者">
+                <button class="search-btn"><svg t="1535339923867" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="2042" xmlns:xlink="http://www.w3.org/1999/xlink" width="19"
+                        height="19">
+                        <defs>
+                            <style type="text/css"></style>
+                        </defs>
+                        <path d="M928 886.4l-160-160c128-150.4 120-377.6-20.8-520-150.4-150.4-393.6-150.4-542.4 0-72 72-112 169.6-112 272s40 198.4 112 272c72 72 169.6 112 272 112 91.2 0 179.2-32 248-91.2l160 160c12.8 12.8 32 12.8 44.8 0 11.2-12.8 11.2-32-1.6-44.8zM249.6 705.6c-60.8-60.8-94.4-140.8-94.4-225.6s33.6-166.4 94.4-225.6c62.4-62.4 144-92.8 225.6-92.8s163.2 30.4 225.6 92.8c124.8 124.8 124.8 328 0 452.8C640 768 560 801.6 475.2 801.6c-84.8-3.2-164.8-35.2-225.6-96z"
+                            fill="#FFFFFF" p-id="2043"></path>
+                    </svg></button>
+            </div>
+            <div class="pull-right">
+                <a href="#">登录</a>
+            </div>
+        </div>
+    </div>
+    <div id="user_center">
+        <div class="wrap clearfix">
+            <div class="menu pull-left">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="bg-huabankaobei"></i>
+                            个人中心
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bg-biaoqing"></i>
+                            我的书架
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bg-icon_mine_yigoumaide_px"></i>
+                            已购作品
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bg-chongzhizhongxin"></i>
+                            充值中心
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bg-chongzhijilu"></i>
+                            充值记录
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bg-dashang"></i>
+                            我的打赏
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bg-yuepiao"></i>
+                            我的月票
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bg-jibenziliao"></i>
+                            基本资料
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            <i class="bg-mimaxiugai"></i>
+                            修改密码
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="center pull-right presonal_cont_right">
+                <div class="title">修改密码</div>
+                <div class="mybasic_cont">
+                    <ul>
+                        <li>
+                            <label>头像</label>
+                            <p class="head-photo"><img src="http://passport.wuyekezhan.com/api/static/avatar/624/624.png"
+                                    alt=""></p>
+                            <a href="javascript:void(0);">修改</a>
+                            <!--修改头像-->
+                            <div class="change-pop headPhoto-change size450">
+                                <div class="content photo1">
+                                    <div class="head">修改头像</div>
+                                    <div class="headPhoto">
+                                        <img src="http://passport.wuyekezhan.com/api/static/avatar/624/624.png" alt="">
+                                    </div>
+                                    <br>
+                                    <div class="new-contentarea tc">
+                                        <label for="upload-file" class="upload-photo">上传新头像</label>
+                                        <input type="file" class="" name="upload-file" id="upload-file">
+                                    </div>
+
+                                    <br>
+                                    <span>支持JPG、BMP、PNG格式，最大不超过15M</span>
+                                </div>
+                                <div class="content1 photo2 size450" style="display: none">
+                                    <div class="head head-back"><span></span>修改头像</div>
+                                    <div style="width: 400px;margin: 50px 0 0 auto;position: relative;font-size: 12px;">
+                                        <div class="imageBox">
+                                            <div class="thumbBox"></div>
+                                        </div>
+                                        <div class="action">
+                                            <input type="button" id="btnCrop" class="Btnsty_peyton" value="保存">
+                                            <input type="button" id="btnZoomIn" class="Btnsty_peyton big">
+                                            <input type="button" id="btnZoomOut" class="Btnsty_peyton small">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label>昵称</label>
+                            <p class="username">程远博</p>
+                            <a href="javascript:void(0);">修改</a>
+                            <!--修改昵称-->
+                            <div class="change-pop username-change size276">
+                                <div class="head">修改昵称</div>
+                                <div class="content">
+                                    <div class="msg-box">昵称不能为空</div>
+                                    <input type="text" placeholder="请输入昵称" value="程远博"><br>
+                                    <button class="saveUsername-btn">保存</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label>姓名</label>
+                            <p class="real-name">暂无</p>
+                            <a href="javascript:void(0);" class="changeName_btn">修改</a>
+                            <!--修改姓名-->
+                            <div class="change-pop name-change size276">
+                                <div class="head">修改姓名</div>
+                                <div class="content">
+                                    <div class="msg-box-name"></div>
+                                    <input type="text" placeholder="请输入真实姓名" value="暂无"><br>
+                                    <button class="saveName-btn">保存</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label>性别</label>
+                            <p class="sex">
+                                保密
+                            </p>
+                            <a href="javascript:void(0);">修改</a>
+                            <!--修改性别-->
+                            <div class="change-pop sex-change size282">
+                                <div class="head">修改性别</div>
+                                <div class="content">
+                                    <div class="sex-choose">
+                                        <span data-sex="1">
+                                            <svg t="1535531686340" class="icon" style="" viewBox="0 0 1024 1024"
+                                                version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1758"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16">
+                                                <defs>
+                                                    <style type="text/css"></style>
+                                                </defs>
+                                                <path d="M623.363026 458.778728L934.897588 146.950265l2.057304 243.055739h85.231154L1018.95314 2.057304h-85.231154L617.191115 0v85.231154l255.693461 2.939005-310.35896 309.77116a348.85993 348.85993 0 0 0-462.305535 24.393744 349.741632 349.741632 0 0 0 4.408508 494.340692 346.214825 346.214825 0 0 0 518.734437-457.897027z m-470.240849 409.109539a277.442101 277.442101 0 1 1 392.651109-392.651109A277.442101 277.442101 0 1 1 153.416077 867.888267z"
+                                                    p-id="1759" fill="#666666"></path>
+                                            </svg>
+                                            男生
+                                        </span>
+                                        <span data-sex="2">
+                                            <svg t="1535531719649" class="icon" style="" viewBox="0 0 1024 1024"
+                                                version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3554"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16">
+                                                <defs>
+                                                    <style type="text/css"></style>
+                                                </defs>
+                                                <path d="M640.594279 715.690679a354.573611 354.573611 0 0 1-182.756727-51.734212l-106.433428 106.484549L496.024762 915.061654l-72.284759 72.284759-144.620638-144.620638-180.711897 180.711897-72.284758-72.284759 180.711896-180.711897-144.569517-144.569517 72.284759-72.284758 144.569517 144.569517 98.867555-98.867555A356.771804 356.771804 0 1 1 640.594279 715.690679z m0-613.449153a255.603814 255.603814 0 1 0 255.603814 255.603814 255.603814 255.603814 0 0 0-255.603814-255.603814z"
+                                                    fill="#666666" p-id="3555"></path>
+                                            </svg>
+                                            女生
+                                        </span>
+                                        <span class="active" data-sex="3">
+                                            <svg t="1535531792988" class="icon" style="" viewBox="0 0 1024 1024"
+                                                version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5215"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16">
+                                                <defs>
+                                                    <style type="text/css"></style>
+                                                </defs>
+                                                <path d="M1010.036364 363.054545c-13.963636-9.309091-37.236364-4.654545-46.545455 9.309091-93.090909 144.290909-260.654545 232.727273-446.836364 232.727273-181.527273 0-353.745455-88.436364-446.836363-232.727273-9.309091-18.618182-32.581818-23.272727-46.545455-13.963636-4.654545 9.309091-9.309091 13.963636-13.963636 18.618182 0 4.654545-4.654545 9.309091-4.654546 13.963636v4.654546c0 4.654545 4.654545 13.963636 4.654546 18.618181 102.4 162.909091 297.890909 265.309091 502.690909 265.309091s400.290909-102.4 502.690909-265.309091c13.963636-18.618182 9.309091-41.890909-4.654545-51.2z"
+                                                    fill="#A40000" p-id="5216"></path>
+                                                <path d="M335.127273 837.818182h-4.654546c-18.618182-4.654545-32.581818-23.272727-27.927272-41.890909l23.272727-153.6c4.654545-18.618182 23.272727-32.581818 41.890909-27.927273 18.618182 4.654545 32.581818 23.272727 27.927273 41.890909l-27.927273 153.6c0 18.618182-13.963636 27.927273-32.581818 27.927273m353.745454 0c-18.618182 0-32.581818-13.963636-32.581818-27.927273l-32.581818-153.6c-4.654545-18.618182 9.309091-37.236364 27.927273-41.890909 18.618182-4.654545 37.236364 9.309091 41.890909 27.927273l32.581818 153.6c4.654545 18.618182-9.309091 37.236364-27.927273 41.890909h-9.309091M97.745455 726.109091h-13.963637c-18.618182-4.654545-27.927273-27.927273-18.618182-46.545455l55.854546-153.6c4.654545-18.618182 27.927273-27.927273 46.545454-18.618181 18.618182 4.654545 27.927273 27.927273 18.618182 46.545454l-55.854545 153.6c-4.654545 9.309091-18.618182 18.618182-32.581818 18.618182m828.50909 23.272727c-13.963636 0-27.927273-9.309091-32.581818-23.272727l-60.509091-153.6c-4.654545-18.618182 4.654545-37.236364 18.618182-46.545455 18.618182-4.654545 37.236364 0 46.545455 18.618182l60.509091 153.6c4.654545 9.309091 4.654545 23.272727-4.654546 32.581818-4.654545 13.963636-13.963636 18.618182-27.927273 18.618182"
+                                                    fill="#A40000" p-id="5217"></path>
+                                            </svg>
+                                            保密
+                                        </span>
+                                    </div>
+                                    <button class="saveSex-btn">保存</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label>生日</label>
+                            <p class="birth">2018年10月17日</p>
+                            <a href="javascript:void(0);">修改</a>
+                            <!--修改生日-->
+                            <div class="change-pop birth-change size282">
+                                <div class="head changeBirth-btn">修改生日</div>
+                                <div class="content">
+                                    <div class="birth-choose">
+                                        <select class="select" name="" id="">
+                                            <option>2018</option>
+                                            <option>2017</option>
+                                            <option>2016</option>
+                                            <option>2015</option>
+                                            <option>2014</option>
+                                            <option>2013</option>
+                                            <option>2012</option>
+                                            <option>2011</option>
+                                            <option>2010</option>
+                                            <option>2009</option>
+                                            <option>2008</option>
+                                            <option>2007</option>
+                                            <option>2006</option>
+                                            <option>2005</option>
+                                            <option>2004</option>
+                                            <option>2003</option>
+                                            <option>2002</option>
+                                            <option>2001</option>
+                                            <option>2000</option>
+                                            <option>1999</option>
+                                            <option>1998</option>
+                                            <option>1997</option>
+                                            <option>1996</option>
+                                            <option>1995</option>
+                                            <option>1994</option>
+                                            <option>1993</option>
+                                            <option>1992</option>
+                                            <option>1991</option>
+                                            <option>1990</option>
+                                            <option>1989</option>
+                                            <option>1988</option>
+                                            <option>1987</option>
+                                            <option>1986</option>
+                                            <option>1985</option>
+                                            <option>1984</option>
+                                            <option>1983</option>
+                                            <option>1982</option>
+                                            <option>1981</option>
+                                            <option>1980</option>
+                                            <option>1979</option>
+                                            <option>1978</option>
+                                            <option>1977</option>
+                                            <option>1976</option>
+                                            <option>1975</option>
+                                            <option>1974</option>
+                                            <option>1973</option>
+                                            <option>1972</option>
+                                            <option>1971</option>
+                                            <option>1970</option>
+                                            <option>1969</option>
+                                        </select>
+                                        <select class="select" name="" id="">
+                                            <option>01</option>
+                                            <option>02</option>
+                                            <option>03</option>
+                                            <option>04</option>
+                                            <option>05</option>
+                                            <option>06</option>
+                                            <option>07</option>
+                                            <option>08</option>
+                                            <option>09</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                        </select>
+                                        <select class="select" name="" id="">
+                                            <option>01</option>
+                                            <option>02</option>
+                                            <option>03</option>
+                                            <option>04</option>
+                                            <option>05</option>
+                                            <option>06</option>
+                                            <option>07</option>
+                                            <option>08</option>
+                                            <option>09</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                            <option>31</option>
+                                        </select>
+                                    </div>
+                                    <button class="saveBirth-btn">保存</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label>城市</label>
+                            <p class="City">甘肃,嘉峪关,嘉峪关市</p>
+                            <a href="javascript:void(0);">修改</a>
+                            <!--修改城市-->
+                            <div class="change-pop city-change size282" style="overflow: hidden;">
+                                <div class="head">修改城市</div>
+                                <div class="content">
+                                    <div class="city-choose" id="element_id">
+                                        <select class="province select" style="top:0;left:0"></select>
+                                        <select class="city select" style="top:0;left:0"></select>
+                                        <select class="area select" style="top:0;left:0"></select>
+                                    </div>
+                                    <button class="saveCity-btn">保存</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label>阅读偏好</label>
+                            <p class="Read">
+                                <i><span>灵异奇闻</span><span>盗墓探险</span></i>
+                                <a href="javascript:void(0);" class="read-change-btn">修改</a>
+                            </p>
+                            <!--修改阅读偏好-->
+                            <div class="change-pop read-change size320">
+                                <div class="head">修改阅读偏好</div>
+                                <div class="content">
+                                    <div class="checkBox">
+                                        <ul>
+                                            <li id="1"><i class="active"></i>灵异奇闻</li>
+                                            <li id="2"><i></i>恐怖惊悚</li>
+                                            <li id="3"><i></i>悬疑推理</li>
+                                            <li id="4"><i></i>姻婚诡事</li>
+                                            <li id="5"><i class="active"></i>盗墓探险</li>
+                                            <li id="6"><i></i>风水秘术</li>
+                                            <li id="7"><i></i>其它悬异</li>
+                                        </ul>
+                                    </div>
+                                    <button class="saveRead-btn">保存</button>
+                                    <br>
+                                    <span>给自己打上标签，有助于系统为您推荐更符合你口味的内容源</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <p>© 2018 午夜客栈wuyekezhan.com 杭州全集文化传播有限公司版权所有 浙ICP备18032227号</p>
+    </div>
+    <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
+                </div>
+                <div class="modal-body">
+                    <div class="tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#login" aria-controls="home" role="tab"
+                                    data-toggle="tab">登录</a></li>
+                            <li role="presentation"><a href="#register" aria-controls="profile" role="tab" data-toggle="tab">注册</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="login">
+                            <div class="form-box">
+                                <form class="login-form" action="">
+                                    <div class="dol clearfix">
+                                        <i class="user-icon"></i>
+                                        <input type="text" name="username" required placeholder="请输入用户名，包含字母和数字">
+                                    </div>
+                                    <div class="dol clearfix">
+                                        <i class="mm-icon"></i>
+                                        <input type="password" name="userpwd" required placeholder="请输入密码，6-15位可包含数字和字母">
+                                    </div>
+                                    <div class="dol clearfix">
+                                        <div class="pull-left">
+                                            <label for="wjmm">
+                                                <input id="wjmm" type="checkbox">
+                                                <label></label>
+                                                <span class="check">自动登录</span>
+                                            </label>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a href="#">忘记密码？</a>
+                                        </div>
+                                    </div>
+                                    <div class="dol">
+                                        <button type="submit">登录</button>
+                                    </div>
+                                </form>
+                                <div class="qt-title">其他登录方式</div>
+                                <ul class="qt-fx clearfix">
+                                    <li class="weix"><a href="#">
+                                            <img src="./img/weixin.png" alt="">
+                                        </a></li>
+                                    <li class="qq"><a href="#">
+                                            <img src="./img/tenxun.png" alt="">
+                                        </a></li>
+                                    <li class="weibo"><a href="#">
+                                            <img src="./img/weibo.png" alt="">
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="register">
+                            <div class="form-box">
+                                <form class="register-form" action="">
+                                    <div class="dol clearfix">
+                                        <i class="phone-icon"></i>
+                                        <input type="number" required name="phone" placeholder="请输入手机号">
+                                    </div>
+                                    <div class="dol clearfix">
+                                        <i class="user-icon"></i>
+                                        <input type="text" required name="username" placeholder="请输入用户名，包含字母和数字">
+                                    </div>
+                                    <div class="dol clearfix">
+                                        <i class="mm-icon"></i>
+                                        <input type="password" required id="password" name="password" placeholder="设置密码，6-15位可包含数字和字母">
+                                    </div>
+                                    <div class="dol clearfix">
+                                        <i class="mm-icon"></i>
+                                        <input type="password" required name="password_again" placeholder="请再次输入密码">
+                                    </div>
+                                    <div class="dol clearfix">
+                                        <i class="mm-icon"></i>
+                                        <input type="text" name="code" required style="width:205px" placeholder="请填写验证码">
+                                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540460458786&di=7f51005a49b54ef4f417b18b51960722&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fzhidao%2Fwh%253D450%252C600%2Fsign%3Dbcb93235f21fbe091c0bcb105e502005%2Feac4b74543a98226088e26648a82b9014a90eb22.jpg"
+                                            class="code-img" alt="">
+                                    </div>
+                                    <div class="dol clearfix">
+                                        <div class="pull-left">
+                                            <label for="tongyi">
+                                                <input id="tongyi" checked type="checkbox">
+                                                <label></label>
+                                                <span class="check">我已阅读并同意 <a href="#">《三更讲故事用户协议》</a> </span>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="dol">
+                                        <button type="submit">注册</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery.validate.min.js"></script>
+    <script src="./js/jquery.validate.extend.js"></script>
+    <script src="./js/messages_zh.min.js"></script>
+    <script src="./js/layer.js"></script>
+    <script src="./js/cropbox.js"></script>
+    <script src="./js/cxselect.js"></script>
+    <script src="./js/cityData.js"></script>
+    <script src="./js/app.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('#element_id').cxSelect({
+                url: './js/cityData.js',
+                selects: ['province', 'city', 'area'],
+            });
+            $(function () {
+                $(".checkEmail").on('click', function () {
+                    var email = $(this).closest('i').find('input').val();
+                    checkEmail(email);
+                });
+                // 提交
+                hide_aihao();
+
+                function hide_aihao() {
+                    $(".mybasic_aihao b").each(function (index) {
+                        if (index >= 40) {
+                            $(this).hide();
+                        }
+                    })
+                };
+
+                $("#show_aihao").click(function () {
+                    if ($(this).attr('show') == 1) {
+                        $(".mybasic_aihao b").show();
+                        $(this).attr('show', '2');
+                        $(this).html("收缩查看");
+                    } else {
+                        hide_aihao();
+                        $(this).attr('show', 1);
+                        $(this).html("查看更多");
+                    }
+
+                });
+            });
+
+            $(".sex-choose span").each(function (i, item) {
+                if ($(item).hasClass("active")) {
+                    $(item).find("path").attr("fill", "#A40000");
+                }
+                $(this).click(function () {
+                    var im = $(this);
+                    $(this).addClass("active").find("path").attr("fill", "#A40000");
+                    im.siblings().removeClass("active").find("path").attr("fill", "#666666");
+                })
+            });
+
+            $(".birth-choose .select").each(function () {
+                $(this).click(function () {
+                    if ($(this).find("em").attr("class") == "yearBtn") {
+                        $(".birth-choose .month,.birth-choose .day").hide();
+                        $(".birth-choose .year").toggle();
+                    } else if ($(this).find("em").attr("class") == "monthBtn") {
+                        $(".birth-choose .year,.birth-choose .day").hide();
+                        $(".birth-choose .month").toggle();
+                    } else if ($(this).find("em").attr("class") == "dayBtn") {
+                        $(".birth-choose .month,.birth-choose .year").hide();
+                        $(".birth-choose .day").toggle();
+                    }
+                })
+            });
+
+            $(".city-choose .select").each(function () {
+                $(this).click(function () {
+                    if ($(this).find("em").attr("class") == "provinceBtn") {
+                        $(".city-choose .area,.city-choose .city").hide();
+                        $(".city-choose .province").toggle();
+                    } else if ($(this).find("em").attr("class") == "cityBtn") {
+                        $(".city-choose .province,.city-choose .area").hide();
+                        $(".city-choose .city").toggle();
+                    } else if ($(this).find("em").attr("class") == "areaBtn") {
+                        $(".city-choose .province,.city-choose .city").hide();
+                        $(".city-choose .area").toggle();
+                    }
+                })
+            });
+
+
+            $(".checkBox li").each(function () {
+                $(this).click(function () {
+                    if ($(this).find("i").hasClass("active")) {
+                        $(this).find("i").removeClass("active");
+                    } else {
+                        $(this).find("i").addClass("active");
+                    }
+                })
+            });
+
+
+            $(".changeName_btn").click(function () {
+                if ($(".real-name").text() == "") {
+                    $(this).next().find("div").show();
+                }
+            });
+            $(".head-back span").click(function () {
+                $(this).parent().parent().hide().prev().show();
+            });
+            // 修改按钮弹出层
+            $(".mybasic_cont ul li a").each(function () {
+                var id = 0;
+                $(this).click(function () {
+                    if ($(this).next().hasClass("size450")) {
+                        id = layer.open({
+                            type: 1,
+                            icon: 0,
+                            title: false,
+                            shadeClose: false,
+                            closeBtn: 1,
+                            shade: 0.5,
+                            area: ['500px', '450px'],
+                            content: $(this).next()
+                        });
+                    } else if ($(this).next().hasClass("size276")) {
+                        id = layer.open({
+                            type: 1,
+                            icon: 0,
+                            title: false,
+                            shadeClose: false,
+                            closeBtn: 1,
+                            shade: 0.5,
+                            area: ['500px', '276px'],
+                            content: $(this).next()
+                        });
+                    } else if ($(this).next().hasClass("size282")) {
+                        id = layer.open({
+                            type: 1,
+                            icon: 0,
+                            title: false,
+                            shadeClose: false,
+                            closeBtn: 1,
+                            shade: 0.5,
+                            area: ['500px', '282px'],
+                            content: $(this).next()
+                        });
+                    }
+                    $(".layui-layer-close2").css({ "right": "-25px", "top": "-25px" });
+                    layers.id = id;
+                });
+            });
+            $(".read-change-btn").click(function () {
+                id = layer.open({
+                    type: 1,
+                    icon: 0,
+                    title: false,
+                    shadeClose: false,
+                    closeBtn: 1,
+                    shade: 0.5,
+                    area: ['500px', '320px'],
+                    content: $(this).parent().next()
+                });
+                $(".layui-layer-close2").css({ "right": "-25px", "top": "-25px" });
+                layers.id = id;
+            });
+          var options =
+            {
+                thumbBox: '.thumbBox',
+                spinner: '.spinner',
+                imgSrc: 'images/avatar.png'
+            };
+            var cropper = $('.imageBox').cropbox(options);
+            var img = "";
+
+            $('#upload-file').on('change', function () {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    options.imgSrc = e.target.result;
+                    cropper = $('.imageBox').cropbox(options);
+                    $(".photo1").hide();
+                    $(".photo2").show();
+                };
+                reader.readAsDataURL(this.files[0]);
+                this.files = [];
+                $('#btnCrop').click();
+            });
+            var options =
+            {
+                thumbBox: '.thumbBox',
+                spinner: '.spinner',
+                imgSrc: 'images/avatar.png'
+            };
+            var cropper = $('.imageBox').cropbox(options);
+            var img = "";
+            //保存头像
+            // $('#btnCrop').on('click', function () {
+            //     var url = getRequestUrl('Member', 'uploaderAvatar');
+            //     img = cropper.getDataURL();
+            //     $('.head-photo').html('');
+            //     $.post(url, { 'img': img }, function (d) {
+            //         if (d.status == 1) {
+            //             $('.head-photo').append('<img src="' + img + '" align="absmiddle" style="width:83px; border-radius:83px;" >');
+            //             var imgavatr = d.message;
+            //             $(".menu-login img").attr('src', imgavatr);
+            //             layer.msg('修改成功', {
+            //                 time: 1000, end: function () {
+            //                     layer.close(layers.id);
+            //                     window.location.reload();
+            //                 }
+            //             });
+            //         } else {
+            //             layer.msg('修改失败');
+            //         }
+            //     });
+            // });
+
+
+            $('#btnZoomIn').on('click', function () {
+                cropper.zoomIn();
+            });
+
+            $('#btnZoomOut').on('click', function () {
+                cropper.zoomOut();
+            });
+        })
+    </script>
+</body>
+
+</html>
