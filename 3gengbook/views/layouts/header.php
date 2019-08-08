@@ -56,7 +56,7 @@ use frontend\controllers\HomeController;
             <ul class="pull-right menu-right">
                 <li class="menu-login1 login_flag">
                     <?php if($this->context->user): ?>
-                        <a href="<?= Url::to(['member/index/index']) ?>" ><?= $this->context->user->username ?></a>&nbsp;&nbsp;
+                        <a href="<?= Url::to(['/member/index/index']) ?>" ><?= $this->context->user->username ?></a>&nbsp;&nbsp;
                         <a href="<?= Url::to(['site/logout']) ?>" >退出</a>
                     <?php else: ?>
                         <a href="#this" data-toggle="modal" data-target="#LoginModal">登录</a>

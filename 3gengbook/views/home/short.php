@@ -1,8 +1,9 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $model \frontend\models\ContactForm */
+/* @var $model \common\models\ContactForm */
 
+use common\popular\Handle;
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\LinkPager;
@@ -25,7 +26,7 @@ $this->title = Yii::$app->params['platform.name'] . '-短篇';
 
 <div class="index-bg wykz-bg"></div>
 <div class="wrap index clearfix">
-    <?php $this->beginContent('@frontend/views/layouts/header.php'); ?>
+    <?php $this->beginContent('@frontend.template/views/layouts/header.php'); ?>
 
     <?php $this->endContent(); ?>
 
@@ -55,7 +56,7 @@ $this->title = Yii::$app->params['platform.name'] . '-短篇';
                         <div class="item clearfix">
                             <div class="img-box ">
                                 <a href="<?= Url::to(['chapter/short','id' => $value->id])?>">
-                                    <img width="100%" height="100%" src="<?= $value->cover ?>" alt="封面">
+                                    <img width="100%" height="100%" src="<?= Handle::getUploadSrc($value->cover,Handle::UPLOAD_SRC_FICTION_COVER) ?>" alt="封面">
                                 </a>
                             </div>
                             <div class="desc">
@@ -82,13 +83,13 @@ $this->title = Yii::$app->params['platform.name'] . '-短篇';
         </div>
     </div>
 
-    <?php $this->beginContent('@frontend/views/layouts/floating.php'); ?>
+    <?php $this->beginContent('@frontend.template/views/layouts/floating.php'); ?>
 
     <?php $this->endContent(); ?>
 
 </div>
 
-<?php $this->beginContent('@frontend/views/layouts/footer.php'); ?>
+<?php $this->beginContent('@frontend.template/views/layouts/footer.php'); ?>
 
 <?php $this->endContent(); ?>
 </body>

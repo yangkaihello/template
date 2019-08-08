@@ -21,7 +21,7 @@ class SignupForm extends Model
         return [
             ['username', 'trim'],
             ['username', 'required'],
-            ['username', 'unique', 'targetClass' => '\frontend\models\MemberIndex', 'message' => '{attribute}已存在'],
+            ['username', 'unique', 'targetClass' => '\common\models\MemberIndex', 'message' => '{attribute}已存在'],
             ['username', 'string', 'min' => 2, 'max' => 255, 'tooShort' => "{attribute}最少2位", 'tooLong' => "{attribute}最大255位"],
 
             ['password_again', 'trim'],

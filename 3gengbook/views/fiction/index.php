@@ -1,8 +1,9 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $model \frontend\models\ContactForm */
+/* @var $model \common\models\ContactForm */
 
+use common\popular\Handle;
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\LinkPager;
@@ -25,11 +26,11 @@ $this->title =  Yii::$app->params['platform.name'] . '-' . $fiction->title . '-�
 
 <div class="index-bg wykz-bg"></div>
 <div class="wrap index clearfix">
-    <?php $this->beginContent('@frontend/views/layouts/header.php'); ?>
+    <?php $this->beginContent('@frontend.template/views/layouts/header.php'); ?>
 
     <?php $this->endContent(); ?>
 
-    <?php $this->beginContent('@frontend/views/layouts/floating.php'); ?>
+    <?php $this->beginContent('@frontend.template/views/layouts/floating.php'); ?>
 
     <?php $this->endContent(); ?>
 
@@ -50,7 +51,7 @@ $this->title =  Yii::$app->params['platform.name'] . '-' . $fiction->title . '-�
             </div>
             <div class="desc pull-left">
                 <p class="t">
-                    <?= $fiction->title ?> <?php if($fiction->isVip == \frontend\models\FictionIndex::VIP_YES): ?><i class="lab y">vip签约</i><?php endif; ?> <!--<i class="lab g">授权作品</i>-->
+                    <?= $fiction->title ?> <?php if($fiction->isVip == \common\models\FictionIndex::VIP_YES): ?><i class="lab y">vip签约</i><?php endif; ?> <!--<i class="lab g">授权作品</i>-->
                 </p>
                 <p class="j">
                     <span class="t">类别：</span>
@@ -74,7 +75,7 @@ $this->title =  Yii::$app->params['platform.name'] . '-' . $fiction->title . '-�
         </div>
         <div class="pull-right user-p">
             <div class="user-img">
-                <img width="100%" height="100%" src="<?= \common\popular\Handle::getImgSrc($fiction->member->icon) ?>" alt="">
+                <img width="100%" height="100%" src="<?= Handle::getUploadSrc($fiction->member->icon,Handle::UPLOAD_SRC_MEMBER_ICON) ?>" alt="">
             </div>
             <p class="n">作者：<?= $fiction->member->authorInfo->penname ?></p>
             <p class="t">
@@ -84,11 +85,11 @@ $this->title =  Yii::$app->params['platform.name'] . '-' . $fiction->title . '-�
                 <p>创作时间：<?= \common\extend\DateTime::formatDate($fiction->member->created_at,"Y-m-d")?></p>
                 <p>
                     推荐指数：
-                    <img src='/img/stars.png' alt="">
-                    <img src='/img/stars.png' alt="">
-                    <img src='/img/stars.png' alt="">
-                    <img src='/img/stars.png' alt="">
-                    <img src='/img/stars.png' alt="">
+                    <img src='/template/img/stars.png' alt="">
+                    <img src='/template/img/stars.png' alt="">
+                    <img src='/template/img/stars.png' alt="">
+                    <img src='/template/img/stars.png' alt="">
+                    <img src='/template/img/stars.png' alt="">
                 </p>
             </div>
         </div>
@@ -454,7 +455,7 @@ $this->title =  Yii::$app->params['platform.name'] . '-' . $fiction->title . '-�
     </div>
 </div>
 
-<?php $this->beginContent('@frontend/views/layouts/footer.php'); ?>
+<?php $this->beginContent('@frontend.template/views/layouts/footer.php'); ?>
 
 <?php $this->endContent(); ?>
 </body>

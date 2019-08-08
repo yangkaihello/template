@@ -1,12 +1,12 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $model \frontend\models\ContactForm */
+/* @var $model \common\models\ContactForm */
 
+use common\popular\Handle;
 use yii\helpers\Url;
 use yii\helpers\Html;
-use frontend\controllers\HomeController;
-use frontend\models\SystemPlace;
+use common\models\SystemPlace;
 
 $this->title = Yii::$app->params['platform.name'] . '-首页';
 
@@ -34,13 +34,13 @@ $this->title = Yii::$app->params['platform.name'] . '-首页';
         <!-- 轮播（Carousel）项目 -->
         <div class="carousel-inner">
             <div class="item active">
-                <a href="<?= Url::to(['fiction/index','id' => 6]) ?>"><img src="/img/banner1.jpeg" alt="First slide"></a>
+                <a href="<?= Url::to(['fiction/index','id' => 6]) ?>"><img src="/template/img/banner1.jpeg" alt="First slide"></a>
             </div>
             <div class="item">
-                <a href="<?= Url::to(['fiction/index','id' => 2]) ?>"><img src="/img/banner2.jpeg" alt="Second slide"></a>
+                <a href="<?= Url::to(['fiction/index','id' => 2]) ?>"><img src="/template/img/banner2.jpeg" alt="Second slide"></a>
             </div>
             <div class="item">
-                <a href="<?= Url::to(['chapter/short','id' => 4]) ?>"><img src="/img/banner3.jpeg" alt="Third slide"></a>
+                <a href="<?= Url::to(['chapter/short','id' => 4]) ?>"><img src="/template/img/banner3.jpeg" alt="Third slide"></a>
             </div>
         </div>
     </div>
@@ -62,14 +62,14 @@ $this->title = Yii::$app->params['platform.name'] . '-首页';
 
     <div class="index-bg wykz-bg"></div>
     <div class="wrap index clearfix">
-        <?php $this->beginContent('@frontend/views/layouts/header.php'); ?>
+        <?php $this->beginContent('@frontend.template/views/layouts/header.php'); ?>
 
         <?php $this->endContent(); ?>
         <div class="book-items">
             <div class="book-title">
                 <div class="eye">
                 </div><br>
-                <img src="/img/t3.png" alt="">
+                <img src="/template/img/t3.png" alt="">
             </div>
             <div class="heng clearfix">
                 <div class="items">
@@ -77,7 +77,7 @@ $this->title = Yii::$app->params['platform.name'] . '-首页';
                     <div class="item">
                         <div class="img-box">
                             <a href="<?= Url::to(['chapter/short','id' => $value->id]) ?>">
-                                <img src="<?= $value->cover ?>" height="100%" width="100%" alt="">
+                                <img src="<?= Handle::getUploadSrc($value->cover,Handle::UPLOAD_SRC_FICTION_COVER) ?>" height="100%" width="100%" alt="">
                             </a>
                         </div>
                         <p class="desc">
@@ -94,7 +94,7 @@ $this->title = Yii::$app->params['platform.name'] . '-首页';
             <div class="book-title">
                 <div class="eye">
                 </div><br>
-                <img src="/img/t2.png" alt="">
+                <img src="/template/img/t2.png" alt="">
             </div>
             <div class="shu clearfix">
                 <div class="items">
@@ -102,7 +102,7 @@ $this->title = Yii::$app->params['platform.name'] . '-首页';
                     <div class="item">
                         <div class="img-box">
                             <a href="<?= Url::to(['fiction/index','id' => $value->id]) ?>">
-                                <img src="<?= $value->cover ?>" height="100%" width="100%" alt="">
+                                <img src="<?= Handle::getUploadSrc($value->cover,Handle::UPLOAD_SRC_FICTION_COVER) ?>" height="100%" width="100%" alt="">
                             </a>
                         </div>
                         <p class="title">
@@ -118,13 +118,13 @@ $this->title = Yii::$app->params['platform.name'] . '-首页';
             <div class="book-title">
                 <div class="eye">
                 </div><br>
-                <img src="./img/t1.png" alt="">
+                <img src="/template/img/t1.png" alt="">
             </div>
             <div class="san clearfix">
                 <div class="items">
                     <div class="item">
                         <div class="img-box">
-                            <img src="./img/wenxue.jpg" alt="">
+                            <img src="/template/img/wenxue.jpg" alt="">
                         </div>
                         <div class="title">
                             发行渠道商
@@ -132,7 +132,7 @@ $this->title = Yii::$app->params['platform.name'] . '-首页';
                         <div class="box clearfix">
                             <div class="list">
                                 <div class="logo-img">
-                                    <img src="/img/homeLog/niuniutui-logo.jpg" height="100%" width="100%" alt="">
+                                    <img src="/template/img/homeLog/niuniutui-logo.jpg" height="100%" width="100%" alt="">
                                 </div>
                                 <p class="name">牛牛推</p>
                             </div>
@@ -140,7 +140,7 @@ $this->title = Yii::$app->params['platform.name'] . '-首页';
                     </div>
                     <div class="item">
                         <div class="img-box">
-                            <img src="./img/yousheng.jpg" alt="">
+                            <img src="/template/img/yousheng.jpg" alt="">
                         </div>
                         <div class="title">
                             发行渠道商
@@ -148,7 +148,7 @@ $this->title = Yii::$app->params['platform.name'] . '-首页';
                         <div class="box clearfix">
                             <div class="list">
                                 <div class="logo-img">
-                                    <img src="/img/homeLog/niuniutui-logo.jpg" height="100%" width="100%" alt="">
+                                    <img src="/template/img/homeLog/niuniutui-logo.jpg" height="100%" width="100%" alt="">
                                 </div>
                                 <p class="name">牛牛推</p>
                             </div>
@@ -156,7 +156,7 @@ $this->title = Yii::$app->params['platform.name'] . '-首页';
                     </div>
                     <div class="item">
                         <div class="img-box">
-                            <img src="./img/manhua.jpg" alt="">
+                            <img src="/template/img/manhua.jpg" alt="">
                         </div>
                         <div class="title">
                             发行渠道商
@@ -164,7 +164,7 @@ $this->title = Yii::$app->params['platform.name'] . '-首页';
                         <div class="box clearfix">
                             <div class="list">
                                 <div class="logo-img">
-                                    <img src="/img/homeLog/niuniutui-logo.jpg" height="100%" width="100%" alt="">
+                                    <img src="/template/img/homeLog/niuniutui-logo.jpg" height="100%" width="100%" alt="">
                                 </div>
                                 <p class="name">牛牛推</p>
                             </div>
@@ -192,12 +192,12 @@ $this->title = Yii::$app->params['platform.name'] . '-首页';
                 </li>
             </ul>
         </div>
-        <?php $this->beginContent('@frontend/views/layouts/floating.php'); ?>
+        <?php $this->beginContent('@frontend.template/views/layouts/floating.php'); ?>
 
         <?php $this->endContent(); ?>
     </div>
 
-    <?php $this->beginContent('@frontend/views/layouts/footer.php'); ?>
+    <?php $this->beginContent('@frontend.template/views/layouts/footer.php'); ?>
 
     <?php $this->endContent(); ?>
 </body>

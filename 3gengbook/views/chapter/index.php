@@ -1,7 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $model \frontend\models\ContactForm */
+/* @var $model \common\models\ContactForm */
 
 use yii\helpers\Url;
 use yii\helpers\Html;
@@ -27,7 +27,7 @@ frontend\assets\AppAsset::addCss($this,'css/reader.css');
         <div class="wrap clearfix">
             <div class="logo-img pull-left">
                 <a href="<?= Url::to([\frontend\controllers\HomeController::ACTION_HOME]) ?>">
-                    <img src="/img/logo1.png" alt="">
+                    <img src="/template/img/logo1.png" alt="">
                 </a>
             </div>
             <ul class="menu pull-left clearfix">
@@ -450,7 +450,7 @@ frontend\assets\AppAsset::addCss($this,'css/reader.css');
         </div>
     </div>
 
-    <?php $this->beginContent('@frontend/views/layouts/footer.php'); ?>
+    <?php $this->beginContent('@frontend.template/views/layouts/footer.php'); ?>
 
     <?php $this->endContent(); ?>
 

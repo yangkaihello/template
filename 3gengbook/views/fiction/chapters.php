@@ -1,7 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $model \frontend\models\ContactForm */
+/* @var $model \common\models\ContactForm */
 
 use yii\helpers\Url;
 use yii\helpers\Html;
@@ -24,7 +24,7 @@ $this->title = Yii::$app->params['platform.name'] . '-' . $fiction->title . '-åˆ
 
 <div class="index-bg wykz-bg"></div>
 <div class="wrap index clearfix">
-    <?php $this->beginContent('@frontend/views/layouts/header.php'); ?>
+    <?php $this->beginContent('@frontend.template/views/layouts/header.php'); ?>
 
     <?php $this->endContent(); ?>
 
@@ -52,13 +52,13 @@ $this->title = Yii::$app->params['platform.name'] . '-' . $fiction->title . '-åˆ
         </div>
     </div>
 
-    <?php $this->beginContent('@frontend/views/layouts/floating.php'); ?>
+    <?php $this->beginContent('@frontend.template/views/layouts/floating.php'); ?>
 
     <?php $this->endContent(); ?>
 
 </div>
 
-<?php $this->beginContent('@frontend/views/layouts/footer.php'); ?>
+<?php $this->beginContent('@frontend.template/views/layouts/footer.php'); ?>
 
 <?php $this->endContent(); ?>
 </body>
