@@ -324,9 +324,9 @@ $this->registerMetaTag([
                     </div>
                     <div class="bd">
                         <p style="margin-top: 9px;"><span class="con-left">泉火QQ：</span> <span
-                                    class="con-right">3519233850</span></p>
+                                    class="con-right">2826140774</span></p>
                         <p style="margin-top: 0px; line-height: 30px;"><span class="con-left">投稿邮箱： </span> <span
-                                    class="con-right">kefu@motie.com </span>
+                                    class="con-right">2826140774@qq.com </span>
                         </p>
 
                     </div>
@@ -342,7 +342,7 @@ $this->registerMetaTag([
                     </div>
                     <div class="bd">
                         <p style="margin-top: 9px;"><span class="con-left">泉火QQ：</span> <span
-                                    class="con-right">3519233850</span></p>
+                                    class="con-right">2826140774</span></p>
                         <p style="margin-top: 0px; line-height: 30px;"><span class="con-left">微信联系扫描下方二维码： </span><br> <span
                                     class="con-right"><img width="120" height="120" src="/template/imgs/index/QR_code.png" alt=""> </span>
                         </p>

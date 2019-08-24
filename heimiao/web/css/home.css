@@ -295,11 +295,11 @@
 }
 
 .listUpdate .content-all .title .author {
-    width: 150px;
+    width: 140px;
 }
 
 .listUpdate .content-all .title .time {
-    width: 140px;
+    width: 150px;
 }
 
 .listUpdate .content-all .item {
@@ -331,12 +331,12 @@
 }
 
 .listUpdate .content-all .item .author {
-    width: 150px;
+    width: 140px;
 }
 
 .listUpdate .content-all .item .time {
     cursor: inherit;
-    width: 141px;
+    width: 150px;
 }
 
 .listUpdate .content-all .item:last-child {
