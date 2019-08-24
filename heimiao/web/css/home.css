@@ -1,0 +1,344 @@
+@charset "UTF-8";
+
+/*引入配置*/
+/*body背景色*/
+/*主题背景色；*/
+/*顶部nav背景色*/
+/*导航背景色；*/
+/*醉唐border*/
+/*醉唐font*/
+/*导航选中颜色；*/
+/*logoImg；*/
+/*header背景图；*/
+/*hover 字体颜色*/
+/*超行溢出显示省略号*/
+/*logoImg；*/
+/* loading svg*/
+.contactWe {
+    width: 290px;
+    float: right;
+    background: #fff;
+    padding-bottom: 20px;
+    overflow: hidden;
+}
+
+.contactWe .bd {
+    margin: 15px 0 0 20px;
+}
+
+.contactWe .bd p span {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.contactWe .bd p span.con-left {
+    font-size: 12px;
+    color: #999;
+}
+
+.contactWe .bd p span.con-right {
+    font-size: 12px;
+}
+
+.contactWe .bd p .qqcontact {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    border-radius: 50%;
+    margin-top: -2px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAAAoUlEQVQY043QsQpBcRiG8ed/yKoMFgwsFpPFQla5AnckN+AeWKxGLkJMNovhlAlFj+WoE87Jr77l6+3t64MUtatu1bt6UZdqg09qXY39tldLn+GZ2cYAUSo/INsw3VpWnznNm3cwqGvz3dQm6sj/TCOgAxzIdwZqqJXk5l1G40Ptq60ohBAD1WR+KQCTEMKxmCxOwBxoA1dgAZSBXvLeFcALCPb6WEXuiVMAAAAASUVORK5CYII=) 4px 4px no-repeat;
+    background-size: 11px 11px;
+    background-color: #ff4c2f;
+}
+
+[data-theme="theme6"] .contactWe .bd p .qqcontact {
+    background-color: #50616d;
+}
+
+.contactWe .bd p.lc {
+    /*通过该函数设置字体颜色，后期方便统一管理；*/
+    color: #ff4c2f;
+}
+
+[data-theme="theme"] .contactWe .bd p.lc {
+    color: #ff4c2f !important;
+}
+
+[data-theme="theme1"] .contactWe .bd p.lc {
+    color: #ff4c2f !important;
+}
+
+[data-theme="theme2"] .contactWe .bd p.lc {
+    color: #1eb9ee !important;
+}
+
+[data-theme="theme4"] .contactWe .bd p.lc {
+    color: #b388ff !important;
+}
+
+[data-theme="theme5"] .contactWe .bd p.lc {
+    color: #0fb295 !important;
+}
+
+[data-theme="theme6"] .contactWe .bd p.lc {
+    color: #ff4c2f !important;
+}
+
+.contactWe .bd p.lc a {
+    text-decoration: underline;
+    /*通过该函数设置字体颜色，后期方便统一管理；*/
+    color: #ff4c2f;
+}
+
+.contactWe .bd .jinwen-editor {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #b5b5b5;
+}
+
+.contactWe .bd .jinwen-editor .conect-tit {
+    font-size: 14px;
+    color: #666;
+}
+
+.contactWe .bd .jinwen-editor .con-bot {
+    margin-top: 10px;
+}
+
+.contactWe .bd .jinwen-editor .con-bot span {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.contactWe .bd .jinwen-editor .con-bot a {
+    display: block;
+    line-height: 24px;
+    margin-top: 1px;
+    cursor: text;
+}
+
+.listTitle {
+    overflow: hidden;
+    background: #fff;
+}
+
+.listTitle .mod-title {
+    margin-left: 20px;
+    height: 48px;
+    line-height: 48px;
+    background: #fff;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.listTitle .mod-title .title-bd {
+    position: relative;
+    padding-left: 0;
+    border-bottom: none;
+}
+
+.listTitle .mod-title .title-bd h2 {
+    height: 48px;
+    line-height: 48px;
+    display: inline-block;
+    font-size: 18px;
+    color: #333;
+    font-weight: 400;
+}
+
+.listTitle .mod-title .title-bd h2.link {
+    cursor: pointer;
+}
+
+.listUpdate {
+    overflow: hidden;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.listUpdate .mod-title {
+    margin: 0 30px 0 20px;
+    height: 48px;
+    line-height: 48px;
+    background: #fff;
+    border-bottom: 1px solid #f0f3f5 !important;
+}
+
+.listUpdate .mod-title .title-bd {
+    position: relative;
+}
+
+.listUpdate .mod-title .title-bd h2 {
+    height: 48px;
+    line-height: 48px;
+    display: inline-block;
+    font-size: 18px;
+    color: #333;
+    font-weight: 400;
+}
+
+.listUpdate .mod-title .title-bd .tab {
+    position: absolute;
+    right: 85px;
+    top: 13px;
+}
+
+.listUpdate .mod-title .title-bd .tab li {
+    float: left;
+    width: 58px;
+    height: 23px;
+    color: #999;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    text-align: center;
+    margin-right: -4px;
+    margin-left: -4px;
+    font-size: 14px;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.listUpdate .mod-title .title-bd .tab li.on {
+    font-size: 16px;
+    /*通过该函数设置字体颜色，后期方便统一管理；*/
+    color: #ff4c2f;
+    /*通过该函数设置主题颜色，后期方便统一管理；*/
+    border-color: #ff4c2f;
+}
+
+[data-theme="theme"] .listUpdate .mod-title .title-bd .tab li.on {
+    color: #ff4c2f !important;
+}
+
+[data-theme="theme1"] .listUpdate .mod-title .title-bd .tab li.on {
+    color: #ff4c2f !important;
+}
+
+[data-theme="theme2"] .listUpdate .mod-title .title-bd .tab li.on {
+    color: #1eb9ee !important;
+}
+
+[data-theme="theme4"] .listUpdate .mod-title .title-bd .tab li.on {
+    color: #b388ff !important;
+}
+
+[data-theme="theme5"] .listUpdate .mod-title .title-bd .tab li.on {
+    color: #0fb295 !important;
+}
+
+[data-theme="theme6"] .listUpdate .mod-title .title-bd .tab li.on {
+    color: #ff4c2f !important;
+}
+
+[data-theme="theme1"] .listUpdate .mod-title .title-bd .tab li.on {
+    border-color: #ff4c2f;
+}
+
+[data-theme="theme2"] .listUpdate .mod-title .title-bd .tab li.on {
+    border-color: #1eb9ee;
+}
+
+[data-theme="theme4"] .listUpdate .mod-title .title-bd .tab li.on {
+    border-color: #b388ff;
+}
+
+[data-theme="theme5"] .listUpdate .mod-title .title-bd .tab li.on {
+    border-color: #0fb295;
+}
+
+[data-theme="theme6"] .listUpdate .mod-title .title-bd .tab li.on {
+    border-color: #ff4c2f;
+}
+
+[data-theme="theme6"] .listUpdate .mod-title .title-bd .tab li.on {
+    border-color: #50616d;
+}
+
+[data-theme="theme6"] .listUpdate .mod-title .title-bd .tab li.on {
+    color: #50616d !important;
+}
+
+.listUpdate .mod-title .title-bd .more {
+    color: #999;
+    font-size: 14px;
+    position: absolute;
+    right: 8px;
+    top: 0;
+}
+
+.listUpdate .content-all {
+    padding: 10px 40px 0 30px;
+}
+
+.listUpdate .content-all .title span {
+    line-height: 30px;
+    color: #666;
+    float: left;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.listUpdate .content-all .title .classis {
+    width: 109px;
+}
+
+.listUpdate .content-all .title .name {
+    width: 176px;
+}
+
+.listUpdate .content-all .title .newest {
+    width: 250px;
+}
+
+.listUpdate .content-all .title .author {
+    width: 150px;
+}
+
+.listUpdate .content-all .title .time {
+    width: 140px;
+}
+
+.listUpdate .content-all .item {
+    border-bottom: 1px dashed #e6e6e6;
+}
+
+.listUpdate .content-all .item a {
+    line-height: 44px;
+    font-size: 14px;
+    color: #999;
+    float: left;
+    overflow: hidden;
+}
+
+.listUpdate .content-all .item .classis {
+    width: 109px;
+}
+
+.listUpdate .content-all .item .name {
+    width: 176px;
+    color: #333;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.listUpdate .content-all .item .newest {
+    width: 250px;
+}
+
+.listUpdate .content-all .item .author {
+    width: 150px;
+}
+
+.listUpdate .content-all .item .time {
+    cursor: inherit;
+    width: 141px;
+}
+
+.listUpdate .content-all .item:last-child {
+    border-bottom: 0;
+}

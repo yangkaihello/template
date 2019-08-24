@@ -1,0 +1,1403 @@
+.rank {
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.rank .leftbar {
+    width: 240px;
+    float: left;
+}
+
+.rank .leftbar>div {
+    margin-bottom: 30px;
+    background: #fff;
+}
+
+.rank .leftbar a {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-bottom: 1px solid #f2f2f2;
+    border-right: 4px solid #fff;
+    font-size: 14px;
+    color: #666;
+}
+
+.rank .leftbar a:first-child {
+    font-size: 16px;
+}
+
+.rank .leftbar a.on {
+    /*通过该函数设置字体颜色，后期方便统一管理；*/
+    color: #ff4c2f;
+    /*通过该函数设置主题颜色，后期方便统一管理；*/
+    border-color: #ff4c2f;
+    border-bottom-color: #f2f2f2 !important;
+}
+
+[data-theme="theme"] .rank .leftbar a.on {
+    color: #ff4c2f !important;
+}
+
+[data-theme="theme1"] .rank .leftbar a.on {
+    color: #ff4c2f !important;
+}
+
+[data-theme="theme2"] .rank .leftbar a.on {
+    color: #1eb9ee !important;
+}
+
+[data-theme="theme4"] .rank .leftbar a.on {
+    color: #b388ff !important;
+}
+
+[data-theme="theme5"] .rank .leftbar a.on {
+    color: #0fb295 !important;
+}
+
+[data-theme="theme6"] .rank .leftbar a.on {
+    color: #ff4c2f !important;
+}
+
+[data-theme="theme1"] .rank .leftbar a.on {
+    border-color: #ff4c2f;
+}
+
+[data-theme="theme2"] .rank .leftbar a.on {
+    border-color: #1eb9ee;
+}
+
+[data-theme="theme4"] .rank .leftbar a.on {
+    border-color: #b388ff;
+}
+
+[data-theme="theme5"] .rank .leftbar a.on {
+    border-color: #0fb295;
+}
+
+[data-theme="theme6"] .rank .leftbar a.on {
+    border-color: #ff4c2f;
+}
+
+.rank .leftbar .male a:first-child {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo4NzU1ODY4Ny0yNGQzLTQxOTEtYmM3Mi05ZGY3NWVhNmZmNjUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NERCNDQ3NjI0NUMxMTFFN0I4OTNDQjNGNjk2RUI1MEQiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NERCNDQ3NjE0NUMxMTFFN0I4OTNDQjNGNjk2RUI1MEQiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4NzU1ODY4Ny0yNGQzLTQxOTEtYmM3Mi05ZGY3NWVhNmZmNjUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6ODc1NTg2ODctMjRkMy00MTkxLWJjNzItOWRmNzVlYTZmZjY1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+xD5byQAAAcZJREFUeNqslMsrhFEYxmcYSW4hxUiKokjRLFASO7lEuSwp2Vv5B8TCgoVIFmxmSy6RMGFDIpfSFIVi5DpSmM2MjOet59Rp+mbMl3nqN1/nMs+5vOd9rQ6HwxJB+2ANjFiiVFxIux7s8CuqAsNgBdQAq1nDUs10XRtv5W5vwSxoA0l/GRaBMq3daDA/H/SBJfAEVsE1yFET4u12u3x7wRaPGK0SQTHIAAXADV7VDr3R3E8EdYEFdeQ0MG1wn2aVC/LEZJB381+lgwExbLbETh1iWB5Dw0Ix/Iihod+GnzuQqXUegRfwBbrDRP8dnDOQtVq/WwxPQAU79kCdRAtcamYXYAo0gTMwwYddyf8rbdq4ktI4+AEPzJQfppuH45MhOz0FB6Ca7WfZso/3GGS2iDrBKDjWzJTawSGfiWiMXzH2qh0uS4TAJwffwBX4Nrg/L/PXz7aYB8CG9Esu39NIcnKbJjdgkUcO1R3TTC3mY3FwgV0bO1287BYwb/KpSKCGwGNo+ZKjpIAsE2apIFuZGRVYJ+jhxL+UzNro1DtVPVQKMrI9rHeeMGZSNxtYvQP6gM1gskyYASWgn+2gFtUELjpntNKvAAMAqbNnX1gHDUoAAAAASUVORK5CYII=) 55px center no-repeat;
+}
+
+.rank .leftbar .female a:first-child {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAVCAYAAABCIB6VAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpiMGZlNGZlMi0yMTJlLTRlZjctYWJlZi0wMzcyNGIwZGQxYmQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QkQ2QzI2ODE0NUI1MTFFN0JEQ0FBQzZENTc1MDIzNUEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QkQ2QzI2ODA0NUI1MTFFN0JEQ0FBQzZENTc1MDIzNUEiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozYTQwNDJkMy1hNDFkLTQ4ZWQtYWE4MC0yMjYwYmQ5MWVhYWUiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo1Mjg0ZTI2ZC04MDA4LTExN2EtYmY3OS1jOWUzODlhOTc4NGUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4xHjypAAAByUlEQVR42pyVzStEURjG7yAfo9EgSqSQpXyNZGxYWOAPUFOWlIWIhY0sRGyUEUopRVE2MwuysLDQbMwkLMRCImWjsRsKcz2nnqvT6dy5c731697z9dxz3o9zPaZpGoFAwHCwGTANcsE8CGeanEgkjBzD2YJgGVSAMrAK2p0WOQkXgl5Nfx/w/ke4HKyAN7CgGV/i2CZPkpVwM7gEU6A4w6aKwBi41rlGFa4Bp6DWyN6qwAmoyyS8ZXc0BxNrNuyExXEGlAU3LsT7QatOOKSZPAfuXYgPWS95UmeXMukZHDP6R8CfhXCnTrhamTQJvkEM1IMeZkwTg+sDpaBSWtOgCgs3FEgTZkFEar+zHdHssgUcgkZggmGwZ/nYx3wUFgWLnGhXuqLqBnl3XPEuEXbLvr/g/YAHvoel1IvYCIfo9yDbL3w+WpqWK9IgxQ9csE9UVYmN8D6DGpOqUFhS3fEOhZN8GkyzuI1wii5LS660YrEtC5sU9zPqbk2c7IPVZ6oFIvzzyisx34Wolz4/B592d8Ud2AUTSvpluuHGwRldY3sJRem/dTCiqUbZusEoWANP4EAe9Dj88zpAG/iSsieHkY8zh7X/vF8BBgDrVV80l3gJRgAAAABJRU5ErkJggg==) 55px center no-repeat;
+}
+
+.rank .right-main {
+    width: 950px;
+    float: right;
+    background: #fff;
+    min-height: 500px;
+    padding-bottom: 30px;
+}
+
+.rank .right-main .allRank {
+    float: left;
+    margin: 18px 0 0px 18px;
+    position: relative;
+    width: 290px;
+    height: 520px;
+    background: #fff;
+    border: 1px solid #f7f7f7;
+}
+
+.rank .right-main .comment-r-menu {
+    padding-left: 20px;
+    height: 49px;
+    line-height: 49px;
+    border-bottom: 1px solid #f2f2f2;
+    font-size: 0;
+}
+
+.rank .right-main .comment-r-menu .r-c-t {
+    font-size: 18px;
+    margin-right: 18px;
+}
+
+.rank .right-main .comment-r-menu .comment-status li {
+    float: left;
+    margin-top: 6px;
+    margin-right: 15px;
+    width: 48px;
+}
+
+.rank .right-main .comment-r-menu .comment-status li a {
+    display: inline-block;
+    width: 48px;
+    height: 23px;
+    line-height: 23px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.rank .right-main .comment-r-menu .comment-status li.on a {
+    /*通过该函数设置字体颜色，后期方便统一管理；*/
+    color: #ff4c2f;
+    /*通过该函数设置主题颜色，后期方便统一管理；*/
+    border-color: #ff4c2f;
+}
+
+[data-theme="theme"] .rank .right-main .comment-r-menu .comment-status li.on a {
+    color: #ff4c2f !important;
+}
+
+[data-theme="theme1"] .rank .right-main .comment-r-menu .comment-status li.on a {
+    color: #ff4c2f !important;
+}
+
+[data-theme="theme2"] .rank .right-main .comment-r-menu .comment-status li.on a {
+    color: #1eb9ee !important;
+}
+
+
+.listRank {
+    width: 290px;
+    position: relative;
+    background: #fff;
+    height: 100%;
+    float: left;
+}
+
+.listRank .rank-1 {
+    margin-left: 20px;
+    font-size: 0;
+}
+
+.listRank .rank-1 li {
+    clear: both;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.listRank .rank-1 li.top {
+    position: relative;
+}
+
+.listRank .rank-1 li.top .num {
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+}
+
+.listRank .rank-1 li.top dl {
+    margin-left: 40px;
+}
+
+.listRank .rank-1 li.noneCover {
+    margin-top: 11px;
+}
+
+.listRank .rank-1 li .num {
+    width: 20px;
+    height: 20px;
+    background: #999;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    float: left;
+    line-height: 18px;
+}
+
+.listRank .rank-1 li .num.front {
+    background-color: #ff4c2f;
+}
+
+[data-theme="theme1"] .listRank .rank-1 li .num.front {
+    background-color: #ff4c2f !important;
+}
+
+[data-theme="theme2"] .listRank .rank-1 li .num.front {
+    background-color: #1eb9ee !important;
+}
+
+[data-theme="theme4"] .listRank .rank-1 li .num.front {
+    background-color: #b388ff !important;
+}
+
+[data-theme="theme5"] .listRank .rank-1 li .num.front {
+    background-color: #0fb295 !important;
+}
+
+[data-theme="theme6"] .listRank .rank-1 li .num.front {
+    background-color: #ff4c2f !important;
+}
+
+.listRank .rank-1 li .book-list-f {
+    margin-left: 20px;
+    font-size: 12px;
+    color: #4c4c4c;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    display: inline-block;
+    width: auto;
+}
+
+.listRank .rank-1 li .clickNum {
+    font-size: 12px;
+    color: #999;
+    float: right;
+    margin-right: 20px;
+}
+
+.listRank .rank-1 li .clickNumTop {
+    font-size: 12px;
+    color: #999;
+    display: block;
+    margin-top: 10px;
+}
+
+.listRank .rank-1 li .book-block {
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.listRank .rank-1 li .book-block dt {
+    float: left;
+}
+
+.listRank .rank-1 li .book-block dt a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.listRank .rank-1 li .book-block dt a img {
+    width: 60px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.listRank .rank-1 li .book-block dd {
+    float: left;
+    margin-left: 13px;
+    width: 50%;
+    margin-top: 25px;
+}
+
+.listRank .rank-1 li .book-block dd .book-name {
+    display: block;
+    color: #000;
+    height: 18px;
+    line-height: 18px;
+    overflow: hidden;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.listRank .rank-1 li .book-block dd .book-author {
+    position: relative;
+    font-size: 12px;
+    color: #999;
+    height: 18px;
+    line-height: 18px;
+    display: block;
+    margin-top: 10px;
+}
+
+.listRank .rank-1 li .book-block dd .book-author a {
+    width: 70%;
+    display: inline-block;
+    color: #999;
+    position: absolute;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.listRank .more {
+    position: absolute;
+    right: 18px;
+    bottom: 13px;
+    color: #999;
+    font-size: 12px;
+}
+
+.listTitle {
+    overflow: hidden;
+    background: #fff;
+}
+
+.listTitle .mod-title {
+    margin-left: 20px;
+    height: 48px;
+    line-height: 48px;
+    background: #fff;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.listTitle .mod-title .title-bd {
+    position: relative;
+    padding-left: 0;
+    border-bottom: none;
+}
+
+.listTitle .mod-title .title-bd h2 {
+    height: 48px;
+    line-height: 48px;
+    display: inline-block;
+    font-size: 18px;
+    color: #333;
+    font-weight: 400;
+}
+
+.listTitle .mod-title .title-bd h2.link {
+    cursor: pointer;
+}
+
+.listTab3 {
+    overflow: hidden;
+    background: #fff;
+    float: left;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.listTab3 .tab-ul {
+    position: absolute;
+    right: 16px;
+    top: 14px;
+}
+
+.listTab3 .tab-ul li {
+    float: left;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 6px;
+    text-align: center;
+    position: relative;
+    padding: 2px
+}
+
+.listTab3 .tab-ul li.on {
+    /*通过该函数设置字体颜色，后期方便统一管理；*/
+    color: #fff;
+    background: #ffd100;
+    border-radius: 1px;
+}
+
+[data-theme="theme"] .listTab3 .tab-ul li.on {
+    color: #ff4c2f !important;
+}
+
+[data-theme="theme1"] .listTab3 .tab-ul li.on {
+    color: #ff4c2f !important;
+}
+
+[data-theme="theme2"] .listTab3 .tab-ul li.on {
+    color: #1eb9ee !important;
+}
+
+[data-theme="theme4"] .listTab3 .tab-ul li.on {
+    color: #b388ff !important;
+}
+
+[data-theme="theme5"] .listTab3 .tab-ul li.on {
+    color: #0fb295 !important;
+}
+
+[data-theme="theme6"] .listTab3 .tab-ul li.on {
+    color: #ff4c2f !important;
+}
+
+[data-theme="theme6"] .listTab3 .tab-ul li.on {
+    color: #50616d !important;
+}
+
+.listTab3 .con-ul {
+    width: 100%;
+    height: 90%;
+}
+
+.listTab3 .con-ul .listRank .rank-1 li:nth-child(2) .num.front {
+    background-color: #f2762b !important;
+}
+
+.listTab3 .con-ul .listRank .rank-1 li:nth-child(3) .num.front {
+    background-color: #f2c12b !important;
+}
+
+.pattern-update-list .hd {
+    padding-bottom: 10px;
+    z-index: 1
+}
+
+.pattern-update-list .handles {
+    float: right;
+    position: relative;
+    top: 11px;
+    _top: 12px
+}
+
+.pattern-update-list .handles span {
+    float: left;
+    display: inline;
+    height: 26px;
+    line-height: 26px;
+    white-space: nowrap;
+    font-size: 14px;
+    color: #999;
+    cursor: pointer
+}
+
+.pattern-update-list .handles span.active {
+    padding: 0 4px 0 4px;
+    border: 2px solid #ddd;
+    border-bottom: 0;
+    color: #333;
+    background: #ebebeb
+}
+
+.pattern-update-list .more {
+    border-top: 1px solid #ccc;
+    padding-top: 12px;
+    text-align: right;
+    font-weight: 700
+}
+
+.pattern-update-list table {
+    width: 90%;
+    table-layout: fixed;
+    margin-left: 28px;
+}
+
+.pattern-update-list table .tag {
+    color: #999
+}
+
+.pattern-update-list table thead th {
+    background: #fafafa;
+    height: 40px;
+    color: #999;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: left;
+    line-height: 40px;
+}
+
+.pattern-update-list .height_line {
+    width: 100%;
+    height: 28px
+}
+
+.pattern-update-list table td,
+.pattern-update-list table th {
+    padding-left: 10px
+}
+
+.pattern-update-list table td {
+    height: 50px
+}
+
+.pattern-update-list table td a:hover {
+    color: #f95637
+}
+
+.pattern-update-list table .first {
+    padding-left: 30px
+}
+
+.pattern-update-list table .last {
+    padding-right: 30px
+}
+
+.pattern-update-list table .rangy {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%
+}
+
+.pattern-update-list table .time {
+    color: #999;
+    font-size: 12px
+}
+
+.pattern-update-list table .chapter {
+    color: #999;
+    font-size: 14px
+}
+
+.pattern-update-list table a.author {
+    color: #999
+}
+
+.pattern-update-list table .icon-hongbao {
+    vertical-align: -8px
+}
+
+.pattern-slide-ad {
+    width: 960px;
+    height: 100px;
+    overflow: hidden;
+    margin-top: 30px;
+    border: 1px solid #f2f2f2
+}
+
+.pattern-slide-ad a {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.pattern-slide-ad img {
+    display: block;
+    width: 960px;
+    height: 100px
+}
+
+.pattern-slide-ad .handles {
+    position: absolute;
+    right: 10px;
+    bottom: 10px
+}
+
+.pattern-slide-ad .handles span {
+    float: left;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    margin-left: 5px;
+    background: #ccc;
+    text-align: center;
+    font-family: Arial;
+    border-radius: 10px;
+    color: #fff
+}
+
+.pattern-slide-ad .handles span.active {
+    background: #960
+}
+
+.pattern-slide-ld {
+    width: 955px;
+    height: 100px;
+    overflow: hidden
+}
+
+.pattern-slide-ld a {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.pattern-slide-ld img {
+    display: block
+}
+
+.pattern-slide-ld .ldz {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.pattern-slide-ld .ldz a {
+    width: 160px;
+    height: 100px
+}
+
+.pattern-slide-ld .ldz .android {
+    left: 600px
+}
+
+.pattern-slide-ld .ldz .ios {
+    left: 780px
+}
+
+.pattern-cover-detail .book-status {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden
+}
+
+.pattern-cover-detail .hd {
+    padding-left: 38px;
+    height: 85px
+}
+
+.pattern-cover-detail .hd .collect {
+    float: right;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: -5px
+}
+
+.pattern-cover-detail .hd .collect em {
+    display: none
+}
+
+.pattern-cover-detail .hd .collect i {
+    display: inline-block;
+    vertical-align: middle;
+    width: 26px;
+    height: 24px;
+    overflow: hidden;
+    margin-right: 6px
+}
+
+.pattern-cover-detail .hd .collect b {
+    font-weight: 400
+}
+
+.pattern-cover-detail .hd .collect span {
+    vertical-align: middle
+}
+
+.pattern-cover-detail .hd .collected em {
+    display: inline
+}
+
+.pattern-cover-detail .hd h2 {
+    font-size: 32px
+}
+
+.pattern-cover-detail .hd .infos-p {
+    margin-left: 100px
+}
+
+.pattern-cover-detail .hd .infos {
+    padding-left: 3px;
+    line-height: 1.8em;
+    *zoom: 1;
+}
+
+.pattern-cover-detail .hd .infos:after,
+.pattern-cover-detail .hd .infos:before {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+.pattern-cover-detail .hd .infos:after {
+    clear: both
+}
+
+.pattern-cover-detail .hd .infos:after,
+.pattern-cover-detail .hd .infos:before {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+.pattern-cover-detail .hd .infos:after {
+    clear: both
+}
+
+.pattern-cover-detail .hd .infos,
+.pattern-cover-detail .hd .infos a {
+    color: #666
+}
+
+.pattern-cover-detail .hd .infos .divide {
+    margin-right: 3px;
+    color: #afafaf
+}
+
+.pattern-cover-detail .bd-p .voteStaff {
+    width: 200px;
+    height: auto
+}
+
+.pattern-cover-detail .bd {
+    padding-bottom: 10px
+}
+
+.pattern-cover-detail .bd .book-cover {
+    display: block;
+    border: 1px solid #ccc
+}
+
+.pattern-cover-detail .bd .left {
+    padding-right: 30px;
+    overflow: hidden
+}
+
+.pattern-cover-detail .bd .buttons {
+    margin-top: 15px;
+    width: 200px
+}
+
+.pattern-cover-detail .bd .index,
+.pattern-cover-detail .bd .read {
+    float: left;
+    display: inline;
+    width: 86px;
+    height: 38px;
+    line-height: 38px;
+    padding: 0
+}
+
+.pattern-cover-detail .bd .index i,
+.pattern-cover-detail .bd .read i {
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin: 10px 10px 0 7px
+}
+
+.pattern-cover-detail .bd .index {
+    border-right: 1px solid #ccc
+}
+
+.pattern-cover-detail .bd .read {
+    width: 100px;
+    margin-left: 13px
+}
+
+.pattern-cover-detail .bd .read i {
+    height: 18px
+}
+
+.pattern-cover-detail .bd .collect .ico {
+    width: 26px;
+    height: 26px
+}
+
+.pattern-cover-detail .bd .auto-pay {
+    text-align: center;
+    margin-top: 12px;
+    width: 202px
+}
+
+.pattern-cover-detail .bd .auto-pay a,
+.pattern-cover-detail .bd .auto-pay span {
+    vertical-align: middle
+}
+
+.pattern-cover-detail .bd .auto-pay span {
+    color: #666
+}
+
+.pattern-cover-detail .bd .auto-pay a {
+    display: inline-block;
+    width: 75px;
+    height: 26px
+}
+
+.pattern-cover-detail .bd .support-vote {
+    width: 196px;
+    padding: 13px 0 13px 6px;
+    border-bottom: 1px solid #ccc;
+    *zoom: 1;
+}
+
+.pattern-cover-detail .bd .support-vote:after,
+.pattern-cover-detail .bd .support-vote:before {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+.pattern-cover-detail .bd .support-vote:after {
+    clear: both
+}
+
+.pattern-cover-detail .bd .support-vote:after,
+.pattern-cover-detail .bd .support-vote:before {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+.pattern-cover-detail .bd .support-vote:after {
+    clear: both
+}
+
+.pattern-cover-detail .bd .support-vote .num {
+    float: left;
+    padding-left: 6px;
+    line-height: 34px;
+    font-size: 30px;
+    font-family: Arial;
+    color: #f30
+}
+
+.pattern-cover-detail .bd .support-vote .support {
+    display: inline;
+    float: right;
+    width: 72px;
+    height: 26px;
+    margin-top: 5px;
+    text-indent: -9999px
+}
+
+.pattern-cover-detail .bd .summary a {
+    color: #00a2ff
+}
+
+.pattern-cover-detail .bd .summary a:hover {
+    text-decoration: underline
+}
+
+.pattern-cover-detail .bd .summary pre {
+    color: #333;
+    line-height: 1.8em
+}
+
+.pattern-cover-detail .bd .summary a.more {
+    color: #369
+}
+
+.pattern-cover-detail .bd .tags {
+    margin-top: 20px
+}
+
+.pattern-cover-detail .bd .tags,
+.pattern-cover-detail .bd .tags a {
+    color: #666
+}
+
+.pattern-cover-detail .bd .tags a:hover {
+    color: #333
+}
+
+.pattern-cover-update {
+    border-top: 1px solid #ccc;
+    padding-top: 18px
+}
+
+.pattern-cover-update .bd {
+    padding-right: 0 !important
+}
+
+.pattern-cover-update .left {
+    padding-right: 16px;
+    font-weight: 700;
+    width: 100px;
+    text-align: center
+}
+
+.pattern-cover-update .left .icon {
+    display: block;
+    width: 59px;
+    height: 53px;
+    margin: 0 auto 10px auto
+}
+
+.pattern-cover-update .right .chapter-link {
+    float: right;
+    padding-right: 20px;
+    height: 100%
+}
+
+.pattern-cover-update .right .chapter-link i {
+    margin-top: 26px;
+    cursor: pointer;
+    display: inline-block;
+    width: 19px;
+    height: 37px
+}
+
+.pattern-cover-update .right h4 {
+    padding-bottom: 10px;
+    width: 90%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden
+}
+
+.pattern-cover-update .right h4 .icon-hongbao {
+    vertical-align: -8px;
+    margin-right: 5px
+}
+
+.pattern-cover-update .right p {
+    line-height: 1.6em;
+    height: 4.8em;
+    overflow: hidden;
+    width: 90%;
+    word-break: break-all;
+    word-wrap: break-word
+}
+
+.pattern-cover-update .right .time {
+    float: right;
+    margin-left: 10px;
+    font-weight: 400
+}
+
+.pattern-cover-author .bd {
+    padding-top: 5px;
+    background: #ebebeb
+}
+
+.pattern-cover-author .author-zone,
+.pattern-cover-author .blocks {
+    padding: 10px 0 0 15px
+}
+
+.pattern-cover-author .author-zone .left {
+    padding-right: 15px
+}
+
+.pattern-cover-author .author-zone .left img {
+    border: 1px solid #fff;
+    width: 80px;
+    height: 80px
+}
+
+.pattern-cover-author .author-zone .right {
+    line-height: 20px;
+    padding-top: 15px
+}
+
+.pattern-cover-author .coper-zone .empty {
+    padding: 18px 0 10px 0;
+    font-size: 12px;
+    color: #999
+}
+
+.pattern-cover-author .coper-zone ul {
+    *zoom: 1;
+    height: 72px
+}
+
+.pattern-cover-author .coper-zone ul:after,
+.pattern-cover-author .coper-zone ul:before {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+.pattern-cover-author .coper-zone ul:after {
+    clear: both
+}
+
+.pattern-cover-author .coper-zone ul:after,
+.pattern-cover-author .coper-zone ul:before {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+.pattern-cover-author .coper-zone ul:after {
+    clear: both
+}
+
+.pattern-cover-author .coper-zone li {
+    float: left;
+    display: inline;
+    position: relative;
+    width: 200px;
+    margin-right: 18px;
+    text-align: left;
+    font-size: 12px;
+    margin: 5px 0
+}
+
+.pattern-cover-author .coper-zone li img {
+    width: 48px;
+    height: 48px;
+    display: block
+}
+
+.pattern-cover-author .coper-zone li p {
+    padding-top: 8px;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden
+}
+
+.pattern-cover-author .coper-zone li .name {
+    color: #999
+}
+
+.pattern-cover-author .coper-zone li .del {
+    display: none;
+    color: #f60
+}
+
+.pattern-cover-author .coper-zone li.not-agree span {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.pattern-cover-author .coper-zone li.not-agree span a {
+    display: block;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    color: #ddd;
+    background: #000;
+    opacity: .6;
+    filter: alpha(opacity=60)
+}
+
+.pattern-cover-author .coper-zone li.not-agree .name {
+    color: #6c6c6c
+}
+
+.pattern-cover-author .coper-zone li.vacancy p a {
+    color: #6c6c6c
+}
+
+.pattern-cover-author .coper-zone li.my .name {
+    color: #000
+}
+
+.pattern-cover-author .coper-zone li.hover .del {
+    display: block
+}
+
+.pattern-cover-author .coper-zone li.hover .name {
+    display: none
+}
+
+.pattern-cover-author .author-recommend {
+    padding-top: 15px;
+    padding-right: 15px
+}
+
+.pattern-cover-author .blocks h4 {
+    line-height: 22px;
+    margin: 0 5px 5px 0;
+    font-weight: 400;
+    zoom: 1;
+    color: #333
+}
+
+.pattern-cover-author .other-books ul {
+    *zoom: 1;
+}
+
+.pattern-cover-author .other-books ul:after,
+.pattern-cover-author .other-books ul:before {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+.pattern-cover-author .other-books ul:after {
+    clear: both
+}
+
+.pattern-cover-author .other-books ul:after,
+.pattern-cover-author .other-books ul:before {
+    display: table;
+    content: "";
+    line-height: 0
+}
+
+.pattern-cover-author .other-books ul:after {
+    clear: both
+}
+
+.pattern-cover-author .other-books ul li {
+    float: left;
+    width: 200px;
+    padding: 5px 0;
+    text-align: left
+}
+
+.pattern-cover-author .other-books ul li .left {
+    padding-right: 12px
+}
+
+.pattern-cover-author .other-books ul li .right h5 {
+    padding: 4px 0;
+    width: 95%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 14px
+}
+
+.pattern-cover-author .other-books ul li p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    font-size: 12px
+}
+
+.pattern-cover-author .other-books ul li p a {
+    color: #999
+}
+
+.pattern-cover-boost .hd {
+    overflow: hidden;
+    height: 40px
+}
+
+.pattern-cover-boost .hd .total {
+    float: left;
+    width: 141px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 15px
+}
+
+.pattern-cover-boost .hd .total a {
+    font-weight: 700
+}
+
+.pattern-cover-boost .hd .total .count {
+    font-family: Arial;
+    font-weight: 400
+}
+
+.pattern-cover-boost .hd .exp {
+    position: relative
+}
+
+.pattern-cover-boost .hd .exp span {
+    position: relative;
+    float: left;
+    font-size: 12px;
+    font-family: '微软雅黑';
+    overflow: hidden
+}
+
+.pattern-cover-boost .bd {
+    overflow: hidden;
+    height: 120px
+}
+
+.pattern-cover-boost .plus {
+    font-size: 12px;
+    color: #f90;
+    font-weight: 700;
+    position: absolute;
+    z-index: 10
+}
+
+.pattern-cover-boost .recent-list {
+    float: left;
+    width: 151px;
+    height: 240px;
+    padding: 0 10px 0 16px;
+    border-right: 1px solid #ccc;
+    overflow: hidden
+}
+
+.pattern-cover-boost .recent-list .more {
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 176px;
+    text-align: center
+}
+
+.pattern-cover-boost .recent-list .more a {
+    font-size: 12px
+}
+
+.pattern-cover-boost .recent-list .empty {
+    font-size: 14px;
+    color: #666;
+    font-weight: 700;
+    line-height: 40px;
+    text-align: center
+}
+
+.pattern-cover-boost .recent-list ul {
+    height: 210px;
+    overflow: hidden
+}
+
+.pattern-cover-boost .recent-list li {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden
+}
+
+.pattern-cover-boost .recent-list li span {
+    float: right
+}
+
+html.ie6 .pattern-cover-boost .recent-list li span {
+    margin-top: 3px
+}
+
+.pattern-cover-boost .recent-list li span img {
+    height: 16px;
+    vertical-align: middle
+}
+
+.pattern-cover-boost .recent-list li span em {
+    margin-left: 3px;
+    vertical-align: middle;
+    font-weight: 700;
+    padding-left: 10px
+}
+
+.pattern-cover-boost .recent-list li a {
+    display: inline-block;
+    width: 50%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden
+}
+
+.pattern-cover-boost .controls {
+    float: left
+}
+
+.pattern-cover-boost .controls .item-list table {
+    table-layout: fixed;
+    width: 100%
+}
+
+.pattern-cover-boost .controls .item-list td {
+    text-align: center
+}
+
+.pattern-cover-boost .controls .item-list td.active div {
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid #ccc
+}
+
+.pattern-cover-boost .controls .item-list .img td {
+    height: 120px;
+    cursor: pointer
+}
+
+.pattern-cover-boost .controls .item-list p.name {
+    font-size: 12px;
+    margin-top: 10px
+}
+
+.pattern-cover-boost .controls .form {
+    padding: 10px 10px 0;
+    height: 110px;
+    font-size: 12px
+}
+
+.pattern-cover-boost .controls .form .left {
+    width: 120px;
+    text-align: center
+}
+
+.pattern-cover-boost .controls .form .right {
+    padding-right: 15px
+}
+
+.pattern-cover-boost .controls .form .to-pay {
+    font-weight: 700
+}
+
+.pattern-cover-boost .controls .form .conver input,
+.pattern-cover-boost .controls .form .conver span {
+    vertical-align: middle
+}
+
+.pattern-cover-boost .controls .form .conver span.count {
+    margin-left: 5px
+}
+
+.pattern-cover-boost .controls .form .conver span.count em {
+    margin: 0 3px;
+    font-weight: 700
+}
+
+.pattern-cover-boost .controls .form .buttons {
+    padding-left: 10px;
+    text-align: center
+}
+
+.pattern-cover-boost .controls .form .submit {
+    display: block;
+    width: 99px;
+    height: 72px;
+    margin-top: -5px
+}
+
+.pattern-cover-boost .controls .form table {
+    width: 100%
+}
+
+.pattern-cover-boost .controls .form td {
+    vertical-align: top;
+    padding-bottom: 8px
+}
+
+.pattern-cover-boost .controls .form input.text {
+    width: 60px
+}
+
+.pattern-cover-boost .controls .form .text {
+    border: 1px solid #ccc;
+    padding: 3px
+}
+
+.container .top_list_title {
+    border-bottom: 0;
+    width: 100%;
+    margin-left: 0;
+    padding-bottom: 18px;
+    padding-top: 6px;
+    text-align: center;
+}
+
+.container .top_list_title .time {
+    float: right
+}
+
+.container .top_list_title .time span {
+    font-size: 14px;
+    float: left;
+    font-weight: normal;
+    margin: 6px 2px 0 2px;
+    color: #333;
+    padding: 2px 5px 3px 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer
+}
+
+.container .top_list_title .time span.active {
+    background: #ffd100;
+    color: #FFF
+}
+
+.ranks_page .rangy .name {
+    color: #333;
+    font-weight: bold;
+    font-size: 16px
+}
+
+.ranks_page .rangy .name:hover {
+    color: #f95637
+}
+
+.rangy .name {
+    color: #333;
+    font-weight: bold;
+    font-size: 16px
+}
+
+.ranks_page .rangy .name:hover {
+    color: #f95637
+}
+
+.pattern-update-list table .num {
+    color: #999;
+    font-size: 16px
+}
+
+.pattern-update-list table .red_num {
+    color: #f95637
+}

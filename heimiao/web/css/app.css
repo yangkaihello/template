@@ -1,0 +1,279 @@
+body {
+  background: #fafafa;
+}
+body a {
+  text-decoration: none;
+}
+.lf {
+  float: left;
+}
+.top {
+  display: block;
+  height: 40px;
+  background: #fff;
+  overflow: hidden;
+}
+.top a {
+  line-height: 40px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #666666;
+}
+.top .login-liks {
+  font-size: 0;
+}
+.top .login-liks img {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.bar {
+  background: #16171a;
+  height: 80px;
+}
+.bar .logo img {
+  margin-top: 22px;
+}
+.bar .bar-links {
+  line-height: 80px;
+  font-size: 14px;
+  margin-left: 62px;
+}
+.bar .bar-links a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #666666;
+  margin-right: 20px;
+}
+.bar .search-box {
+  height: 40px;
+  width: 240px;
+  background: #333;
+  color: #999999;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+.bar .search-box input {
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding-right: 30px;
+  box-sizing: border-box;
+  color: #fff;
+}
+.bar .search-box a {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.main {
+  margin-top: 20px;
+}
+.main .penl1 {
+  height: 360px;
+}
+.main .penl1 .books {
+  font-size: 12px;
+  margin-top: 20px;
+}
+.main .penl1 .books .item {
+  margin-bottom: 19px;
+}
+.main .penl1 .books a {
+  color: #333333;
+  text-decoration: none;
+}
+.main .penl2 {
+  height: 300px;
+}
+.main .penl2 .panl {
+  height: 300px;
+}
+.main .penl2 .book-list {
+  width: 950px;
+  background: #fff;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.main .penl2 .book-list .book {
+  text-align: center;
+  width: 20%;
+  margin-top: 12px;
+}
+.main .penl2 .book-list .book .img {
+  display: inline-block;
+  width: 110px;
+  height: 150px;
+  border-radius: 5px;
+  box-shadow: 2px 1px 14px #ccc;
+  overflow: hidden;
+}
+.main .penl2 .book-list .book .img img {
+  width: 100%;
+  height: 100%;
+}
+.main .penl2 .book-list .book .book-name {
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.main .penl2 .book-list .book .desc {
+  font-size: 12px;
+  color: #ccc;
+  margin-bottom: 28px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+}
+.main .penl3 {
+  background: #fff;
+  margin-top: 10px;
+}
+.main .penl3 .panl-title {
+  padding-left: 20px;
+}
+.main .penl3 .book {
+  width: 16.666%;
+  text-align: center;
+}
+.main .penl3 .book img {
+  display: inline-block;
+  width: 110px;
+  height: 150px;
+  border-radius: 5px;
+  box-shadow: 2px 1px 14px #ccc;
+  overflow: hidden;
+}
+.main .penl3 .book .book-name {
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.main .penl3 .book .desc {
+  font-size: 12px;
+  color: #ccc;
+  margin-bottom: 28px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+}
+.main .penl4 .items {
+  margin-top: 10px;
+}
+.main .penl4 .items a {
+  text-decoration: none;
+}
+.main .penl4 .items .item {
+  width: 290px;
+  background: #fff;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin-right: 13px;
+}
+.main .penl4 .items .item:last-child {
+  margin-right: 0;
+}
+.main .penl4 .items .item .title {
+  font-size: 18px;
+  line-height: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid #ddd;
+}
+.main .penl4 .items .item .list {
+  margin-bottom: 14px;
+}
+.main .penl4 .items .item .list.d {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 20px;
+}
+.main .penl4 .items .item .list.d a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.main .penl4 .items .item .list.d .avatar {
+  display: block;
+  width: 60px;
+  height: 80px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0 10px;
+  box-shadow: 2px 1px 14px #ccc;
+}
+.main .penl4 .items .item .list.d .avatar img {
+  width: 100%;
+  height: 100%;
+}
+.main .penl4 .items .item .list.d .name {
+  font-size: 12px;
+  color: #000;
+}
+.main .penl4 .items .item .list.d .s {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #999999;
+}
+.main .penl4 .items .item .list:nth-child(2) .num {
+  background: #ff0d2a;
+}
+.main .penl4 .items .item .list:nth-child(3) .num {
+  background: #ff723e;
+}
+.main .penl4 .items .item .list:nth-child(4) .num {
+  background: #ffc602;
+}
+.main .penl4 .items .item .list .num {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  line-height: 16px;
+  font-size: 12px;
+  color: #fff;
+  background: #999;
+  text-align: center;
+  margin-right: 14px;
+}
+.main .penl4 .items .item .list .name {
+  font-size: 12px;
+  color: #999999;
+}
+.main .panl {
+  padding: 0 19px;
+  box-sizing: border-box;
+  background: #fff;
+  width: 240px;
+  height: 360px;
+}
+.main .panl .panl-title {
+  font-size: 18px;
+  line-height: 49px;
+  border-bottom: 1px solid #f2f2f2;
+}
+.main .footer {
+  background: #16171a;
+  color: #fff;
+  padding: 40px 0;
+  margin-top: 40px;
+  text-align: center;
+}
+.main .footer a {
+  color: #fff;
+  text-decoration: none;
+}
+.main .home-swiper {
+  width: 950px;
+  height: 360px;
+  overflow: hidden;
+}
