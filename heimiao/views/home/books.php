@@ -14,7 +14,7 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\LinkPager;
 
-$this->title = Yii::$app->params['platform.name'] . '-书库-首页';
+$this->title = Yii::$app->params['platform.name'] . '-书库';
 
 /*$this->registerMetaTag([
     'name'      => 'keywords',

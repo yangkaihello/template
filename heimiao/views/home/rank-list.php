@@ -12,7 +12,7 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\LinkPager;
 
-$this->title = Yii::$app->params['platform.name'] . '-排行榜-首页';
+$this->title = Yii::$app->params['platform.name'] . '-排行榜';
 
 /*$this->registerMetaTag([
     'name'      => 'keywords',
