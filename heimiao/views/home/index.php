@@ -63,22 +63,30 @@ $this->registerMetaTag([
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
+                                    <a href="/fiction/4">
+                                        <img src="/template/imgs/index/lunbo.jpg" alt="">
+                                    </a>
+                                </div>
+                                <!--<div class="swiper-slide">
                                     <img src="https://qidian.qpic.cn/qidian_common/349573/7f689b6db8ad99e6093bae7db9a7d130/0"
                                          alt="">
                                 </div>
                                 <div class="swiper-slide">
                                     <img src="https://qidian.qpic.cn/qidian_common/349573/7f689b6db8ad99e6093bae7db9a7d130/0"
                                          alt="">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://qidian.qpic.cn/qidian_common/349573/7f689b6db8ad99e6093bae7db9a7d130/0"
-                                         alt="">
-                                </div>
+                                </div>-->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="penl penl3">
+                <a href="/fiction/4">
+                    <img width="100%" src="/template/imgs/index/banner.jpg" />
+                </a>
+            </div>
+
             <div class="penl1 penl2 penl clearfix" style="margin-top: 20px;">
                 <div class="lf">
                     <div class="panl">
