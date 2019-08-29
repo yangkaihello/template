@@ -88,8 +88,7 @@ $this->registerMetaTag([
                                         <td>
                                             <div class="rangy">
                                                 <a href="<?= Url::to(['fiction/index' ,'id' => $book->id ],true) ?>" class="name"><?= $book->title ?></a>
-                                                <a href="#this" class="chapter"
-                                                   target="_blank"><?= $book->chapter->title ?? "" ?></a>
+                                                <a href="#this" class="chapter" ><?= $book->chapter->title ?? "" ?></a>
                                             </div>
                                         </td>
                                         <td>
