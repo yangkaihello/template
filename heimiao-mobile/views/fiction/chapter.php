@@ -16,6 +16,8 @@ use yii\helpers\Url;
 
 $this->title = $fiction->title . '-章节列表';
 
+$this->context->backHref = Url::to(['fiction/index','id' => $fiction->id]);
+
 /*$this->registerMetaTag([
     'name'      => 'keywords',
     'content'   => '原创小说;精品小说;长篇小说连载;优质小说阅读;都市情感小说;婚恋小说',
@@ -48,7 +50,7 @@ $this->registerMetaTag([
     <div class="navList">
         <?php for($i=1;$i<=$pagination->getPageCount();$i++): ?>
         <div class="nav-item <?php if($i == $pagination->getPage()+1): ?>active<?php endif; ?>">
-            <a href="<?= $pagination->createUrl($i-1) ?>"><?= (($i-1)*$pagination->defaultPageSize)+1 ?>-<?= $i*$pagination->defaultPageSize ?></a>
+            <a href="<?= $pagination->createUrl($i-1,$pagination->defaultPageSize) ?>"><?= (($i-1)*$pagination->defaultPageSize)+1 ?>-<?= $i*$pagination->defaultPageSize ?></a>
         </div>
         <?php endfor; ?>
     </div>

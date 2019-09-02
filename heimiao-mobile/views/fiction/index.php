@@ -17,6 +17,8 @@ use yii\helpers\Url;
 
 $this->title = $fiction->title;
 
+$this->context->backHref = Url::to(['home/index']);
+
 $this->registerMetaTag([
     'name'      => 'keywords',
     'content'   => implode(";",array_column($lexicons,'title')),
