@@ -7,6 +7,9 @@
  *
  *
  */
+use common\popular\RequestHandle;
+use yii\helpers\Url;
+
 $this->title = "选择登陆";
 
 ?>
@@ -40,13 +43,40 @@ $this->title = "选择登陆";
     <div class="log-bg">
         <img src="/static/img/log-bg.png" alt="">
     </div>
-    <div class="wx">
-        <img src="/static/img/wx.png" alt="" class='wx-i'><span>微信登录</span>
+
+    <div class="log-botton">
+
+        <?php if(RequestHandle::isWechat(Yii::$app->request)): ?>
+            <a href="<?= Yii::$app->params['thirdly.domain'] . Url::to(['wechat/login/info']) ?>" >
+                <div class="wx">
+                    <img src="/static/img/wx.png" alt="" class='icon-i'>
+                    <span>微信登录</span>
+                </div>
+            </a>
+        <?php endif; ?>
+
+        <a href="https://graph.qq.com/oauth2.0/authorize?response_type=token&client_id=<?= Yii::$app->params['qq']['api_id'] ?>&redirect_uri=<?= Yii::$app->params['thirdly.domain'] . Url::to(['/qq/login/info']) ?>&state=${state}" >
+            <div class="qq">
+                <img src="/static/img/qq.png" alt="" class='icon-i'>
+                <span>QQ登陆</span>
+            </div>
+        </a>
+
+        <!--<a>
+            <div class="user">
+                <img src="/static/img/user.png" alt="" class='icon-i'><span>账号登录</span>
+            </div>
+        </a>-->
+
+
+
     </div>
-    <!--<div class="user">
-        <img src="/static/img/user.png" alt="" class='user-i'><span>账号登录</span>
-    </div>-->
+
 </div>
 
 </body>
 </html>
+
+<script>
+
+</script>
