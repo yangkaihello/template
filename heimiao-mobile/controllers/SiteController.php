@@ -2,6 +2,8 @@
 namespace mobile\controllers;
 
 use common\models\MemberIndex;
+use mobile\forms\SpeedyForm;
+use mobile\support\SessionMemory;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -72,6 +74,30 @@ class SiteController extends BaseController
         return $this->renderPartial("login-select",[
 
         ]);
+    }
+
+    /**
+     * 快捷登陆
+     * @return \yii\web\Response
+     */
+    public function actionSpeedy()
+    {
+
+        if (!Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
+        $model = new SpeedyForm();
+
+        if ($model->load(Yii::$app->request->get(),"") && $model->agentLogin() ) {
+            $memory = new SessionMemory();
+            if($memory->hasLoginBack())
+            {
+                $this->redirect($memory->getLoginBack());
+            }else{
+                return $this->goBack();
+            }
+        }
     }
 
     /**
