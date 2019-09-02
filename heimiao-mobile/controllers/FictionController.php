@@ -72,6 +72,7 @@ namespace mobile\controllers
 
             $pagination = new Pagination([
                 'defaultPageSize' => 100,
+                'pageSize' => 100,
                 'totalCount' => (clone $models)->count(),
             ]);
 
