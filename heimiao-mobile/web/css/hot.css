@@ -1,0 +1,100 @@
+/*hot.css*/
+/*index.css*/
+
+.item {
+  margin-top: 0.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 0.16rem 0 0.15rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 1.16rem;
+}
+
+.item_left {
+  width: 0.87rem;
+  margin-right: 0.14rem;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cover {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+.item_right {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.item-right {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.bookName {
+  font-size: 0.16rem;
+  font-weight: 700;
+  margin-bottom: 0.05rem;
+  color: #333;
+}
+
+.bookInfo {
+  -webkit-line-clamp:3;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  font-size: 0.14rem;
+  line-height: 0.25rem;
+  text-align: justify;
+  color: #333;
+}
+
+.auth-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.12rem;
+  height: 0.13rem;
+  color: #999;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.serial {
+  color: #ff6d6b;
+}
+
+.over {
+  color: #999999;
+}
+
+.classify {
+  margin-right: 0.18rem;
+  color: #3588fe;
+}
+
+.list-body {
+  padding-bottom: 0.2rem;
+}

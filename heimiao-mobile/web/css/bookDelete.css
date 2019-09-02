@@ -1,0 +1,221 @@
+/*bookshelf.css*/
+
+.head{
+    text-align: center;
+    height:0.44rem;
+    font-size: 0.2rem;
+    color: #333;
+    line-height: 0.44rem;
+    background: #fff;
+    position: relative;
+}
+
+.head img{
+  position: absolute;
+  left: 0.1rem;
+  top:0.07rem;
+  width: 0.11rem;
+  height: 0.19rem;
+  padding: 0.05rem;
+}
+
+.complete {
+  position: absolute;
+  padding-right: 0.15rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 0;
+  color: #3589fe;
+  font-size: 0.14rem;
+}
+
+
+.list .cover {
+  width: 1rem;
+  height: 1.33rem;
+  position: relative;
+  overflow:hidden;
+}
+
+.list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-top: 0.2rem;
+  padding: 0.15rem;
+  padding-bottom: 0;
+}
+
+.cover img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+}
+
+.name {
+  font-size: 0.16rem;
+  margin-top: 0.14rem;
+  padding-bottom: 0.34rem;
+  height: 0.16rem;
+  color: #333333;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+.list li {
+  width: 1rem;
+}
+
+
+.list li:nth-child(3n+1) {
+  margin-right: 0.22rem;
+}
+
+.list li:nth-child(3n+2) {
+  margin-right: 0.23rem;
+}
+
+.read-list {
+  padding-top: 0.2rem;
+}
+
+.read-list li{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 0.15rem;
+  padding-bottom: 0.14rem;
+}
+
+
+.read-cover {
+  width: 0.52rem;
+  height: 0.70rem;
+  position: relative;
+  overflow: hidden;
+  margin-right: 0.1rem;
+}
+
+.read-cover img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+}
+
+.info {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.read-name {
+  font-size: 0.16rem;
+  margin-bottom: 0.1rem;
+  height: 0.16rem;
+  color: #333333;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.progress {
+  height: 0.16rem;
+  font-size: 0;
+}
+
+.progress span {
+  font-size: 0.16rem;
+}
+
+.go-library {
+  display: block;
+  font-size: 0.14rem;
+  width: 0.8rem;
+  height: 0.3rem;
+  text-align: center;
+  line-height: 0.3rem;
+  position: relative;
+  margin: 0 auto;
+  color: #FFF;
+  background-color: #ff4c2e;
+  border-radius: 0.04rem;
+  margin-bottom: 1.14rem;
+}
+
+.go-library:after {
+  position: absolute;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  width: 200%;
+  height: 200%;
+  left: 0;
+  top: 0;
+  border: 1px solid #dc3418;
+  border-radius: 0.08rem;
+  content: '';
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+}
+
+.all {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1rem;
+  position: fixed;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  background-color: #f5f5f5;
+  padding: 0 0.15rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+} 
+
+.all-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.toggle {
+  width: 0.2rem;
+  height: 0.2rem;
+  -webkit-appearance:none;
+  outline: none;
+  background: url(../img/check.png);
+  background-size: 100% 100%;
+}
+
+.toggle:checked{
+  background: url(../img/check-on.png);
+  background-size: 100% 100%;
+}

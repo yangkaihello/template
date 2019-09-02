@@ -1,0 +1,111 @@
+/*link.css*/
+.head{
+    text-align: center;
+    height:0.44rem;
+    font-size: 0.2rem;
+    color: #333;
+    line-height: 0.44rem;
+    background: #fff;
+    position: relative;
+}
+
+.head img{
+  position: absolute;
+  left: 0.1rem;
+  top:0.07rem;
+  width: 0.11rem;
+  height: 0.19rem;
+  padding: 0.05rem;
+}
+
+.service {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin: 0 auto 0.2rem;
+}
+
+.service img {
+  width: 100%;
+  height: 100%;
+}
+.link-desc {
+  padding-bottom: 0.28rem;
+  font-size: 0.14rem;
+  text-align: center;
+}
+
+.top {
+  position: relative;
+  height: 2.41rem;
+  padding-top: 0.19rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.top:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f2f6ff;
+  height: 1px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: bottom left;
+  transform-origin: bottom left;
+}
+
+.link-item {
+  height: 0.5rem;
+  padding: 0 0.28rem 0 0.15rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 0.16rem;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.link-item:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f2f6ff;
+  height: 1px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: bottom left;
+  transform-origin: bottom left;
+}
+
+.link-item-right {
+  color: #ff4c2e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.arrow-r {
+  margin-left: 0.12rem;
+}
+
+.block {
+  width: 0.2rem;
+  height: 0.2rem;
+}
+
+.arrow-r {
+  width: 0.07rem;
+  height: 0.08rem;
+}

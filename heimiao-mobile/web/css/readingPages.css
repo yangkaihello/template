@@ -1,0 +1,72 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #f4f7fe;
+    font-family: 微软雅黑;
+
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.head{
+    text-align: center;
+    height:0.44rem;
+    font-size: 0.2rem;
+    color: #333;
+    line-height: 0.44rem;
+    background: #fff;
+    position: relative;
+}
+.head img{
+  position: absolute;
+  left: 0.1rem;
+  top:0.07rem;
+  width: 0.11rem;
+  height: 0.19rem;
+  padding: 0.05rem;
+}
+.book{
+   padding: 0.3rem 0.15rem 0 0.15rem;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+.title{
+  color: #333333;
+  font-weight: 600;
+  font-size: 0.16rem;
+  margin-bottom: 0.3rem;
+}
+.book p{
+   color:#333333;
+   line-height: 0.3rem;
+   font-size: 0.14rem;
+   text-indent:2em;
+   margin-bottom: 0.1rem;
+}
+.book p:last-child {
+  margin-bottom: 0;
+}
+.sections{
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-pack: justify;
+   -ms-flex-pack: justify;
+   justify-content: space-between;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   align-items: center;
+   padding: 0.38rem 0.15rem;
+}
+.sections div{
+   width:1rem;
+   height: 0.35rem;
+   line-height: 0.35rem;
+   text-align: center;
+   border-radius: 0.08rem;
+   border: 1px solid #a9c6e4;
+   font-size: 18px;
+   color: #a9c6e4;
+}
