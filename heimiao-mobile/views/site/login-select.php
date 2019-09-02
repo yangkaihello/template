@@ -55,7 +55,7 @@ $this->title = "选择登陆";
             </a>
         <?php endif; ?>
 
-        <a href="https://graph.qq.com/oauth2.0/authorize?response_type=token&client_id=<?= Yii::$app->params['qq']['api_id'] ?>&redirect_uri=<?= Yii::$app->params['thirdly.domain'] . Url::to(['/qq/login/info']) ?>&state=${state}" >
+        <a href="https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=<?= Yii::$app->params['qq']['api_id'] ?>&redirect_uri=<?= urlencode(Yii::$app->params['thirdly.domain'] . Url::to(['/qq/login/info'])) ?>&state=test" >
             <div class="qq">
                 <img src="/static/img/qq.png" alt="" class='icon-i'>
                 <span>QQ登陆</span>
