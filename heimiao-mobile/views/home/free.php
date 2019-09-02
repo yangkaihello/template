@@ -25,11 +25,11 @@ $this->registerMetaTag([
 
 /* 预加载CSS */
 //'template/css/reset.css',
-\mobile\assets\AppAsset::addCss($this,'css/free.css');
+\mobile\assets\AppAsset::addCss($this,'static/css/free.css');
 
 /*预加载JS*/
 //'js/jquery-1.10.1.min.js',
-//\mobile\assets\AppAsset::addScript($this,'js/index.js');
+//\mobile\assets\AppAsset::addScript($this,'static/js/index.js');
 
 
 ?>

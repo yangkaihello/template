@@ -38,13 +38,13 @@ $this->title = "选择登陆";
 
 <div class="main">
     <div class="log-bg">
-        <img src="/img/log-bg.png" alt="">
+        <img src="/static/img/log-bg.png" alt="">
     </div>
     <div class="wx">
-        <img src="/img/wx.png" alt="" class='wx-i'><span>微信登录</span>
+        <img src="/static/img/wx.png" alt="" class='wx-i'><span>微信登录</span>
     </div>
     <!--<div class="user">
-        <img src="/img/user.png" alt="" class='user-i'><span>账号登录</span>
+        <img src="/static/img/user.png" alt="" class='user-i'><span>账号登录</span>
     </div>-->
 </div>
 

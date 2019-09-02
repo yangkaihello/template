@@ -26,14 +26,14 @@ $this->registerMetaTag([
 
 /* 预加载CSS */
 //'template/css/reset.css',
-\mobile\assets\AppAsset::addCss($this,'css/swiper.min.css');
-\mobile\assets\AppAsset::addCss($this,'css/index.css');
-\mobile\assets\AppAsset::addCss($this,'css/foot.css');
+\mobile\assets\AppAsset::addCss($this,'static/css/swiper.min.css');
+\mobile\assets\AppAsset::addCss($this,'static/css/index.css');
+\mobile\assets\AppAsset::addCss($this,'static/css/foot.css');
 
 /*预加载JS*/
 //'js/jquery-1.10.1.min.js',
-\mobile\assets\AppAsset::addScript($this,'js/index.js');
-\mobile\assets\AppAsset::addScript($this,'js/swiper.min.js');
+\mobile\assets\AppAsset::addScript($this,'static/js/index.js');
+\mobile\assets\AppAsset::addScript($this,'static/js/swiper.min.js');
 
 
 ?>
@@ -59,28 +59,28 @@ $this->registerMetaTag([
     <!-- banner -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="./img/banner.png" alt="" class='banner-img'></div>
-            <div class="swiper-slide"><img src="./img/banner.png" alt="" class='banner-img'></div>
-            <div class="swiper-slide"><img src="./img/banner.png" alt="" class='banner-img'></div>
+            <div class="swiper-slide"><img src="/static/img/banner.png" alt="" class='banner-img'></div>
+            <div class="swiper-slide"><img src="/static/img/banner.png" alt="" class='banner-img'></div>
+            <div class="swiper-slide"><img src="/static/img/banner.png" alt="" class='banner-img'></div>
         </div>
         <!-- 如果需要分页器 -->
         <div class="swiper-pagination"></div>
     </div>
     <div class="nav">
         <a class="nav-item" href="<?= Url::to(['home/books'],true) ?>">
-            <div class="nav-icon-box"><img src="/img/index-icon1.png" alt="" class='nav-icon'></div>
+            <div class="nav-icon-box"><img src="/static/img/index-icon1.png" alt="" class='nav-icon'></div>
             <p class='nav-item-txt'>书库</p>
         </a>
         <a class="nav-item" href="<?= Url::to(['home/rank'],true) ?>">
-            <div class="nav-icon-box"><img src="/img/index-icon2.png" alt="" class='nav-icon'></div>
+            <div class="nav-icon-box"><img src="/static/img/index-icon2.png" alt="" class='nav-icon'></div>
             <p class='nav-item-txt'>榜单</p>
         </a>
         <a class="nav-item" href="<?= Url::to(['home/free'],true) ?>">
-            <div class="nav-icon-box"><img src="/img/index-icon3.png" alt="" class='nav-icon'></div>
+            <div class="nav-icon-box"><img src="/static/img/index-icon3.png" alt="" class='nav-icon'></div>
             <p class='nav-item-txt'>免费</p>
         </a>
         <a class="nav-item" href="<?= Url::to(['home/pay'],true) ?>">
-            <div class="nav-icon-box"><img src="/img/index-icon4.png" alt="" class='nav-icon'></div>
+            <div class="nav-icon-box"><img src="/static/img/index-icon4.png" alt="" class='nav-icon'></div>
             <p class='nav-item-txt'>充值</p>
         </a>
     </div>

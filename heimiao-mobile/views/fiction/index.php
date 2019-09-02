@@ -28,11 +28,11 @@ $this->registerMetaTag([
 
 /* 预加载CSS */
 //'template/css/reset.css',
-\mobile\assets\AppAsset::addCss($this,'css/detail.css');
+\mobile\assets\AppAsset::addCss($this,'static/css/detail.css');
 
 /*预加载JS*/
 //'js/jquery-1.10.1.min.js',
-//\mobile\assets\AppAsset::addScript($this,'js/index.js');
+//\mobile\assets\AppAsset::addScript($this,'static/js/index.js');
 
 
 ?>
@@ -73,12 +73,12 @@ $this->registerMetaTag([
 <!--<div class="reward">
     <div class="reward1">打赏记录</div>
     <a class="reward2" href='reward.html'>
-        <img src="/img/detail_07.jpg" alt="">
-        <img src="/img/detail_07.jpg" alt="">
-        <img src="/img/detail_07.jpg" alt="">
-        <img src="/img/detail_07.jpg" alt="">
-        <img src="/img/detail_07.jpg" alt="">
-        <img src="/img/detail_07.jpg" alt="">
+        <img src="/static/img/detail_07.jpg" alt="">
+        <img src="/static/img/detail_07.jpg" alt="">
+        <img src="/static/img/detail_07.jpg" alt="">
+        <img src="/static/img/detail_07.jpg" alt="">
+        <img src="/static/img/detail_07.jpg" alt="">
+        <img src="/static/img/detail_07.jpg" alt="">
         <div>></div>
     </a>
 </div>-->
@@ -98,15 +98,15 @@ $this->registerMetaTag([
     <div class="footcontent">
         <ul class="footUl">
             <li class='dashang'>
-                <img src="/img/detail_17.jpg" alt="">
+                <img src="/static/img/detail_17.jpg" alt="">
                 <div class='footer-info'>打赏</div>
             </li>
             <li class='fenxiang'>
-                <img src="/img/detail_19.jpg" alt="">
+                <img src="/static/img/detail_19.jpg" alt="">
                 <div class='footer-info'>分享</div>
             </li>
             <li>
-                <img src="/img/detail_21.jpg" alt="">
+                <img src="/static/img/detail_21.jpg" alt="">
                 <?php if(isset($this->context->user)): ?>
                         <?php if( \common\models\collect\MemberCollect::isCollect($this->context->user->id,$fiction->id) ): ?>
                         <div data-href="<?= Url::to(['member/collect/attention','fiction_id' => $fiction->id]) ?>"
@@ -135,32 +135,32 @@ $this->registerMetaTag([
         <h3 class='reward-title'>打赏</h3>
         <div class="prizeList">
             <div class="prize">
-                <div class="prize-icon"><img src="/img/red-wine.png" alt=""></div>
+                <div class="prize-icon"><img src="/static/img/red-wine.png" alt=""></div>
                 <p class='prize-name'>红酒</p>
                 <p class='prize-gold'>50金币</p>
             </div>
             <div class="prize">
-                <div class="prize-icon"><img src="/img/Diamonds.png" alt=""></div>
+                <div class="prize-icon"><img src="/static/img/Diamonds.png" alt=""></div>
                 <p class='prize-name'>钻石</p>
                 <p class='prize-gold'>50金币</p>
             </div>
             <div class="prize">
-                <div class="prize-icon"><img src="/img/sedan.png" alt=""></div>
+                <div class="prize-icon"><img src="/static/img/sedan.png" alt=""></div>
                 <p class='prize-name'>轿车</p>
                 <p class='prize-gold'>50金币</p>
             </div>
             <div class="prize">
-                <div class="prize-icon"><img src="/img/house.png" alt=""></div>
+                <div class="prize-icon"><img src="/static/img/house.png" alt=""></div>
                 <p class='prize-name'>别墅</p>
                 <p class='prize-gold'>50金币</p>
             </div>
             <div class="prize">
-                <div class="prize-icon"><img src="/img/yacht.png" alt=""></div>
+                <div class="prize-icon"><img src="/static/img/yacht.png" alt=""></div>
                 <p class='prize-name'>游艇</p>
                 <p class='prize-gold'>50金币</p>
             </div>
             <div class="prize">
-                <div class="prize-icon"><img src="/img/plane.png" alt=""></div>
+                <div class="prize-icon"><img src="/static/img/plane.png" alt=""></div>
                 <p class='prize-name'>飞机</p>
                 <p class='prize-gold'>50金币</p>
             </div>
@@ -188,7 +188,7 @@ $this->registerMetaTag([
         <h3 class='reward-title'>分享</h3>
         <div class="prizeList">
             <div class="prize wechat">
-                <div class="prize-icon"><img src="/img/red-wine.png" alt=""></div>
+                <div class="prize-icon"><img src="/static/img/red-wine.png" alt=""></div>
                 <p class='prize-name'>分享给朋友</p>
             </div>
         </div>
