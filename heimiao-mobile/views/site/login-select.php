@@ -28,7 +28,7 @@ $this->title = "选择登陆";
     <script src='/static/js/jquery-1.10.1.min.js'></script>
     <script src='/static/js/rank.js'></script>
     <link rel="stylesheet" href="/static/css/reset.css">
-    <link rel="stylesheet" href="/static/css/log.css">
+    <link rel="stylesheet" href="/static/css/log.css?v=1.0">
 
     <title><?= $this->title ?></title>
 </head>
@@ -45,13 +45,14 @@ $this->title = "选择登陆";
     </div>
 
     <div class="log-botton">
-
+        <?php if( RequestHandle::isWechat(Yii::$app->request) ): ?>
         <a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=<?= Yii::$app->params['wechat']['app_id'] ?>&redirect_uri=<?= urlencode(Yii::$app->params['thirdly.domain'] . Url::to(['/wechat/login/info'])) ?>&response_type=code&scope=snsapi_userinfo&state=<?= Yii::$app->params['wap.domain'] ?>#wechat_redirect" >
             <div class="wx">
                 <img src="/static/img/wx.png" alt="" class='icon-i'>
                 <span>微信登录</span>
             </div>
         </a>
+        <?php endif; ?>
 
         <a href="https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=<?= Yii::$app->params['qq']['api_id'] ?>&redirect_uri=<?= urlencode(Yii::$app->params['thirdly.domain'] . Url::to(['/qq/login/info'])) ?>&state=<?= Yii::$app->params['wap.domain'] ?>" >
             <div class="qq">

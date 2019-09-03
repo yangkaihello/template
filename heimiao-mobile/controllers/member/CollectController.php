@@ -22,19 +22,18 @@ namespace mobile\controllers\member
             $request = Yii::$app->request;
 
             $collect = new MemberCollect();
+
+            $collect->member_id = $this->user->id;
             $collect->createTableNum();
 
             if($collect::isCollect($this->user->id,$request->get('fiction_id')))
             {
-                $collect->member_id = $this->user->id;
                 $collect::findOne([
                     'member_id' => $collect->member_id,
                     'fiction_id' => $request->get('fiction_id'),
                 ])->delete();
                 $status = 'no';
             }else{
-
-                $collect->member_id = $this->user->id;
                 $collect->fiction_id = $request->get('fiction_id');
                 $collect->save();
 

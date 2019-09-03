@@ -11,7 +11,7 @@ namespace mobile\support {
 
 
         /**
-         * @param $model
+         * @param $model ActiveQuery
          * @param Request $request
          * @return ActiveQuery
          */

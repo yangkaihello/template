@@ -14,6 +14,7 @@ namespace mobile\controllers
     use common\models\reader\MemberRead;
     use common\popular\Cache;
     use Yii;
+    use yii\web\HttpException;
 
     class ChapterController extends BaseController
     {
@@ -30,6 +31,11 @@ namespace mobile\controllers
                 'fiction_id' => $fiction->id,
                 'sort'  => $request->get('sort'),
             ])->one();
+
+            if(!isset($model))
+            {
+                throw new HttpException(404,"章节不存在");
+            }
 
             $fictionCache = Cache::factory('fictionCache');
 

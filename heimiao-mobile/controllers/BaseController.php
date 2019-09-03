@@ -26,10 +26,7 @@ class BaseController extends \yii\web\Controller
         {
             $this->user = null;
         }else{
-            $this->user = MemberIndex::find()->with(['property'])->where([
-                'id' => Yii::$app->user->id,
-                'status' => MemberIndex::STATUS_ACTIVE,
-            ])->one();
+            $this->user = MemberIndex::findLoginInfo(Yii::$app->user->id);
         }
 
         $this->accessPath = '/' . Yii::$app->request->pathInfo;

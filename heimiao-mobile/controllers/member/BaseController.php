@@ -27,10 +27,7 @@ class BaseController extends \yii\web\Controller
         {
             die($response->redirect(Url::to(['/site/login-select']))->send());
         }else{
-            $this->user = MemberIndex::find()->with(['property'])->where([
-                'id' => Yii::$app->user->id,
-                'status' => MemberIndex::STATUS_ACTIVE,
-            ])->one();
+            $this->user = MemberIndex::findLoginInfo(Yii::$app->user->id);
         }
 
         $this->accessPath = '/' . Yii::$app->request->pathInfo;

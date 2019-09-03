@@ -108,7 +108,7 @@ $this->registerMetaTag([
                 <div class='footer-info'>分享</div>
             </li>
             <li>
-                <img src="/static/img/detail_21.jpg" alt="">
+                <img class="collect-img" src="/static/img/detail_21.jpg" alt="">
                 <?php if(isset($this->context->user)): ?>
                         <?php if( \common\models\collect\MemberCollect::isCollect($this->context->user->id,$fiction->id) ): ?>
                         <div data-href="<?= Url::to(['member/collect/attention','fiction_id' => $fiction->id]) ?>"
@@ -190,7 +190,7 @@ $this->registerMetaTag([
         <h3 class='reward-title'>分享</h3>
         <div class="prizeList">
             <div class="prize wechat">
-                <div class="prize-icon"><img src="/static/img/red-wine.png" alt=""></div>
+                <div class="prize-icon"><img src="/static/img/wx-share.png" alt=""></div>
                 <p class='prize-name'>分享给朋友</p>
             </div>
         </div>
@@ -201,10 +201,12 @@ $this->registerMetaTag([
 
 <?php $this->beginBlock('window.js'); ?>
 
-<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 <script>
 
-    wx.config(<?= $app->jssdk->buildConfig(['updateAppMessageShareData','onMenuShareAppMessage','onMenuShareTimeline'], true) ?>);
+    <?php if(YII_DEBUG == false): ?>
+    wx.config(<?= $app->jssdk->buildConfig(['updateAppMessageShareData'], true) ?>);
+    <?php endif; ?>
 
     $(".collect-dialog-box .wechat").click(function (){
 
@@ -234,6 +236,10 @@ $this->registerMetaTag([
 //            })
         });
 
+    });
+
+    $(".foot .collect-img").click(function (){
+        $(".foot .collect").trigger("click");
     });
 
     $(".foot .collect").on("click",function (){

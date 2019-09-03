@@ -48,14 +48,14 @@ $this->registerMetaTag([
 
 <section>
 
-    <div class="search-box">
-        <form>
+    <!--<div class="search-box">
+        <form method="get" action="<?/*= Url::to(['home/books']) */?>">
             <div class="search-input">
                 <i class='search-icon'></i>
-                <input type="text" class="search" placeholder="请输入书名搜索">
+                <input type="text" name="keywords" class="search" placeholder="请输入书名搜索">
             </div>
         </form>
-    </div>
+    </div>-->
     <!-- banner -->
     <div class="swiper-container">
         <div class="swiper-wrapper">

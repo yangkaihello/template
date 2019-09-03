@@ -14,25 +14,27 @@ use Yii;
 class SessionMemory
 {
     const LOGIN_BACK = '__login-back';
+    const LOGIN_USER = 'user';
 
     public function setLoginBack($value)
     {
-        return Yii::$app->session->set(self::LOGIN_BACK,$value);
+        Yii::$app->session->setFlash(self::LOGIN_BACK,$value);
     }
 
     public function getLoginBack($defaultValue = null)
     {
-        return Yii::$app->session->get(self::LOGIN_BACK,$defaultValue);
+        return Yii::$app->session->getFlash(self::LOGIN_BACK,$defaultValue);
     }
 
     public function hasLoginBack()
     {
-        if(Yii::$app->session->get(self::LOGIN_BACK))
+        if(Yii::$app->session->hasFlash(self::LOGIN_BACK))
         {
             return true;
         }else{
             return false;
         }
     }
+
 
 }

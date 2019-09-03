@@ -28,10 +28,10 @@ class SiteController extends BaseController
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'signup','login-select'],
+                'only' => ['logout', 'signup','login-select','login-test'],
                 'rules' => [
                     [
-                        'actions' => ['signup','login-select'],
+                        'actions' => ['signup','login-select','login-test'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
@@ -68,8 +68,18 @@ class SiteController extends BaseController
         ];
     }
 
+    public function actionLoginTest()
+    {
+
+        return $this->renderPartial("login-test",[
+
+        ]);
+    }
+
     public function actionLoginSelect()
     {
+        $memory = new SessionMemory();
+        $memory->setLoginBack(Yii::$app->request->referrer);
 
         return $this->renderPartial("login-select",[
 
@@ -91,6 +101,7 @@ class SiteController extends BaseController
 
         if ($model->load(Yii::$app->request->get(),"") && $model->agentLogin() ) {
             $memory = new SessionMemory();
+
             if($memory->hasLoginBack())
             {
                 $this->redirect($memory->getLoginBack());
@@ -112,13 +123,14 @@ class SiteController extends BaseController
         }
 
         $model = new LoginForm();
+
         if ($model->load(Yii::$app->request->post(),"") && $model->login()) {
-            return $this->goBack();
+            return $this->goHome();
         } else {
             Yii::$app->response->setStatusCode(401);
         }
 
-        return $model->getFirstErrors();
+        return $model->getOneFirstError();
     }
 
     /**

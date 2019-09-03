@@ -8,7 +8,7 @@ use yii\helpers\Url;
 <footer>
     <div class="bottom">我是有底线的，去书库看看</div>
     <div class="foot">
-        <a <?php if(Handle::isOpen("/member/book")): ?>class="active-foot"<?php endif; ?> href="<?= Url::to(['member/index']) ?>" >
+        <a <?php if(Handle::isOpen("/member/book")): ?>class="active-foot"<?php endif; ?> href="<?= Url::to(['member/book']) ?>" >
             <img src="/static/img/book.png" alt="" class='icon footer-icon'>
             <img src='/static/img/book-on.png' class='footer-icon icon-on'>
             <div>书架</div>
@@ -25,4 +25,5 @@ use yii\helpers\Url;
         </a>
     </div>
 </footer>
+
 
