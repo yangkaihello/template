@@ -34,8 +34,6 @@ $this->registerMetaTag([
 
 /*预加载JS*/
 //'js/jquery-1.10.1.min.js',
-\mobile\assets\AppAsset::addScript($this,'static/js/rank.js');
-
 
 ?>
 

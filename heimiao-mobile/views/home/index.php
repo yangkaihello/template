@@ -79,7 +79,7 @@ $this->registerMetaTag([
             <div class="nav-icon-box"><img src="/static/img/index-icon3.png" alt="" class='nav-icon'></div>
             <p class='nav-item-txt'>免费</p>
         </a>
-        <a class="nav-item" href="<?= Url::to(['home/pay'],true) ?>">
+        <a class="nav-item" href="<?= Url::to(['member/pay'],true) ?>">
             <div class="nav-icon-box"><img src="/static/img/index-icon4.png" alt="" class='nav-icon'></div>
             <p class='nav-item-txt'>充值</p>
         </a>

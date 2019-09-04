@@ -61,7 +61,7 @@ $this->registerMetaTag([
                 <?php if($model->isVip == $model::VIP_YES): ?>
                     <?= Handle::formatReduceContent($model->content) ?>
                     <?php if(isset($this->context->user)): ?>
-                        <a class="button" href="<?= Url::to(['home/pay']) ?>" >缺少书币</a>
+                        <a class="button" href="<?= Url::to(['member/pay']) ?>" >缺少书币</a>
                     <?php else: ?>
                         <a class="button" href="<?= Url::to(['site/login-select']) ?>" >请先登陆</a>
                     <?php endif; ?>
@@ -79,7 +79,7 @@ $this->registerMetaTag([
             <?php if($chapterUp): ?>
                 <a href="<?= Url::to(['chapter/index','fiction_id' => $chapterUp->fiction_id,'sort' => $chapterUp->sort]) ?>">上一章</a>
             <?php else: ?>
-                <a href="#this">上一章</a>
+                <a href="#this">起始章</a>
             <?php endif; ?>
         </div>
         <div><a href="<?= Url::to(['fiction/chapter','id' => $fiction->id]) ?>">目录</a></div>
@@ -87,7 +87,7 @@ $this->registerMetaTag([
             <?php if($chapterDown): ?>
                 <a href="<?= Url::to(['chapter/index','fiction_id' => $chapterDown->fiction_id,'sort' => $chapterDown->sort]) ?>">下一章</a>
             <?php else: ?>
-                <a href="#this">下一章</a>
+                <a class="red" href="#this">已读完</a>
             <?php endif; ?>
         </div>
     </div>
@@ -122,6 +122,9 @@ $this->registerMetaTag([
         border-radius: 4px;
         color: #fff;
         background-color: coral;
+    }
+    .red{
+        color:red;
     }
 </style>
 

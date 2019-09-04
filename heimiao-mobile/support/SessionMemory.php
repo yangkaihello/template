@@ -14,7 +14,7 @@ use Yii;
 class SessionMemory
 {
     const LOGIN_BACK = '__login-back';
-    const LOGIN_USER = 'user';
+    const PAY_BACK = '__pay-back';
 
     public function setLoginBack($value)
     {
@@ -28,12 +28,23 @@ class SessionMemory
 
     public function hasLoginBack()
     {
-        if(Yii::$app->session->hasFlash(self::LOGIN_BACK))
-        {
-            return true;
-        }else{
-            return false;
-        }
+        return Yii::$app->session->hasFlash(self::LOGIN_BACK);
+    }
+
+
+    public function setPayBack($value)
+    {
+        Yii::$app->session->setFlash(self::PAY_BACK,$value);
+    }
+
+    public function getPayBack($defaultValue = null)
+    {
+        return Yii::$app->session->getFlash(self::PAY_BACK,$defaultValue);
+    }
+
+    public function hasPayBack()
+    {
+        return Yii::$app->session->hasFlash(self::PAY_BACK);
     }
 
 

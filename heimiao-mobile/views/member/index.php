@@ -44,7 +44,7 @@ $this->registerMetaTag([
 
 <div class="head"><?= $this->title ?></div>
 <div class="headbody">
-    <div class="user"><img src="/static/img/my_03.jpg" alt=""></div>
+    <div class="user"><img src="<?= Handle::getUploadSrc($this->context->user->icon,Handle::UPLOAD_SRC_MEMBER_ICON_M) ?>" alt=""></div>
     <div class="userDetail">
         <div class="userDetail1"><?= $this->context->user->userInfo->showname ?? "" ?></div>
         <div class="userDetail2">ID:<?= $this->context->user->id ?></div>
@@ -64,18 +64,18 @@ $this->registerMetaTag([
 </div>
 <ul class="myul">
     <li>
-        <a href="">
+        <a href="<?= Url::to(['member/pay'],true) ?>">
             <div class="firstLi">
                 <img src="/static/img/my_06.png" alt="">
                 <div>书币充值</div>
             </div>
             <div class="secondLi">
-                <div>书币余额:<span>50</span></div>
+                <div>书币余额:<span><?= $this->context->user->property->buy ?? 0 ?></span></div>
                 <img src="/static/img/my_19.png" alt="">
             </div>
         </a>
     </li>
-    <li>
+    <!--<li>
         <a href="bookshelf.html">
             <div class="firstLi">
                 <img src="/static/img/my_09.png" alt="">
@@ -99,12 +99,12 @@ $this->registerMetaTag([
             </div>
         </a>
 
-    </li>
+    </li>-->
     <li>
-        <a href="consumeRecord.html">
+        <a href="<?= Url::to(['member/order/index'],true) ?>">
             <div class="firstLi">
                 <img src="/static/img/my_13.png" alt="">
-                <div>消费记录</div>
+                <div>充值记录</div>
             </div>
             <div class="secondLi">
                 <img src="/static/img/my_19.png" alt="">
@@ -113,7 +113,7 @@ $this->registerMetaTag([
 
     </li>
     <li>
-        <a href="readingRecord.html">
+        <a href="<?= Url::to(['member/reader'],true) ?>">
             <div class="firstLi">
                 <img src="/static/img/my_15.png" alt="">
                 <div>阅读足迹</div>
@@ -124,7 +124,7 @@ $this->registerMetaTag([
         </a>
     </li>
     <li>
-        <a href="link.html">
+        <a href="<?= Url::to(['member/service'],true) ?>">
             <div class="firstLi">
                 <img src="/static/img/my_17.png" alt="">
                 <div>联系客服</div>
@@ -133,9 +133,8 @@ $this->registerMetaTag([
                 <img src="/static/img/my_19.png" alt="">
             </div>
         </a>
-
     </li>
-    <li>
+    <!--<li>
         <a href="link.html">
             <div class="firstLi">
                 <img src="/static/img/my_23.png" alt="">
@@ -144,6 +143,15 @@ $this->registerMetaTag([
             <div class="secondLi">
                 <div>绑定手机号</div>
                 <img src="/static/img/my_19.png" alt="">
+            </div>
+        </a>
+    </li>-->
+
+    <li>
+        <a href="<?= Url::to(['site/logout'],true) ?>">
+            <div class="firstLi">
+                <img src="/static/img/my_18.png" alt="">
+                <div>退出登陆</div>
             </div>
         </a>
     </li>
@@ -172,6 +180,9 @@ $this->registerMetaTag([
     }
     .line a:after{
         content: unset;
+    }
+    footer .bottom{
+        display: none;
     }
 </style>
 

@@ -208,8 +208,7 @@ $this->registerMetaTag([
     wx.config(<?= $app->jssdk->buildConfig(['updateAppMessageShareData'], true) ?>);
     <?php endif; ?>
 
-    $(".collect-dialog-box .wechat").click(function (){
-
+    $(".collect-dialog-box .wechat").on('click',$.proxy(function (){
         wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
 
             wx.onMenuShareAppMessage({
@@ -235,8 +234,7 @@ $this->registerMetaTag([
 //                }
 //            })
         });
-
-    });
+    }));
 
     $(".foot .collect-img").click(function (){
         $(".foot .collect").trigger("click");
@@ -253,9 +251,12 @@ $this->registerMetaTag([
                 $this.removeClass("red");
                 $this.html("加入书架");
             }
-        }).fail(function (res) {
-            console.log(res);
-        });
+        }).onloadend = function (xhr){
+            if(this.status < 200 || this.status >= 300)
+            {
+                console.log(this);
+            }
+        }
     });
 
     $(".foot .no-collect").on("click",function (){

@@ -116,13 +116,5 @@ class HomeController extends BaseController
         ]);
     }
 
-    public function actionPay()
-    {
-
-        return $this->render("pay",[
-
-        ]);
-    }
-
 
 }
