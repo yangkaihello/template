@@ -61,7 +61,7 @@ $this->registerMetaTag([
 </div>
 <div class="tip">
     <p class="tip-item">1元=100书币</p>
-    <p class="tip-item">2.阅读一章付费章节消耗<?= $setting->value ?>书币</p>
+    <p class="tip-item">2.每100字消耗<?= $setting->value ?>书币</p>
     <p class="tip-item">3.书币为虚拟商品，一经出售不得退换</p>
 </div>
 <div class="pay">
