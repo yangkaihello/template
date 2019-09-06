@@ -131,7 +131,7 @@ $this->registerMetaTag([
             'member_id='+$('input[name=member_id]').val(),
         ];
 
-        location.href= $('.pay-selection:checked').val() + "?" + param.join("&");
+        location.href= $('.pay-selection:checked').val() + "/?" + param.join("&");
 
     });
 
