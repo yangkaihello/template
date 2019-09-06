@@ -52,7 +52,7 @@ $this->registerMetaTag([
             <?= $model->title ?>
         </div>
         <div>
-            <?php if(isset($this->context->user) && $this->context->user->hasReadFictionOrDec($model)): ?>
+            <?php if($model->isVip == $model::VIP_YES && isset($this->context->user) && $this->context->user->hasReadFictionOrDec($model)): ?>
 
                 <?= Handle::formatContent($model->content) ?>
 
