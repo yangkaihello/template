@@ -46,7 +46,7 @@ $this->registerMetaTag([
 <ul class="read-list">
 
     <?php foreach ($models as $key=>$model): ?>
-        <a href="<?= Url::to(['chapter/index','fiction_id' => $model->fiction->id ,'sort' => $reader[$model->fiction->id]['count'] ?? 1]) ?>">
+        <a href="<?= Url::to(['chapter/index','fiction_id' => $model->fiction->id ,'sort' => $reader[$model->fiction->id]['chapter_sort'] ?? 1]) ?>">
             <li>
                 <div class="read-cover">
                     <img src="<?= Handle::getUploadSrc($model->fiction->cover,Handle::UPLOAD_SRC_FICTION_COVER) ?>" alt="">

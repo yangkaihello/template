@@ -33,9 +33,6 @@ namespace mobile\controllers
                 'id' => $request->get('id'),
             ])->one();
 
-            $fictionCache = Cache::factory('fictionCache');
-            $fictionCache->setFictionPv($fiction->id);
-
             $config = [
                 // 前面的appid什么的也得保留哦
                 'app_id'             => Yii::$app->params['wechat']['app_id'],

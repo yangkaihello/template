@@ -59,11 +59,17 @@ $this->registerMetaTag([
     <!-- banner -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="/static/img/banner.png" alt="" class='banner-img'></div>
-            <div class="swiper-slide"><img src="/static/img/banner.png" alt="" class='banner-img'></div>
-            <div class="swiper-slide"><img src="/static/img/banner.png" alt="" class='banner-img'></div>
+            <div class="swiper-slide">
+                <a href="<?= Url::to(['fiction/index','id' => 4],true) ?>">
+                    <img src="/static/img/lunbo.jpg" alt="" class='banner-img'>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="<?= Url::to(['fiction/index','id' => 1],true) ?>">
+                    <img src="/static/img/lunbo1.jpg" alt="" class='banner-img'>
+                </a>
+            </div>
         </div>
-        <!-- 如果需要分页器 -->
         <div class="swiper-pagination"></div>
     </div>
     <div class="nav">

@@ -14,6 +14,7 @@ namespace mobile\controllers
     use common\models\FictionIndex;
     use common\models\PaymentType;
     use common\models\reader\MemberRead;
+    use common\models\SystemSetting;
     use common\popular\ArrayHandle;
     use mobile\controllers\member\BaseController;
     use mobile\support\SessionMemory;
@@ -59,7 +60,7 @@ namespace mobile\controllers
             $reader = $reader::find()->where([
                 'member_id' => $this->user->id,
                 'fiction_id' => $fiction_ids,
-            ])->select(['fiction_id,count(fiction_id) as count'])->groupBy("fiction_id")->asArray()->all();
+            ])->select(['fiction_id','count(fiction_id) as count','max(chapter_sort) chapter_sort'])->groupBy("fiction_id")->asArray()->all();
             $reader = ArrayHandle::getArrayReplaceKey($reader,'fiction_id');
 
             return $this->render("book",[
@@ -106,11 +107,14 @@ namespace mobile\controllers
                 'type' => PaymentType::TYPE_BUY,
             ])->all();
 
+            $setting = SystemSetting::findBySourceType(SystemSetting::SOURCE_TYPE_READ_BUY);
+
             $memory = new SessionMemory();
             $memory->setPayBack(Yii::$app->request->referrer);
 
             return $this->render("pay",[
-                'type' => $type
+                'type' => $type,
+                'setting' => $setting,
             ]);
         }
 

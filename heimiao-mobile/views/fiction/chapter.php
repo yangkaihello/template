@@ -29,7 +29,7 @@ $this->registerMetaTag([
 
 /* 预加载CSS */
 //'template/css/reset.css',
-\mobile\assets\AppAsset::addCss($this,'static/css/catalogue.css');
+\mobile\assets\AppAsset::addCss($this,'static/css/catalogue.css?v1.0');
 \mobile\assets\AppAsset::addCss($this,'static/css/foot.css');
 
 /*预加载JS*/
@@ -57,7 +57,12 @@ $this->registerMetaTag([
 
     <?php foreach ($models as $model): ?>
     <a class="item" href="<?= Url::to(['chapter/index','fiction_id' => $model->fiction_id, 'sort' => $model->sort]) ?>">
-        <!--<span class='chapter'>第一章</span>--><span class='title'><?= $model->title ?></span>
+        <div>
+            <!--<span class='chapter'>第一章</span>--><span class='title'><?= $model->title ?></span>
+            <?php if($model->isVip == $model::VIP_YES): ?>
+            <span class="vip">VIP</span>
+            <?php endif; ?>
+        </div>
     </a>
     <?php endforeach; ?>
 
@@ -83,6 +88,7 @@ $this->registerMetaTag([
     a{
         color: inherit;
     }
+
 </style>
 
 <?php $this->endBlock(); ?>

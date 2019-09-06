@@ -104,3 +104,18 @@
   right: 0;
   overflow: scroll;
 }
+
+.list .item .title{
+  position: absolute;
+}
+
+.list .item .vip{
+  display: inherit;
+  position: relative;
+  top: 0.04rem;
+  right: -3.3rem;
+  width: 0.25rem;
+  color: burlywood;
+  font-weight: bold;
+  font-size: 13px;
+}

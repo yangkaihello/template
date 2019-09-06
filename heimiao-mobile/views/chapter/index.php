@@ -33,7 +33,7 @@ $this->registerMetaTag([
 
 /*预加载JS*/
 //'js/jquery-1.10.1.min.js',
-//\mobile\assets\AppAsset::addScript($this,'static/js/rank.js');
+\mobile\assets\AppAsset::addScript($this,'static/js/mobile.js?v1.1');
 
 
 ?>
@@ -52,7 +52,7 @@ $this->registerMetaTag([
             <?= $model->title ?>
         </div>
         <div>
-            <?php if(isset($this->context->user) && $this->context->user->hasReadFictionOrDec($model->isVip)): ?>
+            <?php if(isset($this->context->user) && $this->context->user->hasReadFictionOrDec($model)): ?>
 
                 <?= Handle::formatContent($model->content) ?>
 
@@ -75,7 +75,7 @@ $this->registerMetaTag([
     </div>
     <div class="sections">
 
-        <div>
+        <div class="left">
             <?php if($chapterUp): ?>
                 <a href="<?= Url::to(['chapter/index','fiction_id' => $chapterUp->fiction_id,'sort' => $chapterUp->sort]) ?>">上一章</a>
             <?php else: ?>
@@ -83,7 +83,7 @@ $this->registerMetaTag([
             <?php endif; ?>
         </div>
         <div><a href="<?= Url::to(['fiction/chapter','id' => $fiction->id]) ?>">目录</a></div>
-        <div>
+        <div class="right">
             <?php if($chapterDown): ?>
                 <a href="<?= Url::to(['chapter/index','fiction_id' => $chapterDown->fiction_id,'sort' => $chapterDown->sort]) ?>">下一章</a>
             <?php else: ?>
@@ -99,6 +99,16 @@ $this->registerMetaTag([
 <?php $this->beginBlock('window.js'); ?>
 
 <script>
+
+    function yangkaiMoveX(x,e)
+    {
+        if(x == 'left')
+        {
+            $(".sections .left a").trigger("click");
+        }else{
+            $(".sections .right a").trigger("click");
+        }
+    }
 
 </script>
 

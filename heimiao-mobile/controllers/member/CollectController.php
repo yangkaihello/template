@@ -11,6 +11,7 @@ namespace mobile\controllers\member
 
 
     use common\models\collect\MemberCollect;
+    use common\popular\Cache;
     use Yii;
 
     class CollectController extends BaseController
@@ -36,6 +37,9 @@ namespace mobile\controllers\member
             }else{
                 $collect->fiction_id = $request->get('fiction_id');
                 $collect->save();
+
+                $fictionCache = Cache::factory('fictionCache');
+                $fictionCache->setFictionCollect($collect->fiction_id);
 
                 $status = 'yes';
             }

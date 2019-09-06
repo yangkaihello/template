@@ -61,7 +61,8 @@ $this->registerMetaTag([
 </div>
 <div class="tip">
     <p class="tip-item">1元=100书币</p>
-    <p class="tip-item">2.书币为虚拟商品，一经出售不得退换</p>
+    <p class="tip-item">2.阅读一章付费章节消耗<?= $setting->value ?>书币</p>
+    <p class="tip-item">3.书币为虚拟商品，一经出售不得退换</p>
 </div>
 <div class="pay">
     <div class="pay-title">选择支付方式</div>
@@ -103,9 +104,13 @@ $this->registerMetaTag([
 
 <script>
 
-    $('.money-i').on('click', function() {
+    $('.money-i').on('click', function (e) {
         $(this).addClass('active').siblings().removeClass('active')
-    })
+    });
+
+    $(".pay-way").on('click',function (e){
+        $(this).find("input").prop("checked",true);
+    });
 
     $(".confirm").on('click',function (){
 
