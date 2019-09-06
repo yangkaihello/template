@@ -205,7 +205,7 @@ $this->registerMetaTag([
 <script>
 
     <?php if(YII_DEBUG == false): ?>
-    wx.config(<?= $app->jssdk->buildConfig(['updateAppMessageShareData'], true) ?>);
+    wx.config(<?= $app->jssdk->buildConfig(['updateAppMessageShareData'], false) ?>);
     <?php endif; ?>
 
     $(".collect-dialog-box .wechat").on('click',$.proxy(function (){
