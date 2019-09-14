@@ -37,6 +37,11 @@ namespace mobile\controllers
                 throw new HttpException(404,"章节不存在");
             }
 
+            $freeStart = FictionChapter::findCheckIssue()->andWhere([
+                'fiction_id' => $fiction->id,
+                'isVip'      => FictionChapter::VIP_YES,
+            ])->orderBy("isVip ASC")->one();
+
             $fictionCache = Cache::factory('fictionCache');
 
             if(!isset($request->referrer) || strpos(parse_url($request->referrer)['path'],'/chapter/') === false )
@@ -73,6 +78,7 @@ namespace mobile\controllers
                 'model'     => $model,
                 'chapterUp' => $chapterUp,
                 'chapterDown' => $chapterDown,
+                'freeStart' => $freeStart,
             ]);
         }
 
