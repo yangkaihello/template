@@ -103,7 +103,8 @@ $this->registerMetaTag([
 <?php if(
         isset($this->context->user) &&
         (intval($model->sort - $freeStart->sort) == 4) &&
-        (!($userWechat = $this->context->user->userWechat) || !$userWechat::findByApiUserInfo($this->context->user->id) || $userWechat->isSubscribe == $userWechat::SUBSCRIBE_NO)
+        !$userWechat::findByApiUserInfo($this->context->user->id) &&
+        (!($userWechat = $this->context->user->userWechat) || $userWechat->isSubscribe == $userWechat::SUBSCRIBE_NO)
 ): ?>
 <div class="shade-mobile">
     <div class="close">&times;</div>
