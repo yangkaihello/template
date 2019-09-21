@@ -3,6 +3,8 @@
 namespace mobile\controllers;
 
 use common\popular\Handle;
+use common\popular\RequestHandle;
+use common\popular\ThirdlyHandle;
 use Yii;
 use yii\web\HttpException;
 use yii\web\Response;
@@ -25,6 +27,12 @@ class BaseController extends \yii\web\Controller
         if( Yii::$app->user->isGuest )
         {
             $this->user = null;
+
+            if(RequestHandle::isWechat(Yii::$app->request))
+            {
+               return Yii::$app->getResponse()->redirect(ThirdlyHandle::getWechatLoginUrl());
+            }
+
         }else{
             $this->user = MemberIndex::findLoginInfo(Yii::$app->user->id);
         }

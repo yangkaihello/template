@@ -101,10 +101,10 @@ $this->registerMetaTag([
 
 </body>
 <?php if(
+        RequestHandle::isWechat(Yii::$app->request) &&
         isset($this->context->user) &&
-        (intval($model->sort - $freeStart->sort) == 4) &&
-        !MemberUserWechat::findByApiUserInfo($this->context->user->id) &&
-        (!($userWechat = $this->context->user->userWechat) || $userWechat->isSubscribe == $userWechat::SUBSCRIBE_NO)
+        (intval($model->sort - $freeStart->sort) == 4 || $model->sort == 5) &&
+        !MemberUserWechat::findByApiUserInfo($this->context->user->id)
 ): ?>
 <div class="shade-mobile">
     <div class="close">&times;</div>
