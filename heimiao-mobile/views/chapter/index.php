@@ -103,7 +103,7 @@ $this->registerMetaTag([
 <?php if(
         RequestHandle::isWechat(Yii::$app->request) &&
         isset($this->context->user) &&
-        (intval($model->sort - $freeStart->sort) == 4 || $model->sort == 5) &&
+        ((intval($model->sort - ($freeStart->sort ?? 10000)) == 4) || ($model->sort == 5)) &&
         !MemberUserWechat::findByApiUserInfo($this->context->user->id)
 ): ?>
 <div class="shade-mobile">
@@ -111,7 +111,7 @@ $this->registerMetaTag([
     <div class="shadow"></div>
     <div class="center">
         <div style="font-size: 0.2rem;background-color: #fff;padding: 0.1rem;text-align: center;">
-            关注公众号，方便下次阅读
+            长按识别图中二维码；关注公众号，方便下次阅读
         </div>
         <div style="width: 3rem;height: 3rem;">
             <img width="100%" height="100%" src="/static/img/official-qrcode.jpg"  />
