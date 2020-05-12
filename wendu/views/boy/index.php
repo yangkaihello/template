@@ -342,9 +342,6 @@ $this->registerMetaTag([
 
     </div>
 
-    <?php $this->beginContent('@frontend.template/views/layouts/top.php'); ?>
-
-    <?php $this->endContent(); ?>
 </div>
 <?php $this->beginBlock('window.js'); ?>
 
