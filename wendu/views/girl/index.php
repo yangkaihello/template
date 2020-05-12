@@ -2,8 +2,9 @@
 
 /**
  * @var $this \yii\web\View
- * @var $place \common\models\SystemPlace[]
- * @var $fictionLong \common\models\FictionIndex[]
+ * @var $fictionPlace \common\models\SystemPlace[]
+ * @var $fictionNew \common\models\FictionIndex[]
+ * @var $fictionCategory \common\models\FictionIndex[][]
  * @var $book \common\models\FictionIndex
  */
 
@@ -41,9 +42,9 @@ $this->registerMetaTag([
 <div class="main_box">
     <div class="center_box">
         <div class="ga_box">
-            <a href=""> <img src="/template/img/log.png"></a>
+            <a href="/"> <img src="/template/img/log.png"></a>
             <div class="bannerBox">
-                <a href=""><img src="/template/img/banner.jpg"></a>
+                <a target="_blank" href="<?= $ad["header"]["one"]["url"] ?>"><img src="<?= $ad["header"]["one"]["image"] ?>"></a>
                 <div class="bflexbutton">
                     <a data-switch-channel="girl" href="#this">女频</a>
                     <a data-switch-channel="boy" href="#this">男频</a>
@@ -69,85 +70,54 @@ $this->registerMetaTag([
         </div>
 
         <div class="update_boxs">
-            <div class="left"><a href=""><img src="/template/img/banner.jpg"></a></div>
-            <div class="right"><a href=""><img src="/template/img/banner.jpg"></a></div>
+            <div class="left"><a target="_blank" href="<?= $ad["header"]["two"]["url"] ?>"><img src="<?= $ad["header"]["two"]["image"] ?>"></a></div>
+            <div class="right"><a target="_blank" href="<?= $ad["header"]["three"]["url"] ?>"><img src="<?= $ad["header"]["three"]["image"] ?>"></a></div>
         </div>
 
         <div class="intro_box">
             <div class="center_box">
                 <div class="leftbox">
-                    <h2 class="tabq" id="tabut"><span class="active">本周强推</span><span>本月强推</span></h2>
+                    <h2 class="tabq" id="tabut"><span class="active"><?= $fictionPlace["home_girl_week"]->title ?></span><span><?= $fictionPlace["home_girl_month"]->title ?></span></h2>
                     <div>
                         <!-- 本周强推 -->
                         <ul class="each_conten">
-                            <li class="ell"><em>【玄幻】</em><a href="/template/book.html">穿越到上古当码农</a></li>
-                            <li class="ell"><em>【玄幻】</em><a href="/template/book.html">穿越到上古当码农</a></li>
-                            <li class="ell"><em>【玄幻】</em><a href="/template/book.html">穿越到上古当码农</a></li>
-                            <li class="ell"><em>【玄幻】</em><a href="/template/book.html">穿越到上古当码农</a></li>
-                            <li class="ell"><em>【玄幻】</em><a href="/template/book.html">穿越到上古当码农</a></li>
-                            <li class="ell"><em>【玄幻】</em><a href="/template/book.html">穿越到上古当码农</a></li>
-                            <li class="ell"><em>【玄幻】</em><a href="/template/book.html">穿越到上古当码农</a></li>
-                            <li class="ell"><em>【玄幻】</em><a href="/template/book.html">穿越到上古当码农</a></li>
-                            <li class="ell"><em>【玄幻】</em><a href="/template/book.html">穿越到上古当码农</a></li>
-                            <li class="ell"><em>【玄幻】</em><a href="/template/book.html">穿越到上古当码农</a></li>
-                            <li class="ell"><em>【玄幻】</em><a href="/template/book.html">穿越到上古当码农</a></li>
-                            <li class="ell"><em>【玄幻】</em><a href="/template/book.html">穿越到上古当码农</a></li>
+                            <?php foreach($fictionPlace["home_girl_week"]->findBooks(["category"],13) as $book): ?>
+                            <li class="ell"><em>【<?= $book->category->name ?>】</em><a href="<?= Url::to(["home/book","fiction_id" => $book->id]) ?>"><?= $book->title ?></a></li>
+                            <?php endforeach; ?>
                         </ul>
                         <!-- 本月强推 -->
                         <ul class="each_conten">
-                            <li class="ell"><em>【都市】</em><a href="">都市之六界裁决者</a></li>
-                            <li class="ell"><em>【都市】</em><a href="">都市之六界裁决者</a></li>
-                            <li class="ell"><em>【都市】</em><a href="">都市之六界裁决者</a></li>
-                            <li class="ell"><em>【都市】</em><a href="">都市之六界裁决者</a></li>
-                            <li class="ell"><em>【都市】</em><a href="">都市之六界裁决者</a></li>
-                            <li class="ell"><em>【都市】</em><a href="">都市之六界裁决者</a></li>
-                            <li class="ell"><em>【都市】</em><a href="">都市之六界裁决者</a></li>
-                            <li class="ell"><em>【都市】</em><a href="">都市之六界裁决者</a></li>
-                            <li class="ell"><em>【都市】</em><a href="">都市之六界裁决者</a></li>
-                            <li class="ell"><em>【都市】</em><a href="">都市之六界裁决者</a></li>
-                            <li class="ell"><em>【都市】</em><a href="">都市之六界裁决者</a></li>
-                            <li class="ell"><em>【都市】</em><a href="">都市之六界裁决者</a></li>
+                            <?php foreach($fictionPlace["home_girl_month"]->findBooks(["category"],13) as $book): ?>
+                                <li class="ell"><em>【<?= $book->category->name ?>】</em><a href="<?= Url::to(["home/book","fiction_id" => $book->id]) ?>"><?= $book->title ?></a></li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
 
-                    <div class="inmore"><a href="">查看更多>></a></div>
                 </div>
 
                 <div class="incenterbox">
                     <div class="inbanner_boxs banner-container">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="/template/img/banner2.jpg">
-                                <div class="text_box">
-                                    <h1>现言•青春 陆爷家的小可爱超甜   安向暖著   2020-03-17</h1>
-                                    <p>陆爷家的小可爱超甜</p>
+                            <?php foreach($ad["carousel"] as $carousel): ?>
+                                <div class="swiper-slide">
+                                    <img src="<?= $carousel["image"] ?>">
+                                    <a href="<?= $carousel["url"] ?>" target="_blank">
+                                    <div class="text_box">
+                                        <h1><?= $carousel["title"] ?></h1>
+                                        <p><?= $carousel["introduce"] ?></p>
+                                    </div>
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="/template/img/banner2.jpg">
-                                <div class="text_box">
-                                    <h1>小可爱超甜   安向暖著   2020-03-17</h1>
-                                    <p>神医弃女</p>
-                                </div>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                     </div>
-                    <h2 class="inbangdant">大神风云榜单</h2>
+                    <h2 class="inbangdant"><?= $fictionPlace["home_girl_god"]->title ?></h2>
                     <div class="inbangdan">
-                        <div class="initems ell"><i>1</i><a href="">神医弃女1</a></div>
-                        <div class="initems ell"><i>2</i><a href="">神医弃女1</a></div>
-                        <div class="initems ell"><i>3</i><a href="">神医弃女1</a></div>
-                        <div class="initems ell"><i>4</i><a href="">神医弃女1</a></div>
-                        <div class="initems ell"><i>5</i><a href="">神医弃女1</a></div>
-                        <div class="initems ell"><i>6</i><a href="">神医弃女1</a></div>
-                        <div class="initems ell"><i>7</i><a href="">神医弃女1</a></div>
-                        <div class="initems ell"><i>8</i><a href="">神医弃女1</a></div>
-                        <div class="initems ell"><i>9</i><a href="">神医弃女1</a></div>
-                        <div class="initems ell"><i>10</i><a href="">天下电竞大神暗…</a></div>
-                        <div class="initems ell"><i>11</i><a href="">锦绣农女种田忙</a></div>
-                        <div class="initems ell"><i>12</i><a href="">这个大佬画风不对</a></div>
+                        <?php foreach($fictionPlace["home_girl_god"]->findBooks([],12) as $key=>$book): ?>
+                        <div class="initems ell"><i><?= $key+1 ?></i><a href="<?= Url::to(["home/book","fiction_id" => $book->id]) ?>"><?= $book->title ?></a></div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
 
@@ -156,95 +126,16 @@ $this->registerMetaTag([
                         <div class="comtitle">新书上架</div>
                         <div class="ec">
                             <!-- 循环 第一个默认给上active-->
-                            <div class="combookitem active" onclick=" window.location.href= '/a.html' ">
-                                <div class="compicbox"><span class="comkeyvalue">1</span><img src="/template/img/book.jpg"></div>
+                            <?php foreach ($fictionNew as $key=>$book): ?>
+                            <div class="combookitem <?php if($key == 0): ?>active<?php endif; ?>" onclick=" window.location.href= '<?= Url::to(["home/book","fiction_id" => $book->id]) ?>' ">
+                                <div class="compicbox"><span class="comkeyvalue"><?= $key+1 ?></span><img src="<?= Handle::getUploadSrc($book->cover,Handle::UPLOAD_SRC_FICTION_COVER) ?>"></div>
                                 <div class="comrighttbox">
-                                    <h1>我的小可爱登录2</h1>
-                                    <h2>作者：李大钊</h2>
-                                    <h3>分类：现言•青春</h3>
+                                    <h1><?= $book->title ?></h1>
+                                    <h2>作者：<?= $book->member->authorInfo->penname ?></h2>
+                                    <h3>分类：<?= $book->category->name ?></h3>
                                 </div>
                             </div>
-
-                            <div class="combookitem" onclick=" window.location.href= '/a.html' ">
-                                <div class="compicbox"><span class="comkeyvalue">2</span><img src="/template/img/b1.jpg"></div>
-                                <div class="comrighttbox">
-                                    <h1>我的小可爱登录3</h1>
-                                    <h2>作者：李大钊</h2>
-                                    <h3>分类：现言•青春</h3>
-                                </div>
-                            </div>
-
-                            <div class="combookitem" onclick=" window.location.href= '/a.html' ">
-                                <div class="compicbox"><span class="comkeyvalue">3</span><img src="/template/img/book.jpg"></div>
-                                <div class="comrighttbox">
-                                    <h1>我的小可爱登录4</h1>
-                                    <h2>作者：李大钊</h2>
-                                    <h3>分类：现言•青春</h3>
-                                </div>
-                            </div>
-
-                            <div class="combookitem" onclick=" window.location.href= '/a.html' ">
-                                <div class="compicbox"><span class="comkeyvalue">4</span><img src="/template/img/book.jpg"></div>
-                                <div class="comrighttbox">
-                                    <h1>我的小可爱登录3</h1>
-                                    <h2>作者：李大钊</h2>
-                                    <h3>分类：现言•青春</h3>
-                                </div>
-                            </div>
-
-                            <div class="combookitem" onclick=" window.location.href= '/a.html' ">
-                                <div class="compicbox"><span class="comkeyvalue">5</span><img src="/template/img/book.jpg"></div>
-                                <div class="comrighttbox">
-                                    <h1>我的小可爱登4录</h1>
-                                    <h2>作者：李大钊</h2>
-                                    <h3>分类：现言•青春</h3>
-                                </div>
-                            </div>
-
-                            <div class="combookitem" onclick=" window.location.href= '/a.html' ">
-                                <div class="compicbox"><span class="comkeyvalue">6</span><img src="/template/img/book.jpg"></div>
-                                <div class="comrighttbox">
-                                    <h1>我的小可爱登录4</h1>
-                                    <h2>作者：李大钊</h2>
-                                    <h3>分类：现言•青春</h3>
-                                </div>
-                            </div>
-
-                            <div class="combookitem" onclick=" window.location.href= '/a.html' ">
-                                <div class="compicbox"><span class="comkeyvalue">7</span><img src="/template/img/book.jpg"></div>
-                                <div class="comrighttbox">
-                                    <h1>我的小可爱登录5</h1>
-                                    <h2>作者：李大钊</h2>
-                                    <h3>分类：现言•青春</h3>
-                                </div>
-                            </div>
-
-                            <div class="combookitem" onclick=" window.location.href= '/a.html' ">
-                                <div class="compicbox"><span class="comkeyvalue">1</span><img src="/template/img/book.jpg"></div>
-                                <div class="comrighttbox">
-                                    <h1>我的小可爱登4录</h1>
-                                    <h2>作者：李大钊</h2>
-                                    <h3>分类：现言•青春</h3>
-                                </div>
-                            </div>
-
-                            <div class="combookitem" onclick=" window.location.href= '/a.html' ">
-                                <div class="compicbox"><span class="comkeyvalue">1</span><img src="/template/img/book.jpg"></div>
-                                <div class="comrighttbox">
-                                    <h1>我的小可爱登录4</h1>
-                                    <h2>作者：李大钊</h2>
-                                    <h3>分类：现言•青春</h3>
-                                </div>
-                            </div>
-
-                            <div class="combookitem" onclick=" window.location.href= '/a.html' ">
-                                <div class="compicbox"><span class="comkeyvalue">1</span><img src="/template/img/book.jpg"></div>
-                                <div class="comrighttbox">
-                                    <h1>我的小可爱登录4</h1>
-                                    <h2>作者：李大钊</h2>
-                                    <h3>分类：现言•青春</h3>
-                                </div>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
@@ -257,69 +148,17 @@ $this->registerMetaTag([
             <div class="center_box">
                 <div class="swiper-container">
                     <div  class="swiper-wrapper">
-                        <div class="booklistscroolitem swiper-slide">
-                            <a href="">
-                                <img src="/template/img/book.jpg">
-                                <h1>开局变成非人类</h1>
-                                <h2>蝼蚁也曾向往天空</h2>
-                            </a>
-                        </div>
 
+                        <?php foreach($fictionPlace["home_girl_navigate"]->findBooks(["category"],10) as $book ): ?>
                         <div class="booklistscroolitem swiper-slide">
-                            <a href="">
-                                <img src="/template/img/book.jpg">
-                                <h1>开局变成非人类</h1>
-                                <h2>蝼蚁也曾向往天空</h2>
+                            <a href="<?= Url::to(["home/book","fiction_id" => $book->id]) ?>">
+                                <img src="<?= Handle::getUploadSrc($book->cover,Handle::UPLOAD_SRC_FICTION_COVER) ?>">
+                                <h1><?= $book->title ?></h1>
+                                <h2><?= $book->category->name ?></h2>
                             </a>
                         </div>
+                        <?php endforeach; ?>
 
-                        <div class="booklistscroolitem swiper-slide">
-                            <a href="">
-                                <img src="/template/img/book.jpg">
-                                <h1>开局变成非人类</h1>
-                                <h2>蝼蚁也曾向往天空</h2>
-                            </a>
-                        </div>
-
-                        <div class="booklistscroolitem swiper-slide">
-                            <a href="">
-                                <img src="/template/img/book.jpg">
-                                <h1>开局变成非人类</h1>
-                                <h2>蝼蚁也曾向往天空</h2>
-                            </a>
-                        </div>
-
-                        <div class="booklistscroolitem swiper-slide">
-                            <a href="">
-                                <img src="/template/img/book.jpg">
-                                <h1>开局变成非人类</h1>
-                                <h2>蝼蚁也曾向往天空</h2>
-                            </a>
-                        </div>
-
-                        <div class="booklistscroolitem swiper-slide">
-                            <a href="">
-                                <img src="/template/img/book.jpg">
-                                <h1>开局变成非人类</h1>
-                                <h2>蝼蚁也曾向往天空</h2>
-                            </a>
-                        </div>
-
-                        <div class="booklistscroolitem swiper-slide">
-                            <a href="">
-                                <img src="/template/img/book.jpg">
-                                <h1>开局变成非人类</h1>
-                                <h2>蝼蚁也曾向往天空</h2>
-                            </a>
-                        </div>
-
-                        <div class="booklistscroolitem swiper-slide">
-                            <a href="">
-                                <img src="/template/img/b1.jpg">
-                                <h1>开局变成非人类</h1>
-                                <h2>蝼蚁也曾向往天空</h2>
-                            </a>
-                        </div>
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -333,102 +172,49 @@ $this->registerMetaTag([
                 <div class="zhulile">
                     <div class="zleftbox">
                         <div class="com_booklist">
-                            <div class="comtitle">主编力荐</div>
+                            <div class="comtitle"><?= $fictionPlace["home_girl_recommend"]->title ?></div>
                             <div class="ec">
                                 <!-- 循环  第一个默认给上active-->
-                                <div class="combookitem active" onclick=" window.location.href= '/a.html' ">
-                                    <div class="compicbox"><span class="comkeyvalue">1</span><img src="/template/img/book.jpg"></div>
-                                    <div class="comrighttbox">
-                                        <h1>我的小可爱登录2</h1>
-                                        <h2>作者：李大钊</h2>
-                                        <h3>分类：现言•青春</h3>
-                                    </div>
-                                </div>
 
-                                <div class="combookitem" onclick=" window.location.href= '/a.html' ">
-                                    <div class="compicbox"><span class="comkeyvalue">2</span><img src="/template/img/book.jpg"></div>
-                                    <div class="comrighttbox">
-                                        <h1>我的小可爱登录3</h1>
-                                        <h2>作者：李大钊</h2>
-                                        <h3>分类：现言•青春</h3>
+                                <?php foreach($fictionPlace["home_girl_recommend"]->findBooks(["category","member"],11) as $key=>$book ): ?>
+                                    <div class="combookitem <?php if($key == 0): ?>active<?php endif; ?>" onclick=" window.location.href= '<?= Url::to(["home/book","fiction_id" => $book->id]) ?>' ">
+                                        <div class="compicbox"><span class="comkeyvalue"><?= $key+1 ?></span><img src="<?= Handle::getUploadSrc($book->cover,Handle::UPLOAD_SRC_FICTION_COVER) ?>"></div>
+                                        <div class="comrighttbox">
+                                            <h1><?= $book->title ?></h1>
+                                            <h2>作者：<?= $book->member->authorInfo->penname ?></h2>
+                                            <h3>分类：<?= $book->category->name ?></h3>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="combookitem" onclick=" window.location.href= '/a.html' ">
-                                    <div class="compicbox"><span class="comkeyvalue">2</span><img src="/template/img/book.jpg"></div>
-                                    <div class="comrighttbox">
-                                        <h1>我的小可爱登录3</h1>
-                                        <h2>作者：李大钊</h2>
-                                        <h3>分类：现言•青春</h3>
-                                    </div>
-                                </div>
-
-                                <div class="combookitem" onclick=" window.location.href= '/a.html' ">
-                                    <div class="compicbox"><span class="comkeyvalue">2</span><img src="/template/img/book.jpg"></div>
-                                    <div class="comrighttbox">
-                                        <h1>我的小可爱登录3</h1>
-                                        <h2>作者：李大钊</h2>
-                                        <h3>分类：现言•青春</h3>
-                                    </div>
-                                </div>
-
-                                <div class="combookitem" onclick=" window.location.href= '/a.html' ">
-                                    <div class="compicbox"><span class="comkeyvalue">2</span><img src="/template/img/book.jpg"></div>
-                                    <div class="comrighttbox">
-                                        <h1>我的小可爱登录3</h1>
-                                        <h2>作者：李大钊</h2>
-                                        <h3>分类：现言•青春</h3>
-                                    </div>
-                                </div>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
 
 
                     <div class="zjuzhong">
-                        <div class="ztitles">现言•萌宝 > </div>
+                        <div class="ztitles"><?= $fictionCategory[0]["title"] ?> > </div>
                         <div class="leftbox">
-                            <div class="uitems">
-                                <img src="/template/img/b2.jpg">
-                                <div class="ujies">
-                                    <h2>月华庭</h2>
-                                    <p class="i1">互相不待见的两人掉下万丈深渊的悬崖后两人在互相利用中，暗生情愫……</p>
-                                    <p class="i2"> <a href=""> [点击阅读] </a></p>
-                                </div>
-                            </div>
-                            <div class="uitems">
-                                <img src="/template/img/b2.jpg">
-                                <div class="ujies">
-                                    <h2>月华庭</h2>
-                                    <p class="i1">互相不待见的两人掉下万丈深渊的悬崖后两人在互相利用中，暗生情愫……</p>
-                                    <p class="i2"> <a href=""> [点击阅读] </a></p>
-                                </div>
-                            </div>
-
-                            <div class="uitems">
-                                <img src="/template/img/b2.jpg">
-                                <div class="ujies">
-                                    <h2>月华庭</h2>
-                                    <p class="i1">互相不待见的两人掉下万丈深渊的悬崖后两人在互相利用中，暗生情愫……</p>
-                                    <p class="i2"> <a href=""> [点击阅读] </a></p>
-                                </div>
-                            </div>
+                            <?php foreach($fictionCategory[0]["models"] as $key=>$book): ?>
+                                <?php if($key < 3): ?>
+                                    <div class="uitems">
+                                        <img src="<?= Handle::getUploadSrc($book->cover,Handle::UPLOAD_SRC_FICTION_COVER) ?>">
+                                        <div class="ujies">
+                                            <h2><?= $book->title ?></h2>
+                                            <p class="i1"><?= Handle::chapterContentPart($book->description,30) ?>……</p>
+                                            <p class="i2"> <a href="<?= Url::to(["home/book","fiction_id" => $book->id]) ?>"> [点击阅读] </a></p>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
                         </div>
 
                         <div class="rightbox">
                             <ul>
-                                <li> <a href="">觉醒后我成了宫斗冠军</a> </li>
-                                <li> <a href="">穿越之农家悍妻有点田</a> </li>
-                                <li> <a href="">草莓如你</a> </li>
-                                <li> <a href="">我家娘子是个兔子精</a> </li>
-                                <li> <a href="">我家妻主超高冷</a> </li>
-                                <li> <a href="">穿越之农家悍妻有点田</a> </li>
-                                <li> <a href="">农家娘子福满桃园</a> </li>
-                                <li> <a href="">王爷们都求我别衰了</a> </li>
-                                <li> <a href="">神级学生 拷贝</a> </li>
-                                <li> <a href="">明月夜星澜</a> </li>
-                                <li> <a href="">觉醒后我成了宫斗冠军</a> </li>
-                                <li> <a href="">暴君让我恃宠生娇</a> </li>
+                                <?php foreach($fictionCategory[0]["models"] as $key=>$book): ?>
+                                    <?php if($key >= 3): ?>
+                                        <li> <a href="<?= Url::to(["home/book","fiction_id" => $book->id]) ?>"><?= $book->title ?></a> </li>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
@@ -437,53 +223,20 @@ $this->registerMetaTag([
 
                     <div class="inrightbox">
                         <div class="com_booklist">
-                            <div class="comtitle">销售总榜</div>
+                            <div class="comtitle"><?= $fictionPlace["home_girl_sell"]->title ?></div>
                             <div class="ec">
                                 <!-- 循环 第一个默认给上active-->
-                                <div class="combookitem active" onclick=" window.location.href= '/a.html' ">
-                                    <div class="compicbox"><span class="comkeyvalue">1</span><img src="/template/img/b1.jpg"></div>
-                                    <div class="comrighttbox">
-                                        <h1>我的小可爱登录2</h1>
-                                        <h2>作者：李大钊</h2>
-                                        <h3>分类：现言•青春</h3>
-                                    </div>
-                                </div>
 
-                                <div class="combookitem" onclick=" window.location.href= '/a.html' ">
-                                    <div class="compicbox"><span class="comkeyvalue">2</span><img src="/template/img/b1.jpg"></div>
-                                    <div class="comrighttbox">
-                                        <h1>我的小可爱登录3</h1>
-                                        <h2>作者：李大钊</h2>
-                                        <h3>分类：现言•青春</h3>
+                                <?php foreach($fictionPlace["home_girl_sell"]->findBooks(["category","member"],11) as $key=>$book ): ?>
+                                    <div class="combookitem <?php if($key == 0): ?>active<?php endif; ?>" onclick=" window.location.href= '<?= Url::to(["home/book","fiction_id" => $book->id]) ?>' ">
+                                        <div class="compicbox"><span class="comkeyvalue"><?= $key+1 ?></span><img src="<?= Handle::getUploadSrc($book->cover,Handle::UPLOAD_SRC_FICTION_COVER) ?>"></div>
+                                        <div class="comrighttbox">
+                                            <h1><?= $book->title ?></h1>
+                                            <h2>作者：<?= $book->member->authorInfo->penname ?></h2>
+                                            <h3>分类：<?= $book->category->name ?></h3>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="combookitem" onclick=" window.location.href= '/a.html' ">
-                                    <div class="compicbox"><span class="comkeyvalue">2</span><img src="/template/img/b1.jpg"></div>
-                                    <div class="comrighttbox">
-                                        <h1>我的小可爱登录3</h1>
-                                        <h2>作者：李大钊</h2>
-                                        <h3>分类：现言•青春</h3>
-                                    </div>
-                                </div>
-
-                                <div class="combookitem" onclick=" window.location.href= '/a.html' ">
-                                    <div class="compicbox"><span class="comkeyvalue">2</span><img src="/template/img/b1.jpg"></div>
-                                    <div class="comrighttbox">
-                                        <h1>我的小可爱登录3</h1>
-                                        <h2>作者：李大钊</h2>
-                                        <h3>分类：现言•青春</h3>
-                                    </div>
-                                </div>
-
-                                <div class="combookitem" onclick=" window.location.href= '/a.html' ">
-                                    <div class="compicbox"><span class="comkeyvalue">2</span><img src="/template/img/b1.jpg"></div>
-                                    <div class="comrighttbox">
-                                        <h1>我的小可爱登录3</h1>
-                                        <h2>作者：李大钊</h2>
-                                        <h3>分类：现言•青春</h3>
-                                    </div>
-                                </div>
+                                <?php endforeach; ?>
                             </div>
 
                         </div>
@@ -498,59 +251,39 @@ $this->registerMetaTag([
             <div class="center_box">
                 <div class="zhulile">
                     <div class="zleftbox">
-                        <a href=""><img class="comsbannerimg" src="/template/img/adf.jpg"></a>
+                        <a target="_blank" href="<?= $ad["about"]["one"]["url"] ?>"><img class="comsbannerimg" src="<?= $ad["about"]["one"]["image"] ?>"></a>
                     </div>
 
                     <div class="zjuzhong">
-                        <div class="ztitles">现言•萌宝 > </div>
+                        <div class="ztitles"><?= $fictionCategory[1]["title"] ?> > </div>
                         <div class="leftbox">
-                            <div class="uitems">
-                                <img src="/template/img/b2.jpg">
-                                <div class="ujies">
-                                    <h2>月华庭</h2>
-                                    <p class="i1">互相不待见的两人掉下万丈深渊的悬崖后两人在互相利用中，暗生情愫……</p>
-                                    <p class="i2"> <a href=""> [点击阅读] </a></p>
-                                </div>
-                            </div>
-                            <div class="uitems">
-                                <img src="/template/img/b2.jpg">
-                                <div class="ujies">
-                                    <h2>月华庭</h2>
-                                    <p class="i1">互相不待见的两人掉下万丈深渊的悬崖后两人在互相利用中，暗生情愫……</p>
-                                    <p class="i2"> <a href=""> [点击阅读] </a></p>
-                                </div>
-                            </div>
-
-                            <div class="uitems">
-                                <img src="/template/img/b2.jpg">
-                                <div class="ujies">
-                                    <h2>月华庭</h2>
-                                    <p class="i1">互相不待见的两人掉下万丈深渊的悬崖后两人在互相利用中，暗生情愫……</p>
-                                    <p class="i2"> <a href=""> [点击阅读] </a></p>
-                                </div>
-                            </div>
+                            <?php foreach($fictionCategory[1]["models"] as $key=>$book): ?>
+                                <?php if($key < 3): ?>
+                                    <div class="uitems">
+                                        <img src="<?= Handle::getUploadSrc($book->cover,Handle::UPLOAD_SRC_FICTION_COVER) ?>">
+                                        <div class="ujies">
+                                            <h2><?= $book->title ?></h2>
+                                            <p class="i1"><?= Handle::chapterContentPart($book->description,30) ?>……</p>
+                                            <p class="i2"> <a href="<?= Url::to(["home/book","fiction_id" => $book->id]) ?>"> [点击阅读] </a></p>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
                         </div>
 
                         <div class="rightbox">
                             <ul>
-                                <li> <a href="">觉醒后我成了宫斗冠军</a> </li>
-                                <li> <a href="">穿越之农家悍妻有点田</a> </li>
-                                <li> <a href="">草莓如你</a> </li>
-                                <li> <a href="">我家娘子是个兔子精</a> </li>
-                                <li> <a href="">我家妻主超高冷</a> </li>
-                                <li> <a href="">穿越之农家悍妻有点田</a> </li>
-                                <li> <a href="">农家娘子福满桃园</a> </li>
-                                <li> <a href="">王爷们都求我别衰了</a> </li>
-                                <li> <a href="">神级学生 拷贝</a> </li>
-                                <li> <a href="">明月夜星澜</a> </li>
-                                <li> <a href="">觉醒后我成了宫斗冠军</a> </li>
-                                <li> <a href="">暴君让我恃宠生娇</a> </li>
+                                <?php foreach($fictionCategory[1]["models"] as $key=>$book): ?>
+                                    <?php if($key >= 3): ?>
+                                        <li> <a href="<?= Url::to(["home/book","fiction_id" => $book->id]) ?>"><?= $book->title ?></a> </li>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
 
                     <div class="inrightbox">
-                        <a href=""><img class="comsbannerimg" src="/template/img/adff.jpg"></a>
+                        <a target="_blank" href="<?= $ad["about"]["two"]["url"] ?>"><img class="comsbannerimg" src="<?= $ad["about"]["two"]["image"] ?>"></a>
                     </div>
 
                 </div>
@@ -561,59 +294,39 @@ $this->registerMetaTag([
             <div class="center_box">
                 <div class="zhulile">
                     <div class="zleftbox">
-                        <a href=""><img class="comsbannerimg" src="/template/img/adfff.jpg"></a>
+                        <a target="_blank" href="<?= $ad["about"]["three"]["url"] ?>"><img class="comsbannerimg" src="<?= $ad["about"]["three"]["image"] ?>"></a>
                     </div>
 
                     <div class="zjuzhong">
-                        <div class="ztitles">现言•萌宝 > </div>
+                        <div class="ztitles"><?= $fictionCategory[2]["title"] ?> > </div>
                         <div class="leftbox">
-                            <div class="uitems">
-                                <img src="/template/img/b2.jpg">
-                                <div class="ujies">
-                                    <h2>月华庭</h2>
-                                    <p class="i1">互相不待见的两人掉下万丈深渊的悬崖后两人在互相利用中，暗生情愫……</p>
-                                    <p class="i2"> <a href=""> [点击阅读] </a></p>
-                                </div>
-                            </div>
-                            <div class="uitems">
-                                <img src="/template/img/b2.jpg">
-                                <div class="ujies">
-                                    <h2>月华庭</h2>
-                                    <p class="i1">互相不待见的两人掉下万丈深渊的悬崖后两人在互相利用中，暗生情愫……</p>
-                                    <p class="i2"> <a href=""> [点击阅读] </a></p>
-                                </div>
-                            </div>
-
-                            <div class="uitems">
-                                <img src="/template/img/b2.jpg">
-                                <div class="ujies">
-                                    <h2>月华庭</h2>
-                                    <p class="i1">互相不待见的两人掉下万丈深渊的悬崖后两人在互相利用中，暗生情愫……</p>
-                                    <p class="i2"> <a href=""> [点击阅读] </a></p>
-                                </div>
-                            </div>
+                            <?php foreach($fictionCategory[2]["models"] as $key=>$book): ?>
+                                <?php if($key < 3): ?>
+                                    <div class="uitems">
+                                        <img src="<?= Handle::getUploadSrc($book->cover,Handle::UPLOAD_SRC_FICTION_COVER) ?>">
+                                        <div class="ujies">
+                                            <h2><?= $book->title ?></h2>
+                                            <p class="i1"><?= Handle::chapterContentPart($book->description,30) ?>……</p>
+                                            <p class="i2"> <a href="<?= Url::to(["home/book","fiction_id" => $book->id]) ?>"> [点击阅读] </a></p>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
                         </div>
 
                         <div class="rightbox">
                             <ul>
-                                <li> <a href="">觉醒后我成了宫斗冠军</a> </li>
-                                <li> <a href="">穿越之农家悍妻有点田</a> </li>
-                                <li> <a href="">草莓如你</a> </li>
-                                <li> <a href="">我家娘子是个兔子精</a> </li>
-                                <li> <a href="">我家妻主超高冷</a> </li>
-                                <li> <a href="">穿越之农家悍妻有点田</a> </li>
-                                <li> <a href="">农家娘子福满桃园</a> </li>
-                                <li> <a href="">王爷们都求我别衰了</a> </li>
-                                <li> <a href="">神级学生 拷贝</a> </li>
-                                <li> <a href="">明月夜星澜</a> </li>
-                                <li> <a href="">觉醒后我成了宫斗冠军</a> </li>
-                                <li> <a href="">暴君让我恃宠生娇</a> </li>
+                                <?php foreach($fictionCategory[2]["models"] as $key=>$book): ?>
+                                    <?php if($key >= 3): ?>
+                                        <li> <a href="<?= Url::to(["home/book","fiction_id" => $book->id]) ?>"><?= $book->title ?></a> </li>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
 
                     <div class="inrightbox">
-                        <a href=""><img class="comsbannerimg" src="/template/img/adfffff.jpg"></a>
+                        <a target="_blank" href="<?= $ad["about"]["four"]["url"] ?>"><img class="comsbannerimg" src="<?= $ad["about"]["four"]["image"] ?>"></a>
                     </div>
 
                 </div>

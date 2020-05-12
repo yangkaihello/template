@@ -56,7 +56,7 @@ $this->registerMetaTag([
 
             <!--  -->
             <div class="sbannerbox">
-                <a href="#this"><img src="/template/img/banner3.jpg"></a>
+                <a target="_blank" href="<?= $ad["header"]["one"]["url"] ?>"><img src="<?= $ad["header"]["one"]["image"] ?>"></a>
             </div>
             <!--  -->
             <div class="ph_box clear">

@@ -8,15 +8,12 @@
 
 namespace frontend\modules\template\controllers;
 
+use common\extend\DateTime;
 use common\models\FictionShortContent;
-use frontend\modules\template\forms\RankListForm;
-use frontend\modules\template\support\Search;
+use common\models\reader\MemberRead;
+use common\models\sign\MemberSign;
+use common\popular\Cache;
 use common\models\FictionLexicon;
-use common\models\LexiconIndex;
-use common\popular\Handle;
-use common\models\FictionCategory;
-use common\models\SystemPlace;
-use yii\data\Pagination;
 use common\models\FictionIndex;
 use common\models\FictionChapter;
 use yii;
@@ -58,31 +55,65 @@ class HomeController extends BaseController
     public function actionIndex()
     {
 
-        $fiction = FictionIndex::findCheckAndLong()->with([
-            'category',
-            'chapter' => function ($query){
-                return $query->where(['check' => FictionChapter::CHECK_ISSUE]);
-            },
-            'member' => function ($query){
-                $query->with(['authorInfo']);
-            },
-        ])->orderby("id DESC")->limit(20);
-
-
-        $place = SystemPlace::find()->where([
-            'source_type' => [
-                'home_goods','home_new','home_god',
-                'home_active','home_update','home_click','home_up'
+        $ad = [
+            "header" => [
+                "one" => [
+                    "image" => "/template/img/banner.jpg",
+                    "url" => "#this",
+                ],
+                "two" => [
+                    "image" => "/template/img/banner.jpg",
+                    "url" => "#this",
+                ],
+                "three" => [
+                    "image" => "/template/img/banner.jpg",
+                    "url" => "#this",
+                ],
             ],
-            'source_facility' => SystemPlace::SOURCE_FACILITY_PC_FICTION,
-        ])->indexBy("source_type")->all();
-
-        $vip    = "";//(clone $fiction)->andWhere(['isVip' => FictionIndex::VIP_YES])->all();
-        $free   = "";//(clone $fiction)->andWhere(['isVip' => FictionIndex::VIP_NO])->all();
-        $all    = $fiction->all();
+            "carousel" => [
+                [
+                    "image" => "/template/img/banner2.jpg",
+                    "title" => "现言•青春 陆爷家的小可爱超甜   安向暖著   2020-03-17",
+                    "introduce" => "这是介绍文案",
+                    "url" => "#this",
+                ],
+                [
+                    "image" => "/template/img/banner2.jpg",
+                    "title" => "第二本书",
+                    "introduce" => "这是介绍文案",
+                    "url" => "#this",
+                ],
+                [
+                    "image" => "/template/img/banner2.jpg",
+                    "title" => "第三个广告",
+                    "introduce" => "这是介绍文案",
+                    "url" => "#this",
+                ],
+            ],
+            "about" => [
+                "one" => [
+                    "image" => "/template/img/adf.jpg",
+                    "url" => "#this",
+                ],
+                "two" => [
+                    "image" => "/template/img/adff.jpg",
+                    "url" => "#this",
+                ],
+                "three" => [
+                    "image" => "/template/img/adfff.jpg",
+                    "url" => "#this",
+                ],
+                "four" => [
+                    "image" => "/template/img/adfffff.jpg",
+                    "url" => "#this",
+                ],
+            ],
+        ];
 
         $index = $this->template->Index();
-        return $this->render($index["template"],$index["data"]);
+        return $this->render($index["template"],$index["data"]+[
+            "ad" => $ad
+            ]);
     }
 
     /**
@@ -91,9 +122,19 @@ class HomeController extends BaseController
      */
     public function actionBooks()
     {
+        $ad = [
+            "header" => [
+                "one" => [
+                    "image" => "/template/img/banner.jpg",
+                    "url" => "#this",
+                ],
+            ],
+        ];
 
         $index = $this->template->Books();
-        return $this->render($index["template"],$index["data"]);
+        return $this->render($index["template"],$index["data"]+[
+            "ad" => $ad,
+            ]);
     }
 
 
@@ -103,6 +144,15 @@ class HomeController extends BaseController
      */
     public function actionRanks()
     {
+        $ad = [
+            "header" => [
+                "one" => [
+                    "image" => "/template/img/banner.jpg",
+                    "url" => "#this",
+                ],
+            ],
+        ];
+
         $index = $this->template->Ranks();
         $index["data"] = static::RANKS_MODEL+$index["data"];
         $ranks = [];
@@ -113,7 +163,8 @@ class HomeController extends BaseController
         unset($index["data"]["models"]);
 
         return $this->render($index["template"],$index["data"]+[
-            "ranks" => $ranks,
+                "ranks" => $ranks,
+                "ad" => $ad,
             ]);
     }
 
@@ -145,10 +196,19 @@ class HomeController extends BaseController
      */
     public function actionRank()
     {
+        $ad = [
+            "header" => [
+                "one" => [
+                    "image" => "/template/img/banner.jpg",
+                    "url" => "#this",
+                ],
+            ],
+        ];
 
         $index = $this->template->Rank();
         return $this->render($index["template"],$index["data"]+[
                 "ranks" => static::RANKS_MODEL,
+                "ad" => $ad,
             ]);
     }
 
@@ -158,6 +218,15 @@ class HomeController extends BaseController
      */
     public function actionBook()
     {
+        $ad = [
+            "header" => [
+                "one" => [
+                    "image" => "/template/img/banner.jpg",
+                    "url" => "#this",
+                ],
+            ],
+        ];
+
         $request = Yii::$app->request;
 
         $fiction = FictionIndex::findCheckOne($request->get('fiction_id'))->with([
@@ -188,6 +257,7 @@ class HomeController extends BaseController
                 "fiction" => $fiction,
                 "lexicons" => $lexicons,
                 "fictions" => $fictions,
+                "ad" => $ad,
             ]);
     }
 
@@ -215,8 +285,48 @@ class HomeController extends BaseController
 
         if( !$fiction || !$chapter )
         {
+            if(!empty($request->referrer)){
+                return $this->redirect($request->referrer);
+            }
             throw new HttpException(404,"not url");
         }
+
+        $fictionCache = Cache::factory('fictionCache');
+        $fictionCache->setFictionPv($fiction->id); //添加用户点击量
+
+        //用户的浏览量和阅读记录统计
+        if($this->user)
+        {
+            //每个用户的每日uv
+            $fictionCache->setFictionUv($fiction->id,$this->user->id);
+
+            $reader = new MemberRead();
+            $reader->member_id = $this->user->id;
+            $reader->createTableNum();
+
+            //不存在阅读记录的用户添加用户唯一量访问量
+            if(!$reader::find()->where([
+                'fiction_id' => $chapter->fiction_id,
+                'member_id' => $this->user->id,
+            ])->exists()) {
+                $fictionCache->setFictionUser($fiction->id);
+            }
+
+            //保存用户阅读记录
+            if( !$reader::find()->where([
+                'fiction_id' => $chapter->fiction_id,
+                'member_id' => $this->user->id,
+                'chapter_sort' => $chapter->sort,
+            ])->one() )
+            {
+                $reader->fiction_id = $chapter->fiction_id;
+                $reader->member_id = $this->user->id;
+                $reader->chapter_sort = $chapter->sort;
+                $reader->save();
+            }
+
+        }
+
         $chapterDown = FictionChapter::findChapterDown($chapter->fiction_id,$chapter->sort);
         $chapterUp = FictionChapter::findChapterUp($chapter->fiction_id,$chapter->sort);
 
@@ -258,4 +368,60 @@ class HomeController extends BaseController
     }
 
 
+    /**
+     * 查看签到的数据
+     * @return array
+     */
+    public function actionSignData()
+    {
+        /**
+         * @var $signs MemberSign[]
+         */
+        $signs = MemberSign::getMonthData($this->user->id,new \DateTime(date("Y-m-d",time())));
+        $upDayIsSign = MemberSign::isUpDay($this->user->id);
+        $currentDayIsSign = MemberSign::isDay($this->user->id,date("Y-m-d"));
+
+        if ($currentDayIsSign){
+            $continuous = $this->user->userInfo->sign ?? 0;
+        }else{
+            $continuous = $upDayIsSign ? ($this->user->userInfo->sign ?? 0) : 0;
+        }
+
+        $days = [];
+        foreach ($signs as $sign){
+            $days[] = (new \Datetime($sign->date))->format("d");
+        }
+
+        return [
+            "buy" => MemberSign::getBuyNumber($this->user->id),
+            "days" => $days,
+            "continuous" => $continuous,
+        ];
+    }
+
+    /**
+     * 签到
+     * @return bool
+     */
+    public function actionSign()
+    {
+
+        $model = new MemberSign();
+        $model->member_id = $this->user->id;
+        $model->createTableNum();
+
+        //验证今日是否签到过
+        if (!$model::find()->where([
+            'member_id' => $this->user->id,
+            'date' => date("Y-m-d"),
+        ])->exists()) {
+            //历史签到次数
+            $sign = $this->user->userInfo->sign ?? 0;
+            //签到的添加逻辑
+            return $model::Add($this->user->id,++$sign);
+        }else{
+            return false;
+        }
+
+    }
 }

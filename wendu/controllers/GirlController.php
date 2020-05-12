@@ -11,6 +11,7 @@ namespace frontend\modules\template\controllers;
 
 use common\models\FictionChapter;
 use common\models\FictionIndex;
+use common\models\SystemPlace;
 use frontend\modules\template\forms\RankListForm;
 use frontend\modules\template\support\Search;
 use Yii;
@@ -25,11 +26,58 @@ class GirlController extends Widget implements \frontend\modules\template\interf
      */
     public function Index() : array
     {
+        $fictionCategory = [
+            [
+                "title" => "分类一",
+                "category_id" => 1,
+                "models" => [],
+            ],
+            [
+                "title" => "分类二",
+                "category_id" => 2,
+                "models" => [],
+            ],
+            [
+                "title" => "分类三",
+                "category_id" => 3,
+                "models" => [],
+            ],
+        ];
+        //分类书籍获取
+        foreach ($fictionCategory as $key=>$category){
+            $fictionCategory[$key]["models"] = FictionIndex::findCheckIssue()->andWhere([
+                "category_id" => $category["category_id"],
+                "channel" => FictionIndex::CHANNEL_GIRL,
+            ])->orderBy("id DESC")->limit(15)->all();
+        }
 
+        //新书上架
+        $fictionNew = FictionIndex::findCheckIssue()->with([
+            "category",
+            'member' => function ($query){
+                return $query->with(['authorInfo']);
+            },
+        ])->andWhere([
+            "length" => FictionIndex::LENGTH_LONG,
+            "channel" => FictionIndex::CHANNEL_GIRL,
+        ])->orderBy("id DESC")->limit(10)->all();
+
+        //本周强推,本月强推,大神风云榜单,导航书籍,主编力荐,销售总榜
+        $fictionPlace = SystemPlace::find()->where([
+            'source_type' => [
+                'home_girl_week','home_girl_month','home_girl_god',
+                'home_girl_navigate','home_girl_recommend','home_girl_sell',
+            ],
+            'source_facility' => SystemPlace::SOURCE_FACILITY_PC_FICTION,
+        ])->indexBy("source_type")->all();
 
         return [
             "template" => '/girl/index',
-            "data" => [],
+            "data" => [
+                "fictionCategory" => $fictionCategory,
+                "fictionNew" => $fictionNew,
+                "fictionPlace" => $fictionPlace,
+            ],
         ];
     }
 
@@ -57,7 +105,6 @@ class GirlController extends Widget implements \frontend\modules\template\interf
         ]);
 
         $models = $models->limit($pagination->limit)->offset($pagination->offset)->all();
-
 
         return [
             "template" => '/girl/books',

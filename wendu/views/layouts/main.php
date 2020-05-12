@@ -5,6 +5,7 @@
 
 use yii\helpers\Html;
 use frontend\modules\template\assets\AppAsset;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 ?>
@@ -48,6 +49,44 @@ AppAsset::register($this);
             console.log(data.responseJSON);
         });
     });
+
+    $("#day-sign").click(function (e){
+
+        $.post("<?= Url::to(["home/sign-data"]) ?>",{"<?= Yii::$app->request->csrfParam ?>":"<?= Yii::$app->request->csrfToken ?>"},function (data){
+            var signList=[];
+            for (k in data.days){
+                signList.push({"signDay":data.days[k]})
+            }
+
+            //ajax获取日历json数据
+            calUtil.init(signList);
+            if ($("#sign_cal .on:contains("+new Date().getDate()+")").length > 0){
+                $("#sign-submit").removeClass("qiandaobtn");
+                $("#sign-submit").addClass("disabled");
+                $("#sign-submit").unbind("click");
+            }
+            $(".dateTime_box .buy").html(data.buy);
+            $(".dateTime_box .qiandaotishi b").html(data.continuous);
+            $(".dateTime_box").show();
+            $(".shade_box").show();
+        }).fail(function (data){
+            console.log(data.responseJSON);
+        });
+
+    });
+
+    $(".dateTime_box #sign-submit").click(function (e){
+        $.post("<?= Url::to(["home/sign"]) ?>",{"<?= Yii::$app->request->csrfParam ?>":"<?= Yii::$app->request->csrfToken ?>"},function (data){
+            if(data == false){
+                alert("今日已经签到");
+            }else{
+                $("#day-sign").click();
+            }
+        }).fail(function (data){
+            alert("签到异常");
+            console.log(data.responseJSON);
+        });
+    })
 
 </script>
 

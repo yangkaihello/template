@@ -47,4 +47,21 @@ use yii\helpers\Url;
             <a href="#this"><img src="/template/img/sina.png"></a>
         </div>
     </div>
+
+<?php else: ?>
+    <div class="shade_box" style="display: none;"></div>
+    <div class="dateTime_box" style="display: none;">
+        <img class="logcloseBtn" onclick="hideQd()" src="/template/img/clonef.png">
+        <div class="dateTime_header">
+            <h1> <span class="buy">0</span> <span class="pi">币</span></h1>
+            <h2>已累计获得的书币</h2>
+        </div>
+        <div class="dayBox">
+            <div id="calendar">
+
+            </div>
+            <div class="qiandaotishi">您已连续签到 <b>0</b> 天</div>
+            <a id="sign-submit" class="qiandaobtn" href="javascript:">签 到</a>
+        </div>
+    </div>
 <?php endif; ?>

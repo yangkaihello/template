@@ -15,12 +15,14 @@ class AppAsset extends AssetBundle
     public $css = [
         'template/css/style.css',
         'template/css/swiper.min.css',
+        'template/css/sign2.css',
     ];
     public $js = [
         'template/js/jquery-1.11.3.min.js',
         'template/js/swiper.min.js',
         'template/js/action.js',
         'template/js/app.js',
+        'template/js/calendar2.js',
     ];
     public $depends = [
         //'yii\web\YiiAsset',

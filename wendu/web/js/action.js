@@ -80,7 +80,13 @@ $(".closeBtn").click(function(){
 $(".logcloseBtn").click(function(){
 	$(".shade_box").hide();
 	$(".login_box").hide();
+	$(".dateTime_box").hide();
 })
+
+function hideQd() {
+	$(".shade_box").hide();
+	$(".dateTime_box").hide();
+}
 function hideBox(){
 	$(".shade_box").hide();
 	$(".xingxingbox").hide();

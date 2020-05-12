@@ -60,7 +60,7 @@ $this->registerMetaTag([
                       <?php if($key == 0): ?>class="active"<?php endif; ?>
                       ><?= $model->title ?></span>
                 <?php endforeach; ?>
-                <span><input class="orderMonery" type="number" placeholder="其他金额">元</span>
+                <span><input class="orderMonery" type="number" min="0" placeholder="其他金额">元</span>
             </div>
 
             <div class="pay_type">
@@ -102,9 +102,11 @@ $this->registerMetaTag([
         $(this).addClass("active");
 
         if ( !$(this).data("id") ){
-            setBuy(0);
-            $("#pay-submit").find("input[name=type_id]").val(null);
-            $("#pay-submit").find("input[name=price]").val($(this).data("price"));
+            if(!$(this).find(".orderMonery").val()){
+                setBuy(0)
+                $("#pay-submit").find("input[name=type_id]").val(null);
+                $("#pay-submit").find("input[name=price]").val($(this).data("price"));
+            }
         }else{
             setBuy($(this).data("buy"));
             $(this).parents(".pay_num").find(".orderMonery").val(null);
@@ -113,7 +115,7 @@ $this->registerMetaTag([
         }
     });
 
-    $(".pay_num .orderMonery").keyup(function (e){
+    $(".pay_num .orderMonery").bind('input propertychange',function (e){
         setBuy($(this).val()*<?= $setting->value ?>)
         $("#pay-submit").find("input[name=price]").val($(this).val());
     });

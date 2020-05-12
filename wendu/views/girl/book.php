@@ -80,7 +80,7 @@ $this->registerMetaTag([
                         </div>
 
                         <div class="bookBut">
-                            <a href="/template/grey_detail.html">开始试读</a>
+                            <a href="<?= Url::to(["home/chapter","fiction_id" => $fiction->id,"sort" => 1]) ?>">开始试读</a>
                             <a href="<?= Url::to(["home/chapters","fiction_id" => $fiction->id]) ?>">目录</a><br />
                             <a id="collect" href="#this">收藏</a>
                             <a id="give" href="#this">赞</a>

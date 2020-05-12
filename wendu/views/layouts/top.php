@@ -22,6 +22,10 @@ use frontend\controllers\HomeController;
                 </div>
             <?php else: ?>
                 <div class="ri2">
+                    <a id="day-sign" href="#this">每日签到</a>
+                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="ri2">
                     <a href="<?= Url::to(["/member/index/reader"]) ?>">最近阅读</a>
                 </div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -33,7 +37,7 @@ use frontend\controllers\HomeController;
 
                 <div class="ri1">
                     <?php if($this->context->user->isWriter == \common\models\MemberIndex::WRITER_YES):?>
-                    <a href="<?= Yii::$app->params["author.domain"] ?>">作家专区 </a>
+                    <a target="_blank" href="<?= Url::to(["/member/site/author"]) ?>" >作家专区 </a>
                     <?php endif; ?>
                     <span class="gangrow"></span>
                     <a href="<?= Url::to(["pay/index"]) ?>">充值 </a>

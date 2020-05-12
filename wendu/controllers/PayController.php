@@ -60,7 +60,7 @@ class PayController extends BaseController
                     $price = $request->post("price",0);
                     $data["type_id"] = 0;
                     $data["order_title"] = sprintf("充值%s人民币，价值%s书币",$price,$price*$setting->value);
-                    $data["order_price"] = $price;
+                    $data["order_price"] = (int)$price;
                 }
 
                 break;
