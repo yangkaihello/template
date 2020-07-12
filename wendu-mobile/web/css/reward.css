@@ -1,0 +1,92 @@
+/*reward.css*/
+
+img {
+  display: block;
+}
+.user-item {
+  height: 0.66rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.14rem;
+  padding: 0 0.18rem 0 0.15rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.user-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.user-item:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0.15rem;
+  right: 0;
+  background-color: #f2f6ff;
+  height: 1px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: bottom left;
+  transform-origin: bottom left;
+}
+
+.user-avator {
+  width: 0.36rem;
+  height: 0.36rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 0.09rem;
+}
+
+.user-avator img {
+  width: 100%;
+  height: 100%;
+}
+
+.user-name {
+  font-size: 0.16rem;
+  margin-bottom: 0.09rem;
+}
+
+.user-info {
+  color: #999;
+}
+
+.user-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 0;
+}
+
+.prize-img {
+  width: .32rem;
+  height: 0.32rem;
+  border-radius: 50%;
+  margin-right: 0.08rem;
+}
+
+.prize-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.multiply, .prize-num {
+  font-size: 0.18rem;
+}
+
+.multiply {
+  margin-right: 0.04rem;
+}

@@ -29,8 +29,8 @@ $this->registerMetaTag([
 
 /* 预加载CSS */
 //'template/css/reset.css',
-\mobile\assets\AppAsset::addCss($this,'static/css/catalogue.css?v1.0');
-\mobile\assets\AppAsset::addCss($this,'static/css/foot.css');
+\mobile\assets\AppAsset::addCss($this,'template/css/catalogue.css?v1.0');
+\mobile\assets\AppAsset::addCss($this,'template/css/foot.css');
 
 /*预加载JS*/
 //'js/jquery-1.10.1.min.js',

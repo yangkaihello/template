@@ -1,0 +1,70 @@
+/*fdCharge.css*/
+.success-icon {
+  width: 0.66rem;
+  height: 0.66rem;
+  margin: 0.19rem auto 0.16rem;
+  display: block;
+}
+
+
+.success {
+  font-size: 0.16rem;
+  color: #333;
+  text-align: center;
+  height: 0.16rem;
+  margin-bottom: 0.16rem;
+  position: relative;
+}
+
+.success:after {
+  content: '';
+  -webkit-transform-origin: left bottom;
+  transform-origin: left bottom;
+  height: 1px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  background-color: #f2f2f2;
+}
+
+.line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 0.15rem 0.22rem 0.15rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 0.14rem;
+  font-size: 0.14rem;
+  color: #333;
+}
+
+.return {
+  width: 3.46rem;
+  height: 0.4rem;
+  background-color: #FFFFFF;
+  position: relative;
+  display: block;
+  text-align: center;
+  line-height: 0.4rem;
+}
+
+
+.return:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200%;
+  height: 200%;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  border: 1px solid #ff4c2e;
+  border-radius: 0.06rem;
+}
+

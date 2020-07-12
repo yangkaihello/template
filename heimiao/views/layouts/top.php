@@ -14,9 +14,9 @@ use frontend\controllers\HomeController;
     <div class="container clearfix">
         <a href="#" class="lf">创建作品</a>
         <div class="ri clearfix">
-            <a href="#">登录</a>
+            <a href="/site/login">登录</a>
             <span>|</span>
-            <a href="#">注册</a>
+            <a href="/site/s">注册</a>
             <div class="login-liks ri">
                 <a href="#" class="lf">
                     <img src="/template/imgs/bar/qq.png" alt="">

@@ -1,0 +1,206 @@
+/*bookshelf.css*/
+
+.list .cover {
+  width: 1rem;
+  height: 1.33rem;
+  position: relative;
+  overflow:hidden;
+}
+
+.list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-top: 0.2rem;
+  padding: 0.15rem;
+  padding-bottom: 0;
+}
+
+.cover img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+}
+
+.name {
+  font-size: 0.16rem;
+  margin-top: 0.14rem;
+  padding-bottom: 0.34rem;
+  height: 0.16rem;
+  color: #333333;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+.list li {
+  width: 1rem;
+}
+
+
+.list li:nth-child(3n+1) {
+  margin-right: 0.22rem;
+}
+
+.list li:nth-child(3n+2) {
+  margin-right: 0.23rem;
+}
+
+.read-list li{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 0.15rem;
+  padding-bottom: 0.14rem;
+}
+
+
+.read-cover {
+  width: 0.52rem;
+  height: 0.70rem;
+  position: relative;
+  overflow: hidden;
+  margin-right: 0.09rem;
+}
+
+.read-cover img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+}
+
+.info {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.read-name {
+  font-size: 0.16rem;
+  margin-bottom: 0.12rem;
+  height: 0.16rem;
+  color: #333333;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.progress {
+  height: 0.16rem;
+  font-size: 0;
+}
+
+.progress span {
+  font-size: 0.16rem;
+}
+
+.go-library {
+  font-size: 0.14rem;
+  width: 0.8rem;
+  height: 0.3rem;
+  text-align: center;
+  line-height: 0.3rem;
+  position: relative;
+  margin: 0 auto 0.46rem;;
+  color: #FFF;
+  background-color: #ff4c2e;
+  border-radius: 0.04rem;
+  display: block;
+}
+
+.go-library:after {
+  position: absolute;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  width: 200%;
+  height: 200%;
+  left: 0;
+  top: 0;
+  border: 1px solid #dc3418;
+  border-radius: 0.08rem;
+  content: '';
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+}
+
+.foot img{
+   height:0.2rem;
+   width: auto;
+   display: block;
+   margin-bottom: 0.05rem;
+}
+
+.foot{
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   display:-webkit-box;
+   display:-ms-flexbox;
+   display:flex;
+   -ms-flex-pack: distribute;
+   justify-content: space-around;
+   background: #fff;
+   color: #c58f83;
+   font-size: 0.12rem;
+   height: 0.46rem;
+}
+
+.foot a {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.foot div {
+  color: #c58f83;
+}
+
+.foot .active div {
+  color: #ff4c2e;
+}
+.foot a .icon {
+  display: block;
+}
+
+.foot a .icon-on {
+  display: none;
+}
+
+.foot a.active .icon {
+  display: none;
+}
+
+.foot a.active .icon-on {
+  display: block;
+}

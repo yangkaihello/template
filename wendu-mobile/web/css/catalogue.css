@@ -1,0 +1,121 @@
+/*catalogue.css*/
+
+.nav {
+  overflow-x: scroll;
+  width: 100%;
+  height: 0.51rem;
+  
+  -webkit-box-sizing: border-box;
+  
+  box-sizing: border-box;
+  font-size: 0.16rem;
+  padding: 0 0.04rem 0 0.05rem;
+  background-color: #FFFFFF;
+  position: relative;
+  z-index: 1;
+}
+
+.nav:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f2f6ff;
+  height: 1px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: bottom left;
+  transform-origin: bottom left;
+}
+
+.navList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+
+.nav-item { 
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  padding: 0.19rem 0.13rem 0 0.12rem; 
+  white-space: nowrap;
+}
+
+.active {
+  font-weight: bold;
+  color: #ff4c2e;
+}
+
+.active:after {
+  content: '';
+  position: absolute;
+  width: 0.2rem;
+  height: 0.03rem;
+  background-color: #ff4c2e;
+  position: absolute;
+  left: 50%;
+  margin-left: -0.1rem;
+  bottom: 0.04rem;
+  border-radius: 0.015rem;
+}
+
+.item {
+  height: 0.46rem;
+  font-size: .16rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 0.15rem;
+  position: relative;
+  color: #333;
+}
+
+.item:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0.15rem;
+  right: 0;
+  background-color: #f2f6ff;
+  height: 1px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: bottom left;
+  transform-origin: bottom left;
+}
+
+.chapter{
+  margin-right: 0.1rem;
+}
+
+.list {
+  position: inherit;
+  top: 1rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: scroll;
+}
+
+.list .item .title{
+  position: absolute;
+}
+
+.list .item .vip{
+  display: inherit;
+  position: relative;
+  top: 0.04rem;
+  right: -3.3rem;
+  width: 0.25rem;
+  color: burlywood;
+  font-weight: bold;
+  font-size: 13px;
+}

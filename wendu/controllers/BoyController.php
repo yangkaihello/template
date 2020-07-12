@@ -103,7 +103,7 @@ class BoyController extends Widget implements \frontend\modules\template\interfa
         $models = Search::frontendFictionSearch($models,Yii::$app->request);
 
         $pagination = new Pagination([
-            'defaultPageSize' => 20,
+            'defaultPageSize' => 1,
             'totalCount' => (clone $models)->count(),
         ]);
 

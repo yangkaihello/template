@@ -26,14 +26,14 @@ $this->registerMetaTag([
 
 /* 预加载CSS */
 //'template/css/reset.css',
-\mobile\assets\AppAsset::addCss($this,'static/css/swiper.min.css');
-\mobile\assets\AppAsset::addCss($this,'static/css/index.css');
-\mobile\assets\AppAsset::addCss($this,'static/css/foot.css');
+\mobile\assets\AppAsset::addCss($this,'template/css/swiper.min.css');
+\mobile\assets\AppAsset::addCss($this,'template/css/index.css');
+\mobile\assets\AppAsset::addCss($this,'template/css/foot.css');
 
 /*预加载JS*/
 //'js/jquery-1.10.1.min.js',
-\mobile\assets\AppAsset::addScript($this,'static/js/index.js');
-\mobile\assets\AppAsset::addScript($this,'static/js/swiper.min.js');
+\mobile\assets\AppAsset::addScript($this,'template/js/index.js');
+\mobile\assets\AppAsset::addScript($this,'template/js/swiper.min.js');
 
 
 ?>
@@ -61,12 +61,12 @@ $this->registerMetaTag([
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <a href="<?= Url::to(['fiction/index','id' => 4],true) ?>">
-                    <img src="/static/img/lunbo.jpg" alt="" class='banner-img'>
+                    <img src="/template/img/lunbo.jpg" alt="" class='banner-img'>
                 </a>
             </div>
             <div class="swiper-slide">
                 <a href="<?= Url::to(['fiction/index','id' => 1],true) ?>">
-                    <img src="/static/img/lunbo1.jpg" alt="" class='banner-img'>
+                    <img src="/template/img/lunbo1.jpg" alt="" class='banner-img'>
                 </a>
             </div>
         </div>
@@ -74,19 +74,19 @@ $this->registerMetaTag([
     </div>
     <div class="nav">
         <a class="nav-item" href="<?= Url::to(['home/books'],true) ?>">
-            <div class="nav-icon-box"><img src="/static/img/index-icon1.png" alt="" class='nav-icon'></div>
+            <div class="nav-icon-box"><img src="/template/img/index-icon1.png" alt="" class='nav-icon'></div>
             <p class='nav-item-txt'>书库</p>
         </a>
         <a class="nav-item" href="<?= Url::to(['home/rank'],true) ?>">
-            <div class="nav-icon-box"><img src="/static/img/index-icon2.png" alt="" class='nav-icon'></div>
+            <div class="nav-icon-box"><img src="/template/img/index-icon2.png" alt="" class='nav-icon'></div>
             <p class='nav-item-txt'>榜单</p>
         </a>
         <a class="nav-item" href="<?= Url::to(['home/free'],true) ?>">
-            <div class="nav-icon-box"><img src="/static/img/index-icon3.png" alt="" class='nav-icon'></div>
+            <div class="nav-icon-box"><img src="/template/img/index-icon3.png" alt="" class='nav-icon'></div>
             <p class='nav-item-txt'>免费</p>
         </a>
         <a class="nav-item" href="<?= Url::to(['member/pay'],true) ?>">
-            <div class="nav-icon-box"><img src="/static/img/index-icon4.png" alt="" class='nav-icon'></div>
+            <div class="nav-icon-box"><img src="/template/img/index-icon4.png" alt="" class='nav-icon'></div>
             <p class='nav-item-txt'>充值</p>
         </a>
     </div>

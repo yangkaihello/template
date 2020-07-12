@@ -1,0 +1,173 @@
+/*index.css*/
+
+.nav{
+  height: 0.5rem;
+  
+  display: -webkit-box;
+  
+  display: -ms-flexbox;
+  
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  font-size: 0.18rem;
+  border-bottom: 0.02rem solid #f2f6ff;
+}
+
+
+.nav-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0.17rem 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.active {
+  font-weight: bold;
+  color: #ff4c2e;
+}
+
+.active:after {
+  content: '';
+  position: absolute;
+  width: 0.2rem;
+  height: 0.03rem;
+  background-color: #ff4c2e;
+  position: absolute;
+  left: 50%;
+  margin-left: -0.1rem;
+  bottom: 0.04rem;
+  border-radius: 0.015rem;
+}
+
+.item {
+  margin-top: 0.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 0.16rem 0 0.15rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 1.16rem;
+}
+
+.item_left {
+  width: 0.87rem;
+  margin-right: 0.14rem;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cover {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+.item_right {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.item-right {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.bookName {
+  font-size: 0.16rem;
+  font-weight: 700;
+  margin-bottom: 0.05rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  color: #333;
+}
+
+.fir {
+  color: #d1011b;
+}
+
+.sec {
+  color: #f57923;
+}
+
+.three {
+  color: #f4a727;
+}
+
+.bookInfo {
+  -webkit-line-clamp:3;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  font-size: 0.14rem;
+  line-height: 0.25rem;
+  color: #333;
+}
+
+.auth-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.12rem;
+  height: 0.13rem;
+  vertical-align: top;
+  color: #999;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-align: justify;
+}
+
+.serial {
+  color: #ff6d6b;
+}
+
+.over {
+  color: #999999;
+}
+
+.list {
+  position: absolute;
+  top: 0.96rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: scroll;
+}
+
+.list-body {
+  padding-bottom: 0.2rem;
+}

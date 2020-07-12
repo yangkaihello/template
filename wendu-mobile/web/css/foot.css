@@ -1,0 +1,74 @@
+footer .bottom {
+    height: 0.46rem;
+    text-align: center;
+    line-height: 0.46rem;
+    background-color: #fdf6f5;
+    color: #c5958d;
+    font-size: 0.18rem;
+    margin-bottom: 0.46rem;
+}
+
+.foot img{
+    height:0.2rem;
+    width: auto;
+    display: block;
+    margin-bottom: 0.05rem;
+}
+
+.foot{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    background: #fff;
+    color: #c58f83;
+    font-size: 0.12rem;
+    height: 0.46rem;
+}
+
+.foot a {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.foot div {
+    color: #c58f83;
+}
+
+.foot .active-foot div {
+    color: #ff4c2e;
+}
+.foot a .icon {
+    display: block;
+}
+
+.foot a .icon-on {
+    display: none;
+}
+
+.foot a.active-foot .icon {
+    display: none;
+}
+
+.foot a.active-foot .icon-on {
+    display: block;
+}

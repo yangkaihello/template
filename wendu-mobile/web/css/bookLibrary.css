@@ -1,0 +1,244 @@
+/*bookLibrary.css*/
+
+.nav{
+  height: 0.5rem;
+  
+  display: -webkit-box;
+  
+  display: -ms-flexbox;
+  
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  font-size: 0.18rem;
+  border-bottom: 0.01rem solid #fdf6f5;
+}
+
+
+.nav-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0.17rem 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.active {
+  font-weight: bold;
+  color: #ff4c2e;
+}
+
+.active:after {
+  content: '';
+  position: absolute;
+  width: 0.2rem;
+  height: 0.03rem;
+  background-color: #ff4c2e;
+  position: absolute;
+  left: 50%;
+  margin-left: -0.1rem;
+  bottom: 0.04rem;
+  border-radius: 0.015rem;
+}
+
+.line {
+  color: #666;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding: 0.19rem 0.15rem 0.01rem 0.36rem;
+}
+
+.classify {
+  position: relative;
+}
+
+.classify:after{
+  position: absolute;
+  content: '';
+  height: 1px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform-origin: left bottom;
+  transform-origin: left bottom;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  background-color: #f2f2f2;
+}
+
+.classify-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.classify-item {
+  margin-right: 0.1rem;
+}
+
+.line2 .classify-item {
+  margin-right: 0.25rem;
+}
+
+.line2 {
+  color: #666;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding: 0.2rem 0.15rem 0.01rem 0.36rem;
+}
+
+.classify-all {
+  color: #ff4c2e;
+  padding-right: 0.2rem;
+  white-space: nowrap;
+}
+
+.classify-item {
+  margin-bottom: 0.18rem;
+}
+
+.line2:before{
+  position: absolute;
+  content: '';
+  left: 0.36rem;
+  right: 0.15rem;
+  top: 0;
+  height: 1px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  background-color: #f2f2f2;
+}
+
+.list {
+  padding: 0 0.15rem 0 0.15rem;
+  position: relative;
+}
+
+.list-body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #f2f6ff;
+  height: 1px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: bottom left;
+  transform-origin: bottom left;
+}
+.item {
+  padding-bottom: 0.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 1.15rem;
+  padding-bottom: 0.2rem;
+}
+
+.item_left {
+  width: 0.87rem;
+  margin-right: 0.14rem;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cover {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+.item_right {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.item-right {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.bookName {
+  font-size: 0.16rem;
+  font-weight: 700;
+  margin-bottom: 0.05rem;
+}
+
+.bookInfo {
+  -webkit-line-clamp:3;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  font-size: 0.14rem;
+  line-height: 0.25rem;
+  text-align: justify;
+  color: #666;
+}
+
+.auth-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.12rem;
+  color: #999;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.serial {
+  color: #ff6d6b;
+}
+
+.over {
+  color: #999999;
+}
+
+.classify {
+  margin-right: 0.18rem;
+  color: #3588fe;
+}
+
+.list-body {
+  padding-top: 0.2rem;
+}
+
+.mr0 {
+  margin-right: 0;
+}

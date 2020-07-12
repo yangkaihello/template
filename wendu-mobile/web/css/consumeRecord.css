@@ -1,0 +1,229 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 微软雅黑;
+
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.head{
+    text-align: center;
+    height:0.44rem;
+    font-size: 0.2rem;
+    color: #333;
+    line-height: 0.44rem;
+    background: #fff;
+    position: relative;
+}
+
+
+
+.nav{
+ height: 0.5rem;
+ color: #333333;
+ display: -webkit-box;
+ display: -ms-flexbox;
+ display: flex;
+ -ms-flex-pack: distribute;
+ justify-content: space-around;
+ font-size: 0.18rem;
+ border-bottom: 0.02rem solid #fef6f4;
+}
+
+
+.nav-item {
+ display: -webkit-box;
+ display: -ms-flexbox;
+ display: flex;
+ text-align: center;
+ -webkit-box-flex: 1;
+ -ms-flex: 1;
+ flex: 1;
+ -webkit-box-pack: center;
+ -ms-flex-pack: center;
+ justify-content: center;
+ height: 100%;
+ padding: 0.17rem 0;
+ -webkit-box-sizing: border-box;
+ box-sizing: border-box;
+ position: relative;
+}
+
+.active {
+ font-weight: bold;
+ color: #ff4c2e;
+}
+
+.active:after {
+ content: '';
+ position: absolute;
+ width: 0.2rem;
+ height: 0.03rem;
+ background-color: #ff4c2e;
+ position: absolute;
+ left: 50%;
+ margin-left: -0.1rem;
+ bottom: 0.04rem;
+ border-radius: 0.015rem;
+}
+.recordUl li{
+   /*height: 0.7rem;*/
+   padding: 0.16rem 0.15rem 0.16rem 0.36rem;
+   /*border-bottom: 1px solid #f2f6ff;*/
+}
+.recordUl li{
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-pack: justify;
+   -ms-flex-pack: justify;
+   justify-content: space-between;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   align-items: center;
+   position: relative;
+}
+
+.recordUl li:after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0.36rem;
+  right: 0.15rem;
+  background-color: #f2f6ff;
+  height: 1px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: bottom left;
+  transform-origin: bottom left;
+}
+
+.itemdetail{
+   -webkit-box-flex: 1;
+   -ms-flex: 1;
+   flex: 1;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+   -ms-flex-direction: column;
+   flex-direction: column;
+   -webkit-box-pack: justify;
+   -ms-flex-pack: justify;
+   justify-content: space-between;
+}
+.itemdetail1{
+   color: #333333;
+   font-size:0.14rem;
+   font-weight: 600;
+   margin-bottom: 0.08rem;
+}
+.itemdetail2{
+   color: #333333;
+   font-size:0.12rem;
+   margin-bottom: 0.09rem;
+}
+.itemdetail3{
+   color: #999999;
+   font-size:0.12rem;
+}
+.itemright{
+   color:#ff4c2e;
+   font-size:0.14rem;
+   font-weight: 600;
+}
+.itemleft img{
+   display: block;
+   width: 0.5rem;
+   height: 0.5rem;
+   border-radius: 50%;
+}
+.itemleft{
+   padding-right: 0.1rem;
+}
+.head img{
+  position: absolute;
+  left: 0.1rem;
+  top:0.07rem;
+  width: 0.11rem;
+  height: 0.19rem;
+  padding: 0.05rem;
+}
+
+/*打赏记录*/
+
+.gave-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 0.15rem 0 0.36rem;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 0.56rem;
+  position: relative;
+}
+
+.gave-item:after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0.36rem;
+  right: 0.15rem;
+  background-color: #f2f6ff;
+  height: 1px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: bottom left;
+  transform-origin: bottom left;
+}
+
+.gave-title {
+  margin-bottom: 0.06rem;
+  font-weight: 700;
+}
+
+.gave-time {
+  color: #999;
+}
+
+.gave-gold {
+  width: 0.28rem;
+  height: 0.28rem;
+  background: url(../img/coin.png);
+  background-size: 100% 100%;
+  margin-right: 0.1rem;
+}
+
+.gave-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.gave-right {
+  font-weight: 700;
+  color: #ff4c2e;
+}
+
+.empty {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0.94rem;
+  bottom: 0;
+}
+
+
+.empty img {
+  width: 100%;
+  height: auto;
+}
